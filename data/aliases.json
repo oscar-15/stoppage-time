@@ -1,0 +1,5 @@
+{
+  "_help": "If status.json lists unmatched teams, map them here. teams: Odds API name -> football-data name. elo: football-data name -> ClubElo name.",
+  "teams": {},
+  "elo": {}
+}
