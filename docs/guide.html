@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stoppage Time Guide</title>
+<meta name="description" content="How to read the Stoppage Time picks, leans and every-game odds.">
+<meta name="theme-color" content="#08110d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08110d; --bg-2: #0d1a14; --surface: #10201a; --surface-2: #142821;
+    --line: rgba(226,238,220,.10); --line-2: rgba(226,238,220,.18);
+    --text: #eef3ea; --muted: #93a69b; --faint: #607368;
+    --chalk: #d9f45d; --win: #5fd99a; --loss: #ff6f61;
+    --display: "Big Shoulders Display", Impact, sans-serif;
+    --body: "Manrope", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--body); font-size: 15.5px; line-height: 1.55;
+    background-image: radial-gradient(ellipse 90% 40% at 50% -8%, rgba(217,244,93,.10), transparent 70%); }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 24px 16px 64px; }
+  a { color: var(--chalk); }
+  .back { font-size: 14px; text-decoration: none; }
+  h1 { font-family: var(--display); font-weight: 900; font-size: clamp(40px, 11vw, 58px); line-height: .92; text-transform: uppercase; margin: 14px 0 8px; }
+  h1 span { color: var(--chalk); }
+  .lede { color: var(--muted); margin: 0 0 8px; }
+  h2 { font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: .2em; text-transform: uppercase; color: var(--chalk); margin: 0 0 10px; }
+  section { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); }
+  p { margin: 0 0 12px; }
+  b { color: var(--text); }
+  .muted { color: var(--muted); }
+  ul.k { list-style: none; padding: 0; margin: 0; }
+  ul.k li { display: grid; grid-template-columns: 112px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+  ul.k li:last-child { border-bottom: none; }
+  ul.k li > span:first-child { font-weight: 700; color: var(--text); }
+  ul.k li > span:last-child { color: var(--muted); }
+
+  /* 1/X/2 diagram */
+  .demo { background: linear-gradient(165deg, var(--surface-2), var(--surface)); border: 1px solid var(--line-2); border-radius: 18px; padding: 16px; margin: 14px 0 6px; }
+  .demo .t { font-weight: 700; } .demo .m { color: var(--muted); font-size: 12.5px; }
+  .demo .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .boxes { display: flex; gap: 8px; margin-top: 10px; }
+  .box { flex: 1; text-align: center; background: var(--bg-2); border: 1px solid var(--line); border-radius: 10px; padding: 8px 2px; font-variant-numeric: tabular-nums; }
+  .box b { display: block; font-size: 11px; letter-spacing: .1em; color: var(--faint); }
+  .box.val { border-color: rgba(95,217,154,.7); box-shadow: 0 0 0 1px rgba(95,217,154,.25) inset; }
+  .fair { color: var(--text); font-weight: 700; } .us { color: var(--chalk); font-weight: 700; }
+  .callouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 6px; font-size: 12px; color: var(--muted); text-align: center; }
+  .key { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13px; margin: 10px 0 0; color: var(--muted); }
+  .key i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+
+  .rule { background: rgba(217,244,93,.10); border: 1px solid rgba(217,244,93,.28); border-radius: 14px; padding: 12px 14px; margin: 12px 0; }
+  .rule b { color: var(--chalk); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
+  th { color: var(--faint); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+  .pos { color: var(--win); font-weight: 700; } .neg { color: var(--faint); }
+  .tip { font-size: 13.5px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← Back to picks</a>
+  <h1>How to read<br><span>Stoppage Time</span></h1>
+  <p class="lede">A one-page cheat sheet. The short version: the site finds spots where a US sportsbook is paying more than a game is really worth.</p>
+
+  <section>
+    <h2>The idea in 30 seconds</h2>
+    <p><b>Pinnacle</b> is the sharpest sportsbook in the world. It takes huge bets from professionals and keeps a tiny margin, so its odds, with that margin removed, are the best estimate of each team's <b>true chance</b>. We call those the <b>fair odds</b>.</p>
+    <p>US books (DraftKings, FanDuel, BetMGM and others) usually pay <i>less</i> than fair. Every so often one pays <i>more</i>. That's a value bet, and that's all this site looks for.</p>
+  </section>
+
+  <section>
+    <h2>Odds refresher</h2>
+    <ul class="k">
+      <li><span>+150</span><span>Bet $100 to win $150. Underdog.</span></li>
+      <li><span>−150</span><span>Bet $150 to win $100. Favorite.</span></li>
+      <li><span>Better for you</span><span>The bigger number pays more: <b>+130</b> beats +120, and <b>−110</b> beats −120.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The 1 / X / 2 boxes</h2>
+    <p>In <b>Every game</b>, each match shows three boxes. Soccer has three results, so:</p>
+    <ul class="k">
+      <li><span>1</span><span>Home team wins (the first team listed)</span></li>
+      <li><span>X</span><span>Draw</span></li>
+      <li><span>2</span><span>Away team wins</span></li>
+    </ul>
+    <p style="margin-top:12px">Each box shows two numbers: <span class="fair">fair odds</span> · <span class="us">best US price</span>.</p>
+
+    <div class="demo" role="img" aria-label="Example: Como v Manchester United. Home +124 fair, +120 at best US book. Draw +310 fair, +285. Away +224 fair, +230 with a green outline because the US price beats fair.">
+      <div class="row"><span class="t">Como v Manchester United</span><span class="m">xG 1.8–1.5</span></div>
+      <div class="m">Champions League · 9:45 AM</div>
+      <div class="boxes">
+        <div class="box"><b>1</b><span class="fair">+124</span> · <span class="us">+120</span></div>
+        <div class="box"><b>X</b><span class="fair">+310</span> · <span class="us">+285</span></div>
+        <div class="box val"><b>2</b><span class="fair">+224</span> · <span class="us">+230</span></div>
+      </div>
+      <div class="callouts"><span>US pays less than fair. No value.</span><span>US pays less than fair. No value.</span><span style="color:var(--win)">US pays more than fair. Value.</span></div>
+    </div>
+    <div class="key"><span><i style="background:var(--text)"></i>Fair odds (the true price)</span><span><i style="background:var(--chalk)"></i>Best US price</span><span><i style="border:1.5px solid var(--win)"></i>Green outline = value</span></div>
+    <div class="rule"><b>The one rule:</b> if the US price is bigger than the fair price, it's a value bet. If it's smaller, skip it.</div>
+    <p class="tip">The example's numbers are made up to show a green box. <b>xG 1.8–1.5</b> is expected goals: on average, the market expects Como to score about 1.8 and United about 1.5.</p>
+  </section>
+
+  <section>
+    <h2>Tap a game for every market</h2>
+    <table>
+      <thead><tr><th>Market</th><th>Fair</th><th>Best US</th><th>Edge</th></tr></thead>
+      <tbody>
+        <tr><td>Over 2.5</td><td>+120<br><span class="muted">45%</span></td><td>+140 FanDuel</td><td class="pos">+8.9%</td></tr>
+        <tr><td>Under 2.5</td><td>−120<br><span class="muted">55%</span></td><td>−137 DK</td><td class="neg">−5.5%</td></tr>
+      </tbody>
+    </table>
+    <ul class="k" style="margin-top:10px">
+      <li><span>Fair</span><span>True odds, with the chance it happens underneath.</span></li>
+      <li><span>Best US</span><span>The best price across the US books, and which book.</span></li>
+      <li><span>Edge</span><span>How much more the US book pays than fair. <b class="pos">Green and positive</b> = value.</span></li>
+      <li><span>Over/Under 2.5</span><span>3+ total goals, or 2 or fewer.</span></li>
+      <li><span>Both teams to score</span><span>Yes = each side scores at least once.</span></li>
+      <li><span>+0.5</span><span>Team wins <b>or draws</b>.</span></li>
+      <li><span>−0.5</span><span>Team must win.</span></li>
+      <li><span>−1.5</span><span>Team must win by 2+.</span></li>
+      <li><span>+1.5</span><span>Team doesn't lose by 2+.</span></li>
+    </ul>
+    <p class="tip" style="margin-top:10px">A dash under Best US means the bot doesn't get that market from US books yet (both teams to score and handicaps, for now). Open your sportsbook app and compare it with the fair odds yourself: same one rule.</p>
+  </section>
+
+  <section>
+    <h2>Picks and leans</h2>
+    <ul class="k">
+      <li><span>Pick</span><span>A US price beats fair by <b>2% or more</b>. Up to 10 a day, one per match.</span></li>
+      <li><span>Lean</span><span>A smaller edge, 0.5–2%. Listed under the picks, tracked on its own record.</span></li>
+      <li><span>"True odds" bar</span><span>The real chance it hits.</span></li>
+      <li><span>"Book pays" bar</span><span>The chance the US price implies. When it's shorter than the true-odds bar, you're getting paid extra.</span></li>
+      <li><span>Pinnacle (derived)</span><span>Fair price worked out from Pinnacle's nearby line, so it needs 3% instead of 2%.</span></li>
+    </ul>
+    <p class="tip" style="margin-top:10px">Picks never change once posted, they lock at kickoff, and they grade themselves from the final score.</p>
+  </section>
+
+  <section>
+    <h2>Is it working? Watch CLV</h2>
+    <p><b>Closing-line value (CLV)</b> compares the price we posted with Pinnacle's last price before kickoff. If we keep getting better prices than the close, the edge is real, even through losing streaks.</p>
+    <ul class="k">
+      <li><span>Good sign</span><span>Average CLV above 0, and "beat the close" over 55–60%, after 50–100 picks.</span></li>
+      <li><span>Win-loss</span><span>Takes hundreds of bets to mean anything. Don't judge it on a week.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>When it updates</h2>
+    <ul class="k">
+      <li><span>Bot runs</span><span>Every 2 hours, on its own.</span></li>
+      <li><span>Fresh odds</span><span>About every 8 hours per league (free plan), plus once inside 2 hours of a pick's kickoff.</span></li>
+      <li><span>Games shown</span><span>Kickoffs in the next ~36 hours.</span></li>
+      <li><span>Not updating?</span><span>Force a fresh load: Cmd + Shift + R on a Mac, or pull down to refresh on a phone.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>House rules</h2>
+    <p class="muted">Bet small and flat (the same amount every time). Never chase losses. Prices move, so check the book's current price before betting: if it's dropped below fair, skip it. Only bet where it's legal for you.</p>
+    <p><a href="./">← Back to picks</a></p>
+  </section>
+</div>
+</body>
+</html>
