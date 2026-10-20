@@ -247,6 +247,13 @@ def main():
     if not config.ODDS_API_KEY and not os.environ.get("FIXTURES"):
         log("ODDS_API_KEY is not set: add it under Settings > Secrets > Actions.")
 
+    # A new strategy (or pick cap) means the last odds pull was judged by old rules.
+    rules = f"{config.STRATEGY}:{config.SHOP_MIN_EV}:{config.PICKS_PER_DAY}"
+    if state.get("rules") != rules:
+        state["last_odds"] = {}
+        state["rules"] = rules
+        log(f"rules changed to {rules}; refreshing odds")
+
     # 1. lock picks whose match has started
     for p in picks:
         if p["status"] == "pending" and parse_ts(p["kickoff"]) <= now:
