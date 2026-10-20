@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T22:22:06Z",
+  "updated": "2026-10-20T22:26:33Z",
   "record": {
     "wins": 0,
     "losses": 0,
@@ -11,7 +11,7 @@
     "beat_close": null,
     "clv_n": 0
   },
-  "credits_remaining": 486,
+  "credits_remaining": 482,
   "refreshed": [
     "LALIGA",
     "UCL"
@@ -22,8 +22,8 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "rules changed to shop:0.02:10:h2h,totals,spreads:pinnacle,betfair_ex_eu,draftkings,fanduel,betmgm,betrivers,espnbet,hardrockbet,ballybet,betparx; refreshing odds",
-    "odds: LALIGA 21 games, 0 bets clear the bar (h2h 63/63 priced, totals 10/44 priced)",
-    "odds: UCL 9 games, 1 bets clear the bar (h2h 27/27 priced, totals 2/18 priced)"
+    "rules changed to shop:0.02:10:h2h,totals:pinnacle,betfair_ex_eu,draftkings,fanduel,betmgm,betrivers,espnbet,hardrockbet,ballybet,betparx; refreshing odds",
+    "odds: LALIGA 21 games, 0 bets clear the bar (h2h 63/63 priced (0 derived), totals 44/44 priced (34 derived))",
+    "odds: UCL 9 games, 1 bets clear the bar (h2h 27/27 priced (0 derived), totals 18/18 priced (16 derived))"
   ]
 }
