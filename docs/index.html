@@ -114,6 +114,18 @@
   .parlay { margin: 16px 0 0; font-size: 14px; color: var(--muted); }
   .parlay b { color: var(--text); }
 
+  /* leans */
+  .leans { margin-top: 26px; }
+  .leans h3 { font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
+  .leans .sub { margin: 0 0 8px; }
+  .lean { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .lean .l { font-weight: 700; }
+  .lean .o { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .lean .m { color: var(--muted); font-size: 12.5px; }
+  .lean .e { text-align: right; color: var(--muted); font-size: 12.5px; }
+  .lean .e.won { color: var(--win); } .lean .e.lost { color: var(--loss); }
+  .tag-lean { font-size: 10px; font-weight: 800; letter-spacing: .1em; color: var(--muted); border: 1px solid var(--line-2); border-radius: 5px; padding: 0 5px; margin-left: 6px; vertical-align: 2px; }
+
   /* sections */
   section { margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
   h2 {
@@ -176,6 +188,7 @@
   </header>
 
   <div id="card-area"></div>
+  <div id="lean-area"></div>
 
   <section id="record-sec">
     <h2>Live record</h2>
@@ -248,7 +261,27 @@ function card(p, i, now) {
   </article>`;
 }
 
-function renderCards(picks, now) {
+const isLean = (p) => p.tier === "lean";
+
+function renderLeans(all, now) {
+  const leans = all.filter(isLean).filter((p) => ["pending", "locked"].includes(p.status) ||
+    (["won", "lost", "void"].includes(p.status) && now - new Date(p.kickoff) < 36 * 3600e3));
+  if (!leans.length) { $("lean-area").innerHTML = ""; return; }
+  leans.sort((a, b) => new Date(a.kickoff) - new Date(b.kickoff));
+  $("lean-area").innerHTML = `<div class="leans"><h3>Leans · ${leans.length}</h3>
+    <p class="sub">Smaller edges (0.5–2% over the true odds). Tracked on their own record below, never mixed into the main picks.</p>
+    ${leans.map((p) => {
+      const s = statusOf(p, now);
+      const right = s === "won" || s === "lost" ? `${s === "won" ? "Won" : "Lost"} · ${esc(p.final)}` :
+        s === "pending" ? `Edge ${sign(p.ev * 100, 1)}%` : s === "live" ? "Live" : s === "void" ? "Void" : "Awaiting result";
+      return `<div class="lean"><span class="l">${esc(p.label)}</span><span class="o">${esc(p.american)}</span>
+        <span class="m">${esc(p.home)} v ${esc(p.away)} · ${esc(p.book)} · ${esc(fmtTime(p.kickoff))}</span>
+        <span class="e ${s}">${right}</span></div>`;
+    }).join("")}</div>`;
+}
+
+function renderCards(all, now) {
+  const picks = all.filter((p) => !isLean(p));
   // Current card: anything not yet graded, plus results from the last 36 hours.
   const recent = picks.filter((p) => ["pending", "locked"].includes(p.status) ||
     (["won", "lost", "void"].includes(p.status) && now - new Date(p.kickoff) < 36 * 3600e3));
@@ -262,7 +295,7 @@ function renderCards(picks, now) {
 
   if (!recent.length) {
     $("card-area").innerHTML = `<div class="empty"><strong>No picks on the board right now.</strong>
-      The bot checks every two hours and only posts a pick when the model finds a real edge against the market. Quiet days happen.</div>`;
+      The bot checks every two hours and only posts a pick when a US book beats the true odds by 2% or more. Quiet days happen; check the leans.</div>`;
     return;
   }
   let html = `<div class="rail">${recent.map((p, i) => card(p, i, now)).join("")}</div>`;
@@ -276,12 +309,24 @@ function renderCards(picks, now) {
   $("card-area").innerHTML = html;
 }
 
+function leanLine(lr) {
+  if (!lr || !lr.graded) return "";
+  return `<div class="sub" style="margin-top:14px"><b style="color:var(--text)">Leans:</b> ${lr.wins}–${lr.losses} · ${sign(lr.units)}u · ROI ${sign(lr.roi * 100, 1)}%${lr.clv_n ? ` · CLV ${sign(lr.avg_clv * 100, 1)}% · beat close ${pct(lr.beat_close)}` : ""}</div>`;
+}
+
 function renderRecord(picks, status) {
   const rec = status?.record;
   const graded = picks.filter((p) => ["won", "lost", "void"].includes(p.status));
+  const hist = () => { $("hist").innerHTML = graded.map((p) => {
+    const cls = p.status === "won" ? "pos" : p.status === "lost" ? "neg" : "";
+    const r = p.status === "void" ? "Void" : sign(p.units) + "u";
+    return `<li><span class="l">${esc(p.label)} <span style="color:var(--muted);font-weight:500">${esc(p.american)}</span>${isLean(p) ? '<span class="tag-lean">LEAN</span>' : ""}</span>
+      <span class="r ${cls}">${r}</span>
+      <span class="m">${esc(p.home)} v ${esc(p.away)} ${p.final ? "· " + esc(p.final) : ""}${p.clv != null ? " · CLV " + sign(p.clv * 100, 1) + "%" : ""} · ${esc(p.comp_name)} · ${new Date(p.kickoff).toLocaleDateString([], { month: "short", day: "numeric" })}</span></li>`;
+  }).join(""); };
   if (!rec || !rec.graded) {
-    $("record").innerHTML = `<div class="sub">No graded picks yet. The record starts with the first final whistle.</div>`;
-    $("hist-wrap").style.display = "none";
+    $("record").innerHTML = `<div class="sub">No graded picks yet. The record starts with the first final whistle.</div>` + leanLine(status?.lean_record);
+    if (graded.length) hist(); else $("hist-wrap").style.display = "none";
     return;
   }
   const u = rec.units;
@@ -291,14 +336,8 @@ function renderRecord(picks, status) {
     ${rec.clv_n ? `<div class="stats">
       <div class="stat"><div class="k">Avg closing-line value</div><div class="v ${rec.avg_clv >= 0 ? "pos" : "neg"}">${sign(rec.avg_clv * 100, 1)}%</div></div>
       <div class="stat"><div class="k">Beat the close</div><div class="v">${pct(rec.beat_close)}</div></div>
-    </div><div class="sub">Closing-line value is the real scorecard: it shows whether the price we posted was better than where the sharp market finished. It settles in weeks; win-loss takes years.</div>` : ""}`;
-  $("hist").innerHTML = graded.map((p) => {
-    const cls = p.status === "won" ? "pos" : p.status === "lost" ? "neg" : "";
-    const r = p.status === "void" ? "Void" : sign(p.units) + "u";
-    return `<li><span class="l">${esc(p.label)} <span style="color:var(--muted);font-weight:500">${esc(p.american)}</span></span>
-      <span class="r ${cls}">${r}</span>
-      <span class="m">${esc(p.home)} v ${esc(p.away)} ${p.final ? "· " + esc(p.final) : ""}${p.clv != null ? " · CLV " + sign(p.clv * 100, 1) + "%" : ""} · ${esc(p.comp_name)} · ${new Date(p.kickoff).toLocaleDateString([], { month: "short", day: "numeric" })}</span></li>`;
-  }).join("");
+    </div><div class="sub">Closing-line value is the real scorecard: it shows whether the price we posted was better than where the sharp market finished. It settles in weeks; win-loss takes years.</div>` : ""}` + leanLine(status?.lean_record);
+  hist();
 }
 
 function curveSVG(curve) {
@@ -390,6 +429,7 @@ function renderBacktest(bt) {
   const ps = picks || [];
   $("updated").textContent = status?.updated ? `Updated ${fmtTime(status.updated)}` : "Waiting for the first run";
   renderCards(ps, now);
+  renderLeans(ps, now);
   renderRecord(ps, status);
   renderBacktest(bt);
   renderShop(sb);

@@ -125,13 +125,13 @@ def _pipeline(tmp_path, strategy):
     subprocess.run([sys.executable, str(ROOT / "tests" / "make_fixtures.py"), str(fx)], check=True)
     env = dict(os.environ, FIXTURES=str(fx), PUBLIC_DIR=str(tmp_path / "pub"),
                PRIVATE_DIR=str(tmp_path / "priv"), CACHE_DIR=str(tmp_path / "cache"), STRATEGY=strategy,
-               PICKS_PER_DAY="2")   # small cap so the test checks the limit
+               PICKS_PER_DAY="2", LEANS_PER_DAY="2")   # small caps so the test checks limits
     run = lambda now: subprocess.run([sys.executable, "-m", "bot.run"], cwd=ROOT, check=True,
                                      env=dict(env, NOW=now), capture_output=True, text=True)
     run("2026-10-15T08:00:00Z")      # cup day: picks made
     picks = json.loads((tmp_path / "pub" / "picks.json").read_text())
     assert picks and all(p["status"] == "pending" for p in picks)
-    assert len(picks) <= 2
+    assert sum(p.get("tier", "pick") == "pick" for p in picks) <= 2
     first = len(picks)
     assert all(p["strategy"] == strategy for p in picks)
     run("2026-10-15T17:30:00Z")      # inside 2h of kickoff: re-read the closing line
@@ -143,12 +143,12 @@ def _pipeline(tmp_path, strategy):
     status = json.loads((tmp_path / "pub" / "status.json").read_text())
     graded = [p for p in picks if p["status"] in ("won", "lost")]
     assert len(graded) == first
-    assert status["record"]["graded"] == first
+    assert status["record"]["graded"] + status.get("lean_record", {}).get("graded", 0) == first
     assert all("Mystery" in u for u in status["unmatched_teams"])
     # pick count per slate day never exceeds the limit
     from collections import Counter
     from bot.run import slate_day
-    assert max(Counter(slate_day(p["kickoff"]) for p in picks).values()) <= 2
+    assert max(Counter((p.get("tier", "pick"), slate_day(p["kickoff"])) for p in picks).values()) <= 2
     return status
 
 
@@ -194,3 +194,17 @@ def test_derived_totals_from_asian_line():
     row = odds.summarize(ev)[("totals", 2.5, "Over")]
     assert row["derived"] and row["sharp_src"] == "pinnacle"
     assert abs(row["sharp"] - model.over_prob(M, 2.5)) < 0.002
+
+
+def test_lean_tiers():
+    from bot import config
+    from bot.run import build_card
+    def c(eid, tier, ev):
+        return {"id": f"{eid}:{tier}", "event_id": eid, "kickoff": "2026-10-21T19:00:00Z", "status": "pending",
+                "strategy": config.STRATEGY, "tier": tier, "ev": ev, "price": 2.0}
+    posted = [c("A", "lean", 0.01)]
+    card = build_card(posted, [c("A", "pick", 0.03), c("B", "pick", 0.025), c("B", "lean", 0.01), c("C", "lean", 0.008)], set())
+    got = {(p["event_id"], p["tier"]) for p in card}
+    assert ("A", "pick") in got and ("A", "lean") in got     # edge grew: pick added, lean kept
+    assert ("B", "lean") not in got                           # no lean on a match that has a pick
+    assert ("C", "lean") in got

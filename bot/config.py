@@ -51,6 +51,9 @@ CUP_DEFAULT_TOTAL = 2.85                           # cup total goals if no profi
 # "model": the original goal-model picks (backtested at a loss; kept for reference).
 STRATEGY = os.getenv("STRATEGY", "shop")
 SHOP_MIN_EV = float(os.getenv("SHOP_MIN_EV", 0.02))   # beat Pinnacle fair by 2%+
+# Leans: smaller edges, posted and graded on their own separate record.
+LEAN_MIN_EV = float(os.getenv("LEAN_MIN_EV", 0.005))
+LEANS_PER_DAY = int(os.getenv("LEANS_PER_DAY", 10))         # 0 turns leans off
 # Extra edge required when the fair price is derived from a different Pinnacle line.
 DERIVED_EXTRA_EV = float(os.getenv("DERIVED_EXTRA_EV", 0.01))
 SHARP_BOOKS = ["pinnacle", "betfair_ex_eu"]           # fair price source, in order

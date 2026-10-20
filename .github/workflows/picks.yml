@@ -41,6 +41,8 @@ jobs:
           MIN_EV: ${{ vars.MIN_EV || '0.03' }}
           STRATEGY: ${{ vars.STRATEGY || 'shop' }}
           SHOP_MIN_EV: ${{ vars.SHOP_MIN_EV || '0.02' }}
+          LEAN_MIN_EV: ${{ vars.LEAN_MIN_EV || '0.005' }}
+          LEANS_PER_DAY: ${{ vars.LEANS_PER_DAY || '10' }}
         run: python -m bot.run
 
       - name: Commit results

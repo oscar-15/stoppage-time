@@ -134,14 +134,19 @@ def candidates_for(comp, events, eng, now):
                 if fair is None or not (config.MIN_PRICE <= mk["price"] <= config.MAX_PRICE):
                     continue
                 ev_ = fair * mk["price"] - 1
-                if ev_ < config.SHOP_MIN_EV + (config.DERIVED_EXTRA_EV if mk.get("derived") else 0):
+                extra = config.DERIVED_EXTRA_EV if mk.get("derived") else 0
+                if ev_ >= config.SHOP_MIN_EV + extra:
+                    tier = "pick"
+                elif config.LEANS_PER_DAY > 0 and ev_ >= config.LEAN_MIN_EV + extra:
+                    tier = "lean"
+                else:
                     continue
                 src = config.BOOK_NAMES.get(mk["sharp_src"], mk["sharp_src"])
                 if mk.get("derived"):
                     src += " (derived)"
                 out.append(_pick(ev, comp, key, mk, now, p=round(fair, 4), model_p=round(fair, 4),
                                  market_p=round(1 / mk["price"], 4), ev=round(ev_, 4),
-                                 fair_src=src, open_fair=round(fair, 4)))
+                                 fair_src=src, open_fair=round(fair, 4), tier=tier))
             continue
 
         probs = eng.probabilities(comp, ev) if eng else None
@@ -196,29 +201,37 @@ def rank_key(c):
     return c["ev"] / (c["price"] - 1)
 
 
+def tier_of(p):
+    return p.get("tier", "pick")
+
+
 def build_card(picks, new_cands, refreshed_sports):
     """Posted picks stay posted, so the record grades exactly what was shown.
-    New candidates only fill open slots (up to PICKS_PER_DAY per slate day).
+    New candidates fill open slots: PICKS_PER_DAY picks and LEANS_PER_DAY leans per
+    slate day, one per match per tier. A match can get a pick even if it already has
+    a lean (the edge grew); it never gets a lean once it has a pick.
     Pending picks from a different strategy are dropped when you switch."""
     fixed = [p for p in picks if p["status"] != "pending"
              or p.get("strategy", "model") == config.STRATEGY]
-    taken = {p["event_id"] for p in fixed}
-    by_day = {}
-    for c in new_cands:
-        if c["event_id"] not in taken:
-            by_day.setdefault(slate_day(c["kickoff"]), []).append(c)
     chosen = []
-    for day, cs in by_day.items():
-        slots = config.PICKS_PER_DAY - sum(1 for p in fixed if slate_day(p["kickoff"]) == day)
-        seen = set()
-        for c in sorted(cs, key=rank_key, reverse=True):
-            if slots <= 0:
-                break
-            if c["event_id"] in seen:
-                continue
-            seen.add(c["event_id"])
-            chosen.append(c)
-            slots -= 1
+    for tier, cap in (("pick", config.PICKS_PER_DAY), ("lean", config.LEANS_PER_DAY)):
+        taken = {p["event_id"] for p in fixed + chosen
+                 if tier_of(p) == tier or tier_of(p) == "pick"}
+        by_day = {}
+        for c in new_cands:
+            if tier_of(c) == tier and c["event_id"] not in taken:
+                by_day.setdefault(slate_day(c["kickoff"]), []).append(c)
+        for day, cs in by_day.items():
+            slots = cap - sum(1 for p in fixed if tier_of(p) == tier and slate_day(p["kickoff"]) == day)
+            seen = set()
+            for c in sorted(cs, key=rank_key, reverse=True):
+                if slots <= 0:
+                    break
+                if c["event_id"] in seen:
+                    continue
+                seen.add(c["event_id"])
+                chosen.append(c)
+                slots -= 1
     return fixed + chosen
 
 
@@ -264,7 +277,7 @@ def main():
         log("ODDS_API_KEY is not set: add it under Settings > Secrets > Actions.")
 
     # A new strategy (or pick cap) means the last odds pull was judged by old rules.
-    rules = f"{config.STRATEGY}:{config.SHOP_MIN_EV}:{config.PICKS_PER_DAY}:{config.MARKETS}:{config.BOOKMAKERS}"
+    rules = f"{config.STRATEGY}:{config.SHOP_MIN_EV}:{config.PICKS_PER_DAY}:{config.LEAN_MIN_EV}:{config.LEANS_PER_DAY}:{config.MARKETS}:{config.BOOKMAKERS}"
     if state.get("rules") != rules:
         state["last_odds"] = {}
         state["rules"] = rules
@@ -332,7 +345,8 @@ def main():
     save(state_path, state)
     save(config.PUBLIC / "status.json", {
         "updated": iso(now),
-        "record": record(picks),
+        "record": record([p for p in picks if tier_of(p) == "pick"]),
+        "lean_record": record([p for p in picks if tier_of(p) == "lean"]),
         "credits_remaining": remaining,
         "refreshed": sorted(k for k, v in COMPS.items() if v["odds_key"] in refreshed),
         "unmatched_teams": sorted(eng.unmatched) if eng else state.get("unmatched", []),

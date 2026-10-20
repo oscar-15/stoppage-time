@@ -99,6 +99,8 @@ Most are matched automatically. If a game is skipped, it appears under
 | Setting | Default | What it does |
 |---|---|---|
 | `PICKS_PER_DAY` | 10 | Max picks per day (Pacific time), one per match |
+| `SHOP_MIN_EV` | 0.02 | Edge over Pinnacle's fair price needed for a pick |
+| `LEAN_MIN_EV` / `LEANS_PER_DAY` | 0.005 / 10 | Smaller edges posted as "leans", on a separate record (`LEANS_PER_DAY=0` turns them off) |
 | `MIN_EV` | 0.03 | Minimum expected value to bet |
 | `MODEL_WEIGHT` | 0.5 | How much to trust the model vs the market |
 | `MIN_PRICE`/`MAX_PRICE` | 1.45 / 5.0 | Decimal odds range (about -220 to +400) |
