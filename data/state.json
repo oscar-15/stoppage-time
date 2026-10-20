@@ -1,14 +1,14 @@
 {
   "last_odds": {
-    "soccer_spain_la_liga": "2026-10-20T22:26:33Z",
-    "soccer_uefa_champs_league": "2026-10-20T22:26:33Z"
+    "soccer_spain_la_liga": "2026-10-20T22:37:12Z",
+    "soccer_uefa_champs_league": "2026-10-20T22:37:12Z"
   },
-  "credits": 482,
-  "last_run": "2026-10-20T22:26:33Z",
+  "credits": 478,
+  "last_run": "2026-10-20T22:37:12Z",
   "unmatched": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
-  "rules": "shop:0.02:10:h2h,totals:pinnacle,betfair_ex_eu,draftkings,fanduel,betmgm,betrivers,espnbet,hardrockbet,ballybet,betparx"
+  "rules": "shop:0.02:10:0.005:10:h2h,totals:pinnacle,betfair_ex_eu,draftkings,fanduel,betmgm,betrivers,espnbet,hardrockbet,ballybet,betparx"
 }
