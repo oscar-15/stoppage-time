@@ -23,6 +23,9 @@
     "market_p": 0.2817,
     "ev": 0.0328,
     "fair_src": "Pinnacle",
-    "open_fair": 0.2909
+    "open_fair": 0.2909,
+    "close_fair": 0.2856,
+    "clv": 0.0137,
+    "close_checked": "2026-10-20T22:22:06Z"
   }
 ]
