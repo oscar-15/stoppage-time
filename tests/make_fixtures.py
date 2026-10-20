@@ -101,7 +101,7 @@ def make_history(out):
             rng.shuffle(pairs)
             per_week = n // 2
             us_dates = []
-            rows = ["Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,PSH,PSD,PSA,PSCH,PSCD,PSCA,P>2.5,P<2.5,PC>2.5,PC<2.5"]
+            rows = ["Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,PSH,PSD,PSA,PSCH,PSCD,PSCA,P>2.5,P<2.5,PC>2.5,PC<2.5,B365H,B365D,B365A,WHH,WHD,WHA,B365>2.5,B365<2.5"]
             for k, (i, j) in enumerate(pairs):
                 d = start + timedelta(days=7 * (k // per_week) + int(rng.integers(0, 3)))
                 if d >= TODAY:
@@ -121,8 +121,12 @@ def make_history(out):
                                  "goals": {"h": str(hg), "a": str(ag)},
                                  "xG": {"h": f"{lh * rng.lognormal(0, 0.25):.4f}", "a": f"{la * rng.lognormal(0, 0.25):.4f}"}})
                 ftr = "H" if hg > ag else "A" if ag > hg else "D"
+                b3 = odds_from([p["Home"], p["Draw"], p["Away"]], 0.055, 0.09)
+                wh = odds_from([p["Home"], p["Draw"], p["Away"]], 0.06, 0.09)
+                bo = odds_from([pov, 1 - pov], 0.06, 0.09)
                 rows.append(f"{code},{d:%d/%m/%Y},{names[i]},{names[j]},{hg},{ag},{ftr},"
-                            f"{o[0]},{o[1]},{o[2]},{c[0]},{c[1]},{c[2]},{ou[0]},{ou[1]},{cu[0]},{cu[1]}")
+                            f"{o[0]},{o[1]},{o[2]},{c[0]},{c[1]},{c[2]},{ou[0]},{ou[1]},{cu[0]},{cu[1]},"
+                            f"{b3[0]},{b3[1]},{b3[2]},{wh[0]},{wh[1]},{wh[2]},{bo[0]},{bo[1]}")
             if len(rows) > 1:
                 (out / f"fd_{season}_{code}.csv").write_text("\n".join(rows) + "\n", encoding="latin-1")
             if code in US_SLUG and us_dates:

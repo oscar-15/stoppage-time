@@ -46,6 +46,26 @@ def devig(prices):
     return [x / s for x in inv]
 
 
+def devig_power(prices):
+    """Remove the margin with the power method: find k so that sum((1/p)^k) = 1.
+    Unlike proportional de-vigging, this accounts for books loading more margin
+    onto long shots, so it doesn't invent fake value on underdogs."""
+    inv = [1 / p for p in prices]
+    if sum(inv) <= 1:
+        return [x / sum(inv) for x in inv]
+    lo, hi = 1.0, 3.0
+    for _ in range(60):
+        k = (lo + hi) / 2
+        if sum(x ** k for x in inv) > 1:
+            lo = k
+        else:
+            hi = k
+    k = (lo + hi) / 2
+    out = [x ** k for x in inv]
+    s = sum(out)
+    return [x / s for x in out]
+
+
 def summarize(event):
     """Collapse all bookmakers into, per outcome: fair prob (median of de-vigged
     books), best bettable price and which book has it.

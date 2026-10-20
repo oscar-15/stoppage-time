@@ -10,10 +10,12 @@ from . import config, net
 FD_URL = "https://www.football-data.co.uk/mmz4281/{season}/{code}.csv"
 ELO_URL = "http://api.clubelo.com/{day}"
 
-KEEP = ["Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG",
-        "PSH", "PSD", "PSA", "PSCH", "PSCD", "PSCA",
-        "B365H", "B365D", "B365A", "AvgH", "AvgD", "AvgA",
-        "P>2.5", "P<2.5", "PC>2.5", "PC<2.5", "B365>2.5", "B365<2.5", "Avg>2.5", "Avg<2.5"]
+BOOKS_1X2 = ["PS", "B365", "BW", "IW", "WH", "VC", "Max", "Avg"]
+KEEP = (["Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG"]
+        + [f"{b}{s}" for b in BOOKS_1X2 for s in "HDA"]           # pre-closing
+        + [f"{b}C{s}" for b in BOOKS_1X2 for s in "HDA"]          # closing
+        + [f"{b}{s}2.5" for b in ("P", "B365", "Max", "Avg") for s in "><"]
+        + [f"{b}C{s}2.5" for b in ("P", "B365", "Max", "Avg") for s in "><"])
 
 
 def season_start(d: date) -> int:

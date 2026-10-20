@@ -46,11 +46,14 @@ jobs:
       - name: Backtest
         run: python -m bot.backtest --test-seasons ${{ github.event.inputs.seasons || 3 }}
 
+      - name: Line-shopping backtest
+        run: python -m bot.shop_backtest --seasons 6
+
       - name: Commit results
         run: |
           git config user.name "stoppage-time-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add docs/data/backtest.json
+          git add docs/data/backtest.json docs/data/shop_backtest.json
           if git diff --cached --quiet; then echo "no changes"; exit 0; fi
           git commit -m "Update backtest"
           git pull --rebase

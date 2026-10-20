@@ -64,6 +64,13 @@ def test_name_matching():
     assert names.match("1. FC Köln", ["FC Koln", "Mainz"]) == "FC Koln"
 
 
+def test_devig_power():
+    f = odds.devig_power([1.5, 4.2, 7.0])
+    assert abs(sum(f) - 1) < 1e-9
+    prop = odds.devig([1.5, 4.2, 7.0])
+    assert f[2] < prop[2] and f[0] > prop[0]     # trims long shots, not favorites
+
+
 def test_devig_and_american():
     f = odds.devig([2.0, 3.5, 4.0])
     assert abs(sum(f) - 1) < 1e-9
