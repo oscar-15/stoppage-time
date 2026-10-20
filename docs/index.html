@@ -170,7 +170,7 @@
       <rect x="124" y="30" width="22" height="50" stroke-opacity=".4"/>
     </svg>
     <h1>Stoppage<br><span class="clock">Time</span> <span style="font-size:.42em;vertical-align:.45em;color:var(--muted)">90+2'</span></h1>
-    <p class="tag">Two model picks a day across the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League.</p>
+    <p class="tag">Up to two value bets a day across the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League: spots where a US sportsbook pays more than the sharpest market in the world says it should.</p>
     <div class="updated" id="updated">Loading…</div>
     <div class="chips" id="chips"></div>
   </header>
@@ -183,8 +183,13 @@
     <details id="hist-wrap"><summary>Every pick so far</summary><ul class="hist" id="hist"></ul></details>
   </section>
 
+  <section id="shop-sec">
+    <h2>How this works</h2>
+    <div id="shop"></div>
+  </section>
+
   <section id="bt-sec">
-    <h2>Backtest</h2>
+    <h2>Model backtest (retired)</h2>
     <div id="backtest"></div>
   </section>
 
@@ -236,10 +241,10 @@ function card(p, i, now) {
     <div class="pick">${esc(p.label)}</div>
     <div class="price"><span class="odds">${esc(p.american)}</span><span class="book">${esc(p.book)}</span><span class="book">${pct(p.p)} to hit</span></div>
     <div class="bars">
-      <div class="bar-row model"><span>Model</span><div class="bar"><i style="width:${(p.model_p * 100).toFixed(1)}%"></i></div><span>${pct(p.model_p)}</span></div>
-      <div class="bar-row"><span>Market</span><div class="bar"><i style="width:${(p.market_p * 100).toFixed(1)}%"></i></div><span>${pct(p.market_p)}</span></div>
+      <div class="bar-row model"><span>${p.strategy === "shop" ? "True odds" : "Model"}</span><div class="bar"><i style="width:${(p.model_p * 100).toFixed(1)}%"></i></div><span>${pct(p.model_p)}</span></div>
+      <div class="bar-row"><span>${p.strategy === "shop" ? esc(p.book) + " pays" : "Market"}</span><div class="bar"><i style="width:${(p.market_p * 100).toFixed(1)}%"></i></div><span>${pct(p.market_p)}</span></div>
     </div>
-    <div class="card-foot">${statusLabel(s, p)}<span class="edge">Edge ${sign(p.ev * 100, 1)}%</span></div>
+    <div class="card-foot">${statusLabel(s, p)}<span class="edge">${p.clv != null && s !== "pending" ? "Beat close " + sign(p.clv * 100, 1) + "%" : "Edge " + sign(p.ev * 100, 1) + "%"}</span></div>
   </article>`;
 }
 
@@ -282,13 +287,17 @@ function renderRecord(picks, status) {
   const u = rec.units;
   $("record").innerHTML = `<div class="record"><span class="big">${rec.wins}–${rec.losses}${rec.voids ? "–" + rec.voids : ""}</span>
       <span class="units ${u >= 0 ? "pos" : "neg"}">${sign(u)}u</span></div>
-    <div class="sub">${rec.graded} graded · ROI ${sign(rec.roi * 100, 1)}% · 1 unit per pick at the listed price</div>`;
+    <div class="sub">${rec.graded} graded · ROI ${sign(rec.roi * 100, 1)}% · 1 unit per pick at the listed price</div>
+    ${rec.clv_n ? `<div class="stats">
+      <div class="stat"><div class="k">Avg closing-line value</div><div class="v ${rec.avg_clv >= 0 ? "pos" : "neg"}">${sign(rec.avg_clv * 100, 1)}%</div></div>
+      <div class="stat"><div class="k">Beat the close</div><div class="v">${pct(rec.beat_close)}</div></div>
+    </div><div class="sub">Closing-line value is the real scorecard: it shows whether the price we posted was better than where the sharp market finished. It settles in weeks; win-loss takes years.</div>` : ""}`;
   $("hist").innerHTML = graded.map((p) => {
     const cls = p.status === "won" ? "pos" : p.status === "lost" ? "neg" : "";
     const r = p.status === "void" ? "Void" : sign(p.units) + "u";
     return `<li><span class="l">${esc(p.label)} <span style="color:var(--muted);font-weight:500">${esc(p.american)}</span></span>
       <span class="r ${cls}">${r}</span>
-      <span class="m">${esc(p.home)} v ${esc(p.away)} ${p.final ? "· " + esc(p.final) : ""} · ${esc(p.comp_name)} · ${new Date(p.kickoff).toLocaleDateString([], { month: "short", day: "numeric" })}</span></li>`;
+      <span class="m">${esc(p.home)} v ${esc(p.away)} ${p.final ? "· " + esc(p.final) : ""}${p.clv != null ? " · CLV " + sign(p.clv * 100, 1) + "%" : ""} · ${esc(p.comp_name)} · ${new Date(p.kickoff).toLocaleDateString([], { month: "short", day: "numeric" })}</span></li>`;
   }).join("");
 }
 
@@ -325,6 +334,23 @@ function variantsTable(bt) {
   </details>`;
 }
 
+function renderShop(sb) {
+  const intro = `<p class="sub" style="font-size:14px;color:var(--text)">Pinnacle takes bets from the sharpest players in the world and barely moves its margin, so its price, with the margin removed, is the best estimate of the true odds. When a US book pays more than that by 2% or more, the bot posts it. Our own goal model couldn't beat that price in testing, so it no longer picks bets.</p>`;
+  if (!sb || !sb.headline || !sb.headline.bets) { $("shop").innerHTML = intro; return; }
+  const h = sb.headline;
+  const max2 = (sb.grid || []).find((r) => r.snap === "pre" && r.book === "Max" && r.min_ev === 0.02);
+  const row = (name, r) => r && r.bets ? `<tr><td>${esc(name)}</td><td>${r.bets}</td>
+      <td class="${r.roi >= 0 ? "pos" : "neg"}">${sign(r.roi * 100, 1)}%</td>
+      <td class="${(r.avg_clv ?? 0) >= 0 ? "pos" : "neg"}">${r.avg_clv != null ? sign(r.avg_clv * 100, 1) + "%" : "–"}</td>
+      <td>${r.beat_close != null ? pct(r.beat_close) : "–"}</td></tr>` : "";
+  $("shop").innerHTML = intro + `
+    <details><summary>Line-shopping backtest, ${esc(sb.seasons[0])}–${esc(sb.seasons[sb.seasons.length - 1])}</summary>
+      <table><thead><tr><th>Bet at</th><th>Bets</th><th>ROI</th><th>CLV</th><th>Beat close</th></tr></thead><tbody>
+        ${row("Best European retail book", h)}${row("Best price anywhere", max2)}</tbody></table>
+      <p class="sub">Top five leagues, bets that beat Pinnacle's fair price by 2%+. Historical data only covers European books, not US ones, so this is a stand-in. Positive CLV across hundreds of bets is the signal that matters; ROI over this few bets is mostly luck.</p>
+    </details>`;
+}
+
 function renderBacktest(bt) {
   if (!bt || !bt.card || !bt.card.bets) {
     $("backtest").innerHTML = `<div class="sub">No backtest yet. In GitHub, open <b>Actions → Backtest → Run workflow</b>. It replays past seasons against real closing odds.</div>`;
@@ -359,13 +385,14 @@ function renderBacktest(bt) {
 }
 
 (async function init() {
-  const [picks, status, bt] = await Promise.all([getJSON("data/picks.json"), getJSON("data/status.json"), getJSON("data/backtest.json")]);
+  const [picks, status, bt, sb] = await Promise.all([getJSON("data/picks.json"), getJSON("data/status.json"), getJSON("data/backtest.json"), getJSON("data/shop_backtest.json")]);
   const now = new Date();
   const ps = picks || [];
   $("updated").textContent = status?.updated ? `Updated ${fmtTime(status.updated)}` : "Waiting for the first run";
   renderCards(ps, now);
   renderRecord(ps, status);
   renderBacktest(bt);
+  renderShop(sb);
 })();
 </script>
 </body>

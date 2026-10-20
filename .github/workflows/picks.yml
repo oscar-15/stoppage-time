@@ -39,6 +39,8 @@ jobs:
           REFRESH_HOURS: ${{ vars.REFRESH_HOURS || '8' }}
           PICKS_PER_DAY: ${{ vars.PICKS_PER_DAY || '2' }}
           MIN_EV: ${{ vars.MIN_EV || '0.03' }}
+          STRATEGY: ${{ vars.STRATEGY || 'shop' }}
+          SHOP_MIN_EV: ${{ vars.SHOP_MIN_EV || '0.02' }}
         run: python -m bot.run
 
       - name: Commit results

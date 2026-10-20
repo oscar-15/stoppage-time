@@ -87,11 +87,20 @@ def test_grading():
     assert p["status"] == "lost" and p["units"] == -1
 
 
+def test_full_pipeline_model_mode(tmp_path):
+    _pipeline(tmp_path, "model")
+
+
 def test_full_pipeline(tmp_path):
+    status = _pipeline(tmp_path, "shop")
+    assert status["record"]["clv_n"] == status["record"]["graded"]   # closing line captured
+
+
+def _pipeline(tmp_path, strategy):
     fx = tmp_path / "fx"
     subprocess.run([sys.executable, str(ROOT / "tests" / "make_fixtures.py"), str(fx)], check=True)
     env = dict(os.environ, FIXTURES=str(fx), PUBLIC_DIR=str(tmp_path / "pub"),
-               PRIVATE_DIR=str(tmp_path / "priv"), CACHE_DIR=str(tmp_path / "cache"))
+               PRIVATE_DIR=str(tmp_path / "priv"), CACHE_DIR=str(tmp_path / "cache"), STRATEGY=strategy)
     run = lambda now: subprocess.run([sys.executable, "-m", "bot.run"], cwd=ROOT, check=True,
                                      env=dict(env, NOW=now), capture_output=True, text=True)
     run("2026-10-15T08:00:00Z")      # cup day: picks made
@@ -99,6 +108,11 @@ def test_full_pipeline(tmp_path):
     assert picks and all(p["status"] == "pending" for p in picks)
     assert len(picks) <= 2
     first = len(picks)
+    assert all(p["strategy"] == strategy for p in picks)
+    run("2026-10-15T17:30:00Z")      # inside 2h of kickoff: re-read the closing line
+    picks2 = json.loads((tmp_path / "pub" / "picks.json").read_text())
+    assert [p["id"] for p in picks2] == [p["id"] for p in picks]      # posted picks don't change
+    assert [p["price"] for p in picks2] == [p["price"] for p in picks]
     run("2026-10-17T08:00:00Z")      # cup picks lock + grade, league picks made
     picks = json.loads((tmp_path / "pub" / "picks.json").read_text())
     status = json.loads((tmp_path / "pub" / "status.json").read_text())
@@ -110,6 +124,7 @@ def test_full_pipeline(tmp_path):
     from collections import Counter
     from bot.run import slate_day
     assert max(Counter(slate_day(p["kickoff"]) for p in picks).values()) <= 2
+    return status
 
 
 def test_xg_join(tmp_path):

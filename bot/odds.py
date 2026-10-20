@@ -72,7 +72,7 @@ def summarize(event):
     Returns {("h2h", None, "Home"): {...}, ("totals", 2.5, "Over"): {...}, ...}"""
     home, away = event["home_team"], event["away_team"]
     name_map = {home: "Home", away: "Away", "Draw": "Draw"}
-    fair, best = {}, {}
+    fair, best, sharp = {}, {}, {}
     bet_books = set(b for b in config.BET_BOOKS if b)
 
     for bk in event.get("bookmakers", []):
@@ -97,6 +97,9 @@ def summarize(event):
                     ps = [d["Over"], d["Under"]]
                     for k, p in zip(ks, devig(ps)):
                         fair.setdefault(k, []).append(p)
+                    if bk["key"] in config.SHARP_BOOKS:
+                        for k, p in zip(ks, devig_power(ps)):
+                            sharp.setdefault(k, {})[bk["key"]] = p
                     for k, pr in zip(ks, ps):
                         _best(best, k, pr, bk["key"], bet_books)
                 continue
@@ -104,14 +107,20 @@ def summarize(event):
                 continue
             for k, p in zip(keys, devig(prices)):
                 fair.setdefault(k, []).append(p)
+            if bk["key"] in config.SHARP_BOOKS:
+                for k, p in zip(keys, devig_power(prices)):
+                    sharp.setdefault(k, {})[bk["key"]] = p
             for k, pr in zip(keys, prices):
                 _best(best, k, pr, bk["key"], bet_books)
 
     out = {}
     for k, ps in fair.items():
         if k in best:
+            sh = sharp.get(k, {})
+            src = next((b for b in config.SHARP_BOOKS if b in sh), None)
             out[k] = {"fair": statistics.median(ps), "n_books": len(ps),
-                      "price": best[k][0], "book": best[k][1]}
+                      "price": best[k][0], "book": best[k][1],
+                      "sharp": sh[src] if src else None, "sharp_src": src}
     return out
 
 

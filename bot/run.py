@@ -94,6 +94,22 @@ def label_for(market, sel, point, home, away):
     return f"{sel} {point:g} goals"
 
 
+def _pick(event, comp, key, mk, now, **extra):
+    ev = event
+    market, point, sel = key
+    return {
+        "id": f"{ev['id']}:{market}:{sel}:{point if point is not None else ''}",
+        "event_id": ev["id"], "sport_key": ev["sport_key"], "comp": comp,
+        "comp_name": COMPS[comp]["name"],
+        "home": ev["home_team"], "away": ev["away_team"], "kickoff": ev["commence_time"],
+        "market": market, "selection": sel, "point": point,
+        "label": label_for(market, sel, point, ev["home_team"], ev["away_team"]),
+        "price": round(mk["price"], 3), "american": odds.american(mk["price"]),
+        "book": config.BOOK_NAMES.get(mk["book"], mk["book"]),
+        "status": "pending", "created": iso(now), "strategy": config.STRATEGY, **extra,
+    }
+
+
 def candidates_for(comp, events, eng, now):
     out = []
     horizon = now + timedelta(hours=config.ODDS_WINDOW_HOURS)
@@ -101,11 +117,26 @@ def candidates_for(comp, events, eng, now):
         ko = parse_ts(ev["commence_time"])
         if not (now + timedelta(minutes=10) < ko <= horizon):
             continue
-        probs = eng.probabilities(comp, ev)
+        summary = odds.summarize(ev)
+        if config.STRATEGY == "shop":
+            for key, mk in summary.items():
+                fair = mk.get("sharp")
+                if fair is None or not (config.MIN_PRICE <= mk["price"] <= config.MAX_PRICE):
+                    continue
+                ev_ = fair * mk["price"] - 1
+                if ev_ < config.SHOP_MIN_EV:
+                    continue
+                src = config.BOOK_NAMES.get(mk["sharp_src"], mk["sharp_src"])
+                out.append(_pick(ev, comp, key, mk, now, p=round(fair, 4), model_p=round(fair, 4),
+                                 market_p=round(1 / mk["price"], 4), ev=round(ev_, 4),
+                                 fair_src=src, open_fair=round(fair, 4)))
+            continue
+
+        probs = eng.probabilities(comp, ev) if eng else None
         if probs is None:
             continue
         M = probs["_M"]
-        for key, mk in odds.summarize(ev).items():
+        for key, mk in summary.items():
             market, point, sel = key
             if market == "totals":
                 po = model.over_prob(M, point)
@@ -122,20 +153,25 @@ def candidates_for(comp, events, eng, now):
             ev_ = p * mk["price"] - 1
             if ev_ < config.MIN_EV:
                 continue
-            out.append({
-                "id": f"{ev['id']}:{market}:{sel}:{point if point is not None else ''}",
-                "event_id": ev["id"], "sport_key": ev["sport_key"], "comp": comp,
-                "comp_name": COMPS[comp]["name"],
-                "home": ev["home_team"], "away": ev["away_team"], "kickoff": ev["commence_time"],
-                "market": market, "selection": sel, "point": point,
-                "label": label_for(market, sel, point, ev["home_team"], ev["away_team"]),
-                "price": round(mk["price"], 3), "american": odds.american(mk["price"]),
-                "book": config.BOOK_NAMES.get(mk["book"], mk["book"]),
-                "model_p": round(mp, 4), "market_p": round(mk["fair"], 4), "p": round(p, 4),
-                "ev": round(ev_, 4), "xg": [round(x, 2) for x in probs["_xg"]],
-                "status": "pending", "created": iso(now),
-            })
+            out.append(_pick(ev, comp, key, mk, now, model_p=round(mp, 4), market_p=round(mk["fair"], 4),
+                             p=round(p, 4), ev=round(ev_, 4), xg=[round(x, 2) for x in probs["_xg"]]))
     return out
+
+
+def update_clv(picks, events, now):
+    """Before kickoff, keep re-reading Pinnacle's fair price for each posted pick.
+    The last reading before kickoff is the closing line; beating it is the
+    best evidence an edge is real."""
+    by_id = {e["id"]: e for e in events}
+    for p in picks:
+        ev = by_id.get(p["event_id"])
+        if not ev or p["status"] != "pending" or parse_ts(p["kickoff"]) <= now:
+            continue
+        mk = odds.summarize(ev).get((p["market"], p["point"], p["selection"]))
+        if mk and mk.get("sharp"):
+            p["close_fair"] = round(mk["sharp"], 4)
+            p["clv"] = round(p["price"] * mk["sharp"] - 1, 4)
+            p["close_checked"] = iso(now)
 
 
 def rank_key(c):
@@ -145,16 +181,16 @@ def rank_key(c):
 
 
 def build_card(picks, new_cands, refreshed_sports):
-    """Replace pending picks: keep locked/graded, choose up to PICKS_PER_DAY per slate day."""
-    fixed = [p for p in picks if p["status"] != "pending"]
-    old_pending = [p for p in picks if p["status"] == "pending" and p["sport_key"] not in refreshed_sports]
-    pool = new_cands + old_pending
-    locked_events = {p["event_id"] for p in fixed}
+    """Posted picks stay posted, so the record grades exactly what was shown.
+    New candidates only fill open slots (up to PICKS_PER_DAY per slate day).
+    Pending picks from a different strategy are dropped when you switch."""
+    fixed = [p for p in picks if p["status"] != "pending"
+             or p.get("strategy", "model") == config.STRATEGY]
+    taken = {p["event_id"] for p in fixed}
     by_day = {}
-    for c in pool:
-        if c["event_id"] in locked_events:
-            continue
-        by_day.setdefault(slate_day(c["kickoff"]), []).append(c)
+    for c in new_cands:
+        if c["event_id"] not in taken:
+            by_day.setdefault(slate_day(c["kickoff"]), []).append(c)
     chosen = []
     for day, cs in by_day.items():
         slots = config.PICKS_PER_DAY - sum(1 for p in fixed if slate_day(p["kickoff"]) == day)
@@ -177,12 +213,16 @@ def record(picks):
     l = len(graded) - w
     v = sum(p["status"] == "void" for p in picks)
     units = round(sum(p.get("units", 0) for p in graded), 2)
+    clv = [p["clv"] for p in picks if p["status"] != "pending" and p.get("clv") is not None]
     return {"wins": w, "losses": l, "voids": v, "units": units,
-            "roi": round(units / len(graded), 4) if graded else None, "graded": len(graded)}
+            "roi": round(units / len(graded), 4) if graded else None, "graded": len(graded),
+            "avg_clv": round(sum(clv) / len(clv), 4) if clv else None,
+            "beat_close": round(sum(c > 0 for c in clv) / len(clv), 3) if clv else None,
+            "clv_n": len(clv)}
 
 
 # ---------------------------------------------------------------- main
-def needs_odds(sport, evs, state, now):
+def needs_odds(sport, evs, state, now, picks=()):
     last = state.get("last_odds", {}).get(sport)
     last = parse_ts(last) if last else None
     upcoming = [parse_ts(e["commence_time"]) for e in evs
@@ -191,8 +231,10 @@ def needs_odds(sport, evs, state, now):
         return False
     if last is None or now - last >= timedelta(hours=config.REFRESH_HOURS):
         return True
-    soon = min(upcoming) - now <= timedelta(minutes=config.PREKICK_REFRESH_MIN)
-    return soon and now - last >= timedelta(minutes=60)
+    # Re-check close to kickoff of a posted pick, to measure the closing line.
+    pick_ko = [parse_ts(p["kickoff"]) for p in picks if p["sport_key"] == sport and p["status"] == "pending"]
+    soon = any(timedelta(0) < k - now <= timedelta(minutes=config.PREKICK_REFRESH_MIN) for k in pick_ko)
+    return soon and now - last >= timedelta(minutes=50)
 
 
 def main():
@@ -222,7 +264,7 @@ def main():
         except Exception as e:
             log(f"events failed for {comp}: {e}")
             continue
-        if needs_odds(c["odds_key"], evs, state, now):
+        if needs_odds(c["odds_key"], evs, state, now, picks):
             sched[comp] = c["odds_key"]
 
     remaining = odds.credits_remaining() or state.get("credits")
@@ -231,11 +273,13 @@ def main():
         log(f"credits low ({remaining}); skipping odds pull")
         sched = {}
     if sched:
-        eng = Engine(now.date(), log)
-        eng.build(need_cups=any(k in config.CUPS for k in sched))
+        if config.STRATEGY == "model":
+            eng = Engine(now.date(), log)
+            eng.build(need_cups=any(k in config.CUPS for k in sched))
         for comp, sport in sched.items():
             try:
                 evs = odds.odds(sport)
+                update_clv(picks, evs, now)
                 cs = candidates_for(comp, evs, eng, now)
             except Exception as e:
                 log(f"ERROR {comp}: {type(e).__name__}: {e}")

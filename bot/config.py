@@ -47,6 +47,11 @@ ELO_HOME_ADV = 65.0                                # ClubElo-scale home advantag
 CUP_DEFAULT_TOTAL = 2.85                           # cup total goals if no profile
 
 # --- Betting rules ----------------------------------------------------------
+# "shop": bet a US book only when it pays more than Pinnacle's no-vig price.
+# "model": the original goal-model picks (backtested at a loss; kept for reference).
+STRATEGY = os.getenv("STRATEGY", "shop")
+SHOP_MIN_EV = float(os.getenv("SHOP_MIN_EV", 0.02))   # beat Pinnacle fair by 2%+
+SHARP_BOOKS = ["pinnacle", "betfair_ex_eu"]           # fair price source, in order
 MODEL_WEIGHT = float(os.getenv("MODEL_WEIGHT", 0.5))   # blend model with the market
 MIN_EV = float(os.getenv("MIN_EV", 0.03))              # need >= 3% expected value
 MAX_DISAGREE = 0.12        # skip if model and market differ by > 12 pts (likely bad data)

@@ -1,5 +1,12 @@
 # Stoppage Time
 
+> **Current strategy: line shopping.** The bot treats Pinnacle's no-vig price as
+> the true odds and posts a bet only when a US book pays at least 2% more than
+> that. Posted picks never change, and the bot re-reads Pinnacle just before
+> kickoff to measure closing-line value (CLV), the fastest honest test of an edge.
+> The original goal model backtested at a loss, so it's off by default
+> (`STRATEGY=model` turns it back on). See `bot/shop_backtest.py`.
+
 A soccer betting-signals bot for the Premier League, La Liga, Bundesliga, Serie A,
 Ligue 1, Champions League and Europa League. Match markets only: result (1X2) and
 over/under goals.
