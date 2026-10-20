@@ -51,6 +51,8 @@ CUP_DEFAULT_TOTAL = 2.85                           # cup total goals if no profi
 # "model": the original goal-model picks (backtested at a loss; kept for reference).
 STRATEGY = os.getenv("STRATEGY", "shop")
 SHOP_MIN_EV = float(os.getenv("SHOP_MIN_EV", 0.02))   # beat Pinnacle fair by 2%+
+# Extra edge required when the fair price is derived from a different Pinnacle line.
+DERIVED_EXTRA_EV = float(os.getenv("DERIVED_EXTRA_EV", 0.01))
 SHARP_BOOKS = ["pinnacle", "betfair_ex_eu"]           # fair price source, in order
 MODEL_WEIGHT = float(os.getenv("MODEL_WEIGHT", 0.5))   # blend model with the market
 MIN_EV = float(os.getenv("MIN_EV", 0.03))              # need >= 3% expected value
@@ -70,7 +72,9 @@ BOOKMAKERS = os.getenv(
     "BOOKMAKERS",
     "pinnacle,betfair_ex_eu,draftkings,fanduel,betmgm,betrivers,espnbet,hardrockbet,ballybet,betparx",
 )
-MARKETS = os.getenv("MARKETS", "h2h,totals,spreads")
+# "spreads" (handicaps) is supported but The Odds API returns none for soccer today,
+# and it still costs a credit, so it's off.
+MARKETS = os.getenv("MARKETS", "h2h,totals")
 # Books whose prices we actually "bet" at (US-licensed). Others only inform fair value.
 BET_BOOKS = os.getenv(
     "BET_BOOKS",

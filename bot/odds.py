@@ -102,8 +102,22 @@ def summarize(event):
     Returns {("h2h", None, "Home"): {...}, ("totals", 2.5, "Over"): {...},
              ("spreads", -0.5, "Home"): {...}, ...}"""
     fair, best, sharp = {}, {}, {}
+    raw = {}       # sharp book -> {"h2h": [h, d, a], "totals": {line: (over, under)}}
     bet_books = set(b for b in config.BET_BOOKS if b)
     for bk in event.get("bookmakers", []):
+        if bk["key"] in config.SHARP_BOOKS:
+            r = raw.setdefault(bk["key"], {"h2h": None, "totals": {}})
+            for mk in bk.get("markets", []):
+                if mk["key"] == "totals":
+                    d = {}
+                    for o in mk["outcomes"]:
+                        d.setdefault(o.get("point"), {})[o["name"]] = o["price"]
+                    for pt, v in d.items():
+                        if pt is not None and "Over" in v and "Under" in v and min(v.values()) > 1:
+                            r["totals"][float(pt)] = (v["Over"], v["Under"])
+                elif mk["key"] == "h2h":
+                    for keys, prices in _groups(event, mk):
+                        r["h2h"] = prices
         for mk in bk.get("markets", []):
             for keys, prices in _groups(event, mk):
                 if min(prices) <= 1:
@@ -116,14 +130,40 @@ def summarize(event):
                 for k, pr in zip(keys, prices):
                     _best(best, k, pr, bk["key"], bet_books)
     out = {}
+    implied = None
     for k, ps in fair.items():
-        if k in best:
-            sh = sharp.get(k, {})
-            src = next((b for b in config.SHARP_BOOKS if b in sh), None)
-            out[k] = {"fair": statistics.median(ps), "n_books": len(ps),
-                      "price": best[k][0], "book": best[k][1],
-                      "sharp": sh[src] if src else None, "sharp_src": src}
+        if k not in best:
+            continue
+        sh = sharp.get(k, {})
+        src = next((b for b in config.SHARP_BOOKS if b in sh), None)
+        row = {"fair": statistics.median(ps), "n_books": len(ps),
+               "price": best[k][0], "book": best[k][1],
+               "sharp": sh[src] if src else None, "sharp_src": src, "derived": False}
+        if src is None and k[0] == "totals":
+            # No sharp price at this exact line: derive one from the sharp book's own line.
+            if implied is None:
+                implied = _implied(raw)
+            if implied and implied[0] is not None and abs(k[1] - implied[2]) <= 1.0:
+                po = _over(implied[0], k[1])
+                row.update(sharp=po if k[2] == "Over" else 1 - po, sharp_src=implied[1], derived=True)
+        out[k] = row
     return out
+
+
+def _implied(raw):
+    from . import implied
+    for b in config.SHARP_BOOKS:
+        r = raw.get(b)
+        if r and r["h2h"] and r["totals"]:
+            res = implied.from_sharp(r["h2h"], r["totals"])
+            if res:
+                return res[0], b, res[1]
+    return (None, None, None)
+
+
+def _over(M, line):
+    from . import model
+    return model.over_prob(M, line)
 
 
 def _best(best, key, price, book, bet_books):

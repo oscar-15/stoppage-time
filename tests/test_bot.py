@@ -169,3 +169,28 @@ def test_xg_join(tmp_path):
     finally:
         for k in ("FIXTURES", "CACHE_DIR"):
             os.environ.pop(k, None)
+
+
+def test_derived_totals_from_asian_line():
+    from bot import implied
+    M = model.score_matrix(1.7, 1.15, -0.05)
+    p = model.outcome_probs(M)
+    d = implied._totals_dist(M)
+    lo, hi = 1.01, 10.0
+    for _ in range(60):                       # fair Over odds at the 2.75 Asian line
+        o = (lo + hi) / 2
+        lo, hi = (o, hi) if implied.over_ev(d, 2.75, o) < 0 else (lo, o)
+    q = 1 / o
+    ev = {"home_team": "A", "away_team": "B", "bookmakers": [
+        {"key": "pinnacle", "markets": [
+            {"key": "h2h", "outcomes": [{"name": "A", "price": 1 / (p["Home"] * 1.025)},
+                                        {"name": "Draw", "price": 1 / (p["Draw"] * 1.025)},
+                                        {"name": "B", "price": 1 / (p["Away"] * 1.025)}]},
+            {"key": "totals", "outcomes": [{"name": "Over", "price": 1 / (q * 1.025), "point": 2.75},
+                                           {"name": "Under", "price": 1 / ((1 - q) * 1.025), "point": 2.75}]}]},
+        {"key": "fanduel", "markets": [
+            {"key": "totals", "outcomes": [{"name": "Over", "price": 1.95, "point": 2.5},
+                                           {"name": "Under", "price": 1.85, "point": 2.5}]}]}]}
+    row = odds.summarize(ev)[("totals", 2.5, "Over")]
+    assert row["derived"] and row["sharp_src"] == "pinnacle"
+    assert abs(row["sharp"] - model.over_prob(M, 2.5)) < 0.002

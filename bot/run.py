@@ -134,9 +134,11 @@ def candidates_for(comp, events, eng, now):
                 if fair is None or not (config.MIN_PRICE <= mk["price"] <= config.MAX_PRICE):
                     continue
                 ev_ = fair * mk["price"] - 1
-                if ev_ < config.SHOP_MIN_EV:
+                if ev_ < config.SHOP_MIN_EV + (config.DERIVED_EXTRA_EV if mk.get("derived") else 0):
                     continue
                 src = config.BOOK_NAMES.get(mk["sharp_src"], mk["sharp_src"])
+                if mk.get("derived"):
+                    src += " (derived)"
                 out.append(_pick(ev, comp, key, mk, now, p=round(fair, 4), model_p=round(fair, 4),
                                  market_p=round(1 / mk["price"], 4), ev=round(ev_, 4),
                                  fair_src=src, open_fair=round(fair, 4)))
@@ -314,7 +316,8 @@ def main():
                     c = cover.setdefault(m, [0, 0])
                     c[0] += 1
                     c[1] += mk.get("sharp") is not None
-            cov = ", ".join(f"{m} {c[1]}/{c[0]} priced" for m, c in sorted(cover.items()))
+                    c.append(mk.get("derived", False))
+            cov = ", ".join(f"{m} {c[1]}/{c[0]} priced ({sum(c[2:])} derived)" for m, c in sorted(cover.items()))
             log(f"odds: {comp} {len(evs)} games, {len(cs)} bets clear the bar ({cov})")
             new_cands += cs
         remaining = odds.credits_remaining() or remaining
