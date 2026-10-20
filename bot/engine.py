@@ -1,5 +1,6 @@
 """Turn an Odds API event into model probabilities."""
 import math
+import traceback
 
 import pandas as pd
 
@@ -21,8 +22,13 @@ class Engine:
         if need_cups:
             leagues.update(config.SUPPORT_LEAGUES)
         for code, lg in leagues.items():
-            df = history.load_league(lg["fd"], self.today, xg_slug=lg.get("us"))
-            m = model.DixonColes().fit(df, ref)
+            try:
+                df = history.load_league(lg["fd"], self.today, xg_slug=lg.get("us"))
+                m = model.DixonColes().fit(df, ref)
+            except Exception as e:     # one bad league shouldn't sink the run
+                self.log(f"ERROR model {code}: {type(e).__name__}: {e}")
+                traceback.print_exc()
+                continue
             if not m.fitted:
                 self.log(f"model: not enough data for {code}")
                 continue
@@ -32,7 +38,12 @@ class Engine:
                 self.team_league[t] = code
             self.log(f"model: {code} fit on {m.n_matches} matches ({m.xg_share:.0%} with xG), home adv {m.home:.2f}, rho {m.rho:.3f}")
         if need_cups:
-            self.elo = history.load_elo(self.today)
+            try:
+                self.elo = history.load_elo(self.today)
+            except Exception as e:
+                self.log(f"ERROR elo: {type(e).__name__}: {e}")
+                self.elo = None
+                return
             self.log(f"elo: {len(self.elo)} clubs")
 
     # --- domestic --------------------------------------------------------

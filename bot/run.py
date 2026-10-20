@@ -2,6 +2,7 @@
 Usage: python -m bot.run"""
 import json
 import os
+import traceback
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
@@ -235,12 +236,13 @@ def main():
         for comp, sport in sched.items():
             try:
                 evs = odds.odds(sport)
+                cs = candidates_for(comp, evs, eng, now)
             except Exception as e:
-                log(f"odds failed for {comp}: {e}")
+                log(f"ERROR {comp}: {type(e).__name__}: {e}")
+                traceback.print_exc()
                 continue
             refreshed.add(sport)
             state.setdefault("last_odds", {})[sport] = iso(now)
-            cs = candidates_for(comp, evs, eng, now)
             log(f"odds: {comp} {len(evs)} games, {len(cs)} bets clear the bar")
             new_cands += cs
         remaining = odds.credits_remaining() or remaining
