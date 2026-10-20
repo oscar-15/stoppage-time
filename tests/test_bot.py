@@ -149,6 +149,13 @@ def _pipeline(tmp_path, strategy):
     from collections import Counter
     from bot.run import slate_day
     assert max(Counter((p.get("tier", "pick"), slate_day(p["kickoff"])) for p in picks).values()) <= 2
+    slate = json.loads((tmp_path / "pub" / "slate.json").read_text())
+    if strategy == "shop":
+        assert slate and all("result" in g for g in slate)
+        g = next(g for g in slate if "btts" in g)
+        assert abs(g["btts"]["yes"]["p"] + g["btts"]["no"]["p"] - 1) < 1e-3
+        r = g["result"]
+        assert abs(r["home"]["p"] + r["draw"]["p"] + r["away"]["p"] - 1) < 1e-3
     return status
 
 

@@ -8,7 +8,7 @@ import numpy as np
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
-from . import config, model, odds
+from . import config, model, odds, slate as slate_mod
 from .engine import Engine
 
 COMPS = {**{k: v for k, v in config.LEAGUES.items()}, **config.CUPS}
@@ -271,6 +271,8 @@ def main():
     picks_path = config.PUBLIC / "picks.json"
     state_path = config.PRIVATE / "state.json"
     picks = load(picks_path, [])
+    slate_path = config.PUBLIC / "slate.json"
+    slate = {g["id"]: g for g in load(slate_path, [])}
     state = load(state_path, {})
 
     if not config.ODDS_API_KEY and not os.environ.get("FIXTURES"):
@@ -316,6 +318,7 @@ def main():
             try:
                 evs = odds.odds(sport)
                 update_clv(picks, evs, now)
+                slate_mod.update(slate, evs, comp, COMPS[comp]["name"], now, parse_ts, config.ODDS_WINDOW_HOURS)
                 cs = candidates_for(comp, evs, eng, now)
             except Exception as e:
                 log(f"ERROR {comp}: {type(e).__name__}: {e}")
@@ -342,6 +345,8 @@ def main():
     state["credits"] = remaining
     state["last_run"] = iso(now)
     save(picks_path, picks)
+    slate = slate_mod.prune(slate, now, parse_ts)
+    save(slate_path, sorted(slate.values(), key=lambda g: g["kickoff"]))
     save(state_path, state)
     save(config.PUBLIC / "status.json", {
         "updated": iso(now),

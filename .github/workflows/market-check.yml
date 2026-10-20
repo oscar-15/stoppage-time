@@ -1,0 +1,38 @@
+name: Market check
+
+# One-off: lists which betting markets each bookmaker offers for soccer
+# through The Odds API (about 2 credits). Results land in docs/data/market_check.json.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: picks
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Check markets
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python -m bot.market_check
+      - name: Commit results
+        run: |
+          git config user.name "stoppage-time-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data/market_check.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Market check"
+          git pull --rebase
+          git push

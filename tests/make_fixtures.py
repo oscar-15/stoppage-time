@@ -201,7 +201,7 @@ def make_odds(out):
                                           ("Lyon", "FC Porto"), ("Tottenham Hotspur", "Sporting Lisbon")]}
     cup_base = datetime(2026, 10, 15, 19, 0, tzinfo=timezone.utc)
     for sport, games in cups.items():
-        evs = [make_event(sport, f"{sport[-6:]}-{i}", h, a,
+        evs = [make_event(sport, f"{sport}-{i}", h, a,
                           (cup_base + timedelta(hours=i % 2 * 2)).strftime("%Y-%m-%dT%H:%M:%SZ"),
                           float(rng.uniform(1.1, 2.0)), float(rng.uniform(0.8, 1.6)))
                for i, (h, a) in enumerate(games)]

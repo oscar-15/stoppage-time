@@ -126,6 +126,26 @@
   .lean .e.won { color: var(--win); } .lean .e.lost { color: var(--loss); }
   .tag-lean { font-size: 10px; font-weight: 800; letter-spacing: .1em; color: var(--muted); border: 1px solid var(--line-2); border-radius: 5px; padding: 0 5px; margin-left: 6px; vertical-align: 2px; }
 
+  /* slate */
+  .day { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); margin: 18px 0 4px; }
+  .game { border-bottom: 1px solid var(--line); }
+  .game > summary { list-style: none; cursor: pointer; padding: 12px 0; display: grid; grid-template-columns: 1fr auto; gap: 3px 10px; }
+  .game > summary::-webkit-details-marker { display: none; }
+  .game > summary::before { content: none; }
+  .gt { font-weight: 700; font-size: 15px; }
+  .gm { color: var(--muted); font-size: 12.5px; }
+  .g1x2 { display: flex; gap: 6px; grid-column: 1 / -1; margin-top: 4px; }
+  .g1x2 span { flex: 1; text-align: center; background: var(--bg-2); border: 1px solid var(--line); border-radius: 8px; padding: 5px 2px; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+  .g1x2 span b { display: block; font-size: 10px; letter-spacing: .08em; color: var(--faint); font-weight: 700; }
+  .g1x2 span.val { border-color: rgba(95,217,154,.55); }
+  .gxg { text-align: right; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .mk { width: 100%; font-size: 13px; margin: 2px 0 10px; }
+  .mk td, .mk th { padding: 7px 4px; }
+  .mk .grp td { color: var(--chalk); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding-top: 12px; border-bottom: none; }
+  .mk .edge-pos { color: var(--win); font-weight: 700; }
+  .mk .edge-neg { color: var(--faint); }
+  .scores { color: var(--muted); font-size: 12.5px; margin: 0 0 12px; }
+
   /* sections */
   section { margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
   h2 {
@@ -189,6 +209,12 @@
 
   <div id="card-area"></div>
   <div id="lean-area"></div>
+
+  <section id="slate-sec">
+    <h2>Every game</h2>
+    <p class="sub" style="margin-top:-4px">Fair odds for every market, from Pinnacle's prices with the margin removed. Where a US book posts the market, its best price and the edge are shown. For markets the US books don't send us (both teams to score, handicaps), compare the fair odds with your sportsbook app: if the app pays more, that's value. On each game, the 1 / X / 2 boxes show <b>fair odds · best US price</b>; a green outline means the US price beats fair. Tap a game for every market.</p>
+    <div id="slate"></div>
+  </section>
 
   <section id="record-sec">
     <h2>Live record</h2>
@@ -278,6 +304,50 @@ function renderLeans(all, now) {
         <span class="m">${esc(p.home)} v ${esc(p.away)} · ${esc(p.book)} · ${esc(fmtTime(p.kickoff))}</span>
         <span class="e ${s}">${right}</span></div>`;
     }).join("")}</div>`;
+}
+
+function mkRow(label, r) {
+  if (!r) return "";
+  const us = r.us ? `${esc(r.us.american)} <span style="color:var(--faint)">${esc(r.us.book)}</span>` : '<span style="color:var(--faint)">–</span>';
+  const ed = r.edge != null ? `<span class="${r.edge > 0 ? "edge-pos" : "edge-neg"}">${sign(r.edge * 100, 1)}%</span>` : "";
+  return `<tr><td>${esc(label)}</td><td>${esc(r.fair ?? "–")} <span style="color:var(--faint)">${pct(r.p)}</span></td><td>${us}</td><td>${ed}</td></tr>`;
+}
+
+function renderSlate(games) {
+  if (!games || !games.length) {
+    $("slate").innerHTML = `<div class="sub">Games show up here once the bot has pulled their odds (within about 36 hours of kickoff).</div>`;
+    return;
+  }
+  const now = new Date();
+  const up = games.filter((g) => new Date(g.kickoff) > now - 2 * 3600e3);
+  let html = "", lastDay = "";
+  for (const g of up) {
+    const day = new Date(g.kickoff).toLocaleDateString([], { weekday: "long", month: "short", day: "numeric" });
+    if (day !== lastDay) { html += `<div class="day">${esc(day)}</div>`; lastDay = day; }
+    const t = new Date(g.kickoff).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    const r = g.result;
+    const cell = (k, lab) => `<span class="${(r[k].edge ?? -1) > 0 ? "val" : ""}"><b>${lab}</b>${esc(r[k].fair)}${r[k].us ? ` · ${esc(r[k].us.american)}` : ""}</span>`;
+    let body = `<table class="mk"><thead><tr><th>Market</th><th>Fair</th><th>Best US</th><th>Edge</th></tr></thead><tbody>
+      <tr class="grp"><td colspan="4">Match result</td></tr>
+      ${mkRow(g.home + " win", r.home)}${mkRow("Draw", r.draw)}${mkRow(g.away + " win", r.away)}`;
+    if (g.totals) {
+      body += `<tr class="grp"><td colspan="4">Total goals</td></tr>` +
+        g.totals.map((t) => mkRow(`Over ${t.line}`, t.over) + mkRow(`Under ${t.line}`, t.under)).join("");
+      body += `<tr class="grp"><td colspan="4">Both teams to score</td></tr>${mkRow("Yes", g.btts.yes)}${mkRow("No", g.btts.no)}`;
+      body += `<tr class="grp"><td colspan="4">Handicap</td></tr>` +
+        g.handicaps.map((h) => mkRow(`${g.home} ${h.line > 0 ? "+" : ""}${h.line}`, h.home) +
+          mkRow(`${g.away} ${-h.line > 0 ? "+" : ""}${-h.line}`, h.away)).join("");
+    }
+    body += `</tbody></table>`;
+    if (g.scores) body += `<p class="scores">Most likely scores: ${g.scores.map((s) => `${esc(s.score)} (${pct(s.p)})`).join(" · ")}</p>`;
+    html += `<details class="game"><summary>
+        <span class="gt">${esc(g.home)} v ${esc(g.away)}</span>
+        <span class="gxg">${g.xg ? `xG ${g.xg[0].toFixed(1)}–${g.xg[1].toFixed(1)}` : ""}</span>
+        <span class="gm">${esc(g.comp_name)} · ${esc(t)}</span><span></span>
+        <div class="g1x2">${cell("home", "1")}${cell("draw", "X")}${cell("away", "2")}</div>
+      </summary>${body}</details>`;
+  }
+  $("slate").innerHTML = html;
 }
 
 function renderCards(all, now) {
@@ -424,12 +494,13 @@ function renderBacktest(bt) {
 }
 
 (async function init() {
-  const [picks, status, bt, sb] = await Promise.all([getJSON("data/picks.json"), getJSON("data/status.json"), getJSON("data/backtest.json"), getJSON("data/shop_backtest.json")]);
+  const [picks, status, bt, sb, slate] = await Promise.all([getJSON("data/picks.json"), getJSON("data/status.json"), getJSON("data/backtest.json"), getJSON("data/shop_backtest.json"), getJSON("data/slate.json")]);
   const now = new Date();
   const ps = picks || [];
   $("updated").textContent = status?.updated ? `Updated ${fmtTime(status.updated)}` : "Waiting for the first run";
   renderCards(ps, now);
   renderLeans(ps, now);
+  renderSlate(slate);
   renderRecord(ps, status);
   renderBacktest(bt);
   renderShop(sb);

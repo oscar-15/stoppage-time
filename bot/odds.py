@@ -96,28 +96,41 @@ def _groups(event, mk):
                 yield [("spreads", float(pt), "Home"), ("spreads", float(-pt), "Away")], [hp, aw[-pt]]
 
 
+def sharp_raw(event):
+    """Sharp books' raw prices: {book: {"h2h": [h, d, a] or None, "totals": {line: (over, under)}}}."""
+    raw = {}
+    for bk in event.get("bookmakers", []):
+        if bk["key"] not in config.SHARP_BOOKS:
+            continue
+        r = raw.setdefault(bk["key"], {"h2h": None, "totals": {}})
+        for mk in bk.get("markets", []):
+            if mk["key"] == "totals":
+                d = {}
+                for o in mk["outcomes"]:
+                    d.setdefault(o.get("point"), {})[o["name"]] = o["price"]
+                for pt, v in d.items():
+                    if pt is not None and "Over" in v and "Under" in v and min(v.values()) > 1:
+                        r["totals"][float(pt)] = (v["Over"], v["Under"])
+            elif mk["key"] == "h2h":
+                for keys, prices in _groups(event, mk):
+                    r["h2h"] = prices
+    return raw
+
+
+def sharp_matrix(event):
+    """Full scoreline model implied by the sharp book's prices: (M, book, line) or (None, None, None)."""
+    return _implied(sharp_raw(event))
+
+
 def summarize(event):
     """Collapse all bookmakers into, per outcome: market fair prob (median of de-vigged
     books), sharp fair prob (Pinnacle, else Betfair), and the best bettable price.
     Returns {("h2h", None, "Home"): {...}, ("totals", 2.5, "Over"): {...},
              ("spreads", -0.5, "Home"): {...}, ...}"""
     fair, best, sharp = {}, {}, {}
-    raw = {}       # sharp book -> {"h2h": [h, d, a], "totals": {line: (over, under)}}
+    raw = sharp_raw(event)
     bet_books = set(b for b in config.BET_BOOKS if b)
     for bk in event.get("bookmakers", []):
-        if bk["key"] in config.SHARP_BOOKS:
-            r = raw.setdefault(bk["key"], {"h2h": None, "totals": {}})
-            for mk in bk.get("markets", []):
-                if mk["key"] == "totals":
-                    d = {}
-                    for o in mk["outcomes"]:
-                        d.setdefault(o.get("point"), {})[o["name"]] = o["price"]
-                    for pt, v in d.items():
-                        if pt is not None and "Over" in v and "Under" in v and min(v.values()) > 1:
-                            r["totals"][float(pt)] = (v["Over"], v["Under"])
-                elif mk["key"] == "h2h":
-                    for keys, prices in _groups(event, mk):
-                        r["h2h"] = prices
         for mk in bk.get("markets", []):
             for keys, prices in _groups(event, mk):
                 if min(prices) <= 1:
