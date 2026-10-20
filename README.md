@@ -95,7 +95,7 @@ Most are matched automatically. If a game is skipped, it appears under
 
 | Setting | Default | What it does |
 |---|---|---|
-| `PICKS_PER_DAY` | 2 | Max picks per day (Pacific time) |
+| `PICKS_PER_DAY` | 10 | Max picks per day (Pacific time), one per match |
 | `MIN_EV` | 0.03 | Minimum expected value to bet |
 | `MODEL_WEIGHT` | 0.5 | How much to trust the model vs the market |
 | `MIN_PRICE`/`MAX_PRICE` | 1.45 / 5.0 | Decimal odds range (about -220 to +400) |

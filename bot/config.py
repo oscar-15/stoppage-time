@@ -57,7 +57,7 @@ MIN_EV = float(os.getenv("MIN_EV", 0.03))              # need >= 3% expected val
 MAX_DISAGREE = 0.12        # skip if model and market differ by > 12 pts (likely bad data)
 MIN_PRICE, MAX_PRICE = 1.45, 5.0   # decimal odds range we'll bet
 MIN_BOOKS = 3
-PICKS_PER_DAY = int(os.getenv("PICKS_PER_DAY", 2))
+PICKS_PER_DAY = int(os.getenv("PICKS_PER_DAY", 10))
 SLATE_TZ = os.getenv("SLATE_TZ", "America/Los_Angeles")
 
 # --- Odds API ---------------------------------------------------------------

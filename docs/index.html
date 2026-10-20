@@ -170,7 +170,7 @@
       <rect x="124" y="30" width="22" height="50" stroke-opacity=".4"/>
     </svg>
     <h1>Stoppage<br><span class="clock">Time</span> <span style="font-size:.42em;vertical-align:.45em;color:var(--muted)">90+2'</span></h1>
-    <p class="tag">Up to two value bets a day across the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League: spots where a US sportsbook pays more than the sharpest market in the world says it should.</p>
+    <p class="tag">Up to ten value bets a day across the Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Champions League and Europa League: spots where a US sportsbook pays more than the sharpest market in the world says it should.</p>
     <div class="updated" id="updated">Loading…</div>
     <div class="chips" id="chips"></div>
   </header>
@@ -268,7 +268,7 @@ function renderCards(picks, now) {
   let html = `<div class="rail">${recent.map((p, i) => card(p, i, now)).join("")}</div>`;
   if (recent.length > 1) html += `<p class="hint">Swipe for all ${recent.length} picks →</p>`;
   const open = recent.filter((p) => p.status === "pending");
-  if (open.length >= 2) {
+  if (open.length >= 2 && open.length <= 3) {
     const dec = open.reduce((a, p) => a * p.price, 1);
     const hit = open.reduce((a, p) => a * p.p, 1);
     html += `<p class="parlay">All ${open.length} upcoming as a parlay: about <b>${decToAmerican(dec)}</b>, hits about <b>${pct(hit)}</b> of the time. Every leg multiplies the book's cut, so keep it small.</p>`;

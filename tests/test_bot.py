@@ -100,7 +100,8 @@ def _pipeline(tmp_path, strategy):
     fx = tmp_path / "fx"
     subprocess.run([sys.executable, str(ROOT / "tests" / "make_fixtures.py"), str(fx)], check=True)
     env = dict(os.environ, FIXTURES=str(fx), PUBLIC_DIR=str(tmp_path / "pub"),
-               PRIVATE_DIR=str(tmp_path / "priv"), CACHE_DIR=str(tmp_path / "cache"), STRATEGY=strategy)
+               PRIVATE_DIR=str(tmp_path / "priv"), CACHE_DIR=str(tmp_path / "cache"), STRATEGY=strategy,
+               PICKS_PER_DAY="2")   # small cap so the test checks the limit
     run = lambda now: subprocess.run([sys.executable, "-m", "bot.run"], cwd=ROOT, check=True,
                                      env=dict(env, NOW=now), capture_output=True, text=True)
     run("2026-10-15T08:00:00Z")      # cup day: picks made
