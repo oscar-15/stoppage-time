@@ -78,6 +78,30 @@ def test_devig_and_american():
     assert odds.american(1.5) == "-200"
 
 
+def test_spreads_grading_and_labels():
+    from bot.run import label_for
+    p = {"market": "spreads", "selection": "Away", "point": 0.5, "price": 1.8}
+    grade_pick(p, 1, 1)                      # draw: +0.5 wins
+    assert p["status"] == "won"
+    p = {"market": "spreads", "selection": "Home", "point": -1.5, "price": 2.5}
+    grade_pick(p, 2, 1)                      # won by 1: -1.5 loses
+    assert p["status"] == "lost"
+    assert label_for("spreads", "Away", 0.5, "Bayern", "Arsenal") == "Arsenal +0.5 (win or draw)"
+
+
+def test_spreads_summary():
+    ev = {"home_team": "A", "away_team": "B", "bookmakers": [
+        {"key": "pinnacle", "markets": [{"key": "spreads", "outcomes": [
+            {"name": "A", "price": 1.9, "point": -0.5}, {"name": "B", "price": 2.0, "point": 0.5}]}]},
+        {"key": "draftkings", "markets": [{"key": "spreads", "outcomes": [
+            {"name": "A", "price": 2.1, "point": -0.5}, {"name": "B", "price": 1.7, "point": 0.5},
+            {"name": "A", "price": 1.5, "point": -1.0}, {"name": "B", "price": 2.5, "point": 1.0}]}]}]}
+    out = odds.summarize(ev)
+    assert set(out) == {("spreads", -0.5, "Home"), ("spreads", 0.5, "Away")}   # whole-goal lines skipped
+    h = out[("spreads", -0.5, "Home")]
+    assert h["price"] == 2.1 and h["book"] == "draftkings" and 0.5 < h["sharp"] < 0.53
+
+
 def test_grading():
     p = {"market": "totals", "selection": "Over", "point": 2.5, "price": 1.9}
     grade_pick(p, 2, 1)

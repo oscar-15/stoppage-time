@@ -3,6 +3,8 @@ Usage: python -m bot.run"""
 import json
 import os
 import traceback
+
+import numpy as np
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
@@ -52,6 +54,9 @@ def grade_pick(p, hg, ag):
     if p["market"] == "h2h":
         res = "Home" if hg > ag else "Away" if ag > hg else "Draw"
         won = res == p["selection"]
+    elif p["market"] == "spreads":
+        margin = (hg - ag) if p["selection"] == "Home" else (ag - hg)
+        won = margin + p["point"] > 0
     else:
         tot = hg + ag
         won = tot > p["point"] if p["selection"] == "Over" else tot < p["point"]
@@ -91,6 +96,11 @@ def grade(picks, now):
 def label_for(market, sel, point, home, away):
     if market == "h2h":
         return {"Home": f"{home} to win", "Away": f"{away} to win", "Draw": "Draw"}[sel]
+    if market == "spreads":
+        team = home if sel == "Home" else away
+        plain = {0.5: "win or draw", -0.5: "to win", -1.5: "win by 2+", 1.5: "don't lose by 2+",
+                 -2.5: "win by 3+", 2.5: "don't lose by 3+"}.get(point)
+        return f"{team} {point:+g}" + (f" ({plain})" if plain else "")
     return f"{sel} {point:g} goals"
 
 
@@ -141,6 +151,10 @@ def candidates_for(comp, events, eng, now):
             if market == "totals":
                 po = model.over_prob(M, point)
                 mp = po if sel == "Over" else 1 - po
+            elif market == "spreads":
+                g = np.arange(M.shape[0])
+                diff = g[:, None] - g[None, :]          # home goals minus away goals
+                mp = float(M[(diff if sel == "Home" else -diff) + point > 0].sum())
             else:
                 mp = probs[key]
             if mk["n_books"] < config.MIN_BOOKS:
@@ -248,7 +262,7 @@ def main():
         log("ODDS_API_KEY is not set: add it under Settings > Secrets > Actions.")
 
     # A new strategy (or pick cap) means the last odds pull was judged by old rules.
-    rules = f"{config.STRATEGY}:{config.SHOP_MIN_EV}:{config.PICKS_PER_DAY}"
+    rules = f"{config.STRATEGY}:{config.SHOP_MIN_EV}:{config.PICKS_PER_DAY}:{config.MARKETS}:{config.BOOKMAKERS}"
     if state.get("rules") != rules:
         state["last_odds"] = {}
         state["rules"] = rules
@@ -294,7 +308,14 @@ def main():
                 continue
             refreshed.add(sport)
             state.setdefault("last_odds", {})[sport] = iso(now)
-            log(f"odds: {comp} {len(evs)} games, {len(cs)} bets clear the bar")
+            cover = {}
+            for e in evs:
+                for (m, _, _), mk in odds.summarize(e).items():
+                    c = cover.setdefault(m, [0, 0])
+                    c[0] += 1
+                    c[1] += mk.get("sharp") is not None
+            cov = ", ".join(f"{m} {c[1]}/{c[0]} priced" for m, c in sorted(cover.items()))
+            log(f"odds: {comp} {len(evs)} games, {len(cs)} bets clear the bar ({cov})")
             new_cands += cs
         remaining = odds.credits_remaining() or remaining
 

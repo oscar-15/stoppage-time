@@ -67,16 +67,19 @@ then rerun the backtest. Change one thing at a time to avoid curve-fitting.
 
 ## Odds API credits
 
-Each odds pull costs 2 credits (2 markets × 1 region; listing ≤10 bookmakers counts
-as one region). The schedule check (`/events`) is free. The bot only pulls a
-competition when it has games in the next 36 hours, at most every 8 hours, plus once
-inside 2 hours of kickoff.
+Each odds pull costs 3 credits (match result, totals and handicap; listing up to 10
+bookmakers counts as one region). The schedule check (`/events`) is free. The bot
+only pulls a competition when it has games in the next 36 hours, at most every 8
+hours, plus once inside 2 hours of kickoff for any posted pick (to read the
+closing line).
 
-That's roughly 600–1,000 credits a month, more than the free 500. Options:
+On a typical week that's roughly 1,000–1,500 credits a month, more than the free
+500. When credits drop below 15 the bot stops pulling odds until the month resets.
+Options:
 - Add a repo variable (**Settings → Secrets and variables → Actions → Variables**)
-  `REFRESH_HOURS` = `16` and accept staler prices, or
-- Use the paid tier.
-The bot stops pulling odds when fewer than 15 credits remain.
+  `REFRESH_HOURS` = `16` for fewer pulls, or `MARKETS` = `h2h,totals` to drop handicaps.
+- Or use the paid tier (20,000 credits). Then also add `williamhill_us` (Caesars)
+  and `fanatics` to `BOOKMAKERS`, and consider `REFRESH_HOURS` = `2`.
 
 ## Fixing team names
 

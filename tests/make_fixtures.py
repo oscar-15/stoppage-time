@@ -151,11 +151,17 @@ def make_elo(out):
 def book_market(home, away, p, pov, margin, noise):
     h = odds_from([p["Home"], p["Draw"], p["Away"]], margin, noise)
     t = odds_from([pov, 1 - pov], margin + 0.01, noise)
+    sp = odds_from([p["Home"], p["Draw"] + p["Away"]], margin, noise)      # Home -0.5 / Away +0.5
+    sp2 = odds_from([p["Home"] + p["Draw"], p["Away"]], margin, noise)     # Home +0.5 / Away -0.5
     return [{"key": "h2h", "outcomes": [{"name": home, "price": h[0]}, {"name": away, "price": h[2]},
                                         {"name": "Draw", "price": h[1]}]},
             {"key": "totals", "outcomes": [{"name": "Over", "price": t[0], "point": 2.5},
                                            {"name": "Under", "price": t[1], "point": 2.5},
-                                           {"name": "Over", "price": 2.6, "point": 2.25}]}]
+                                           {"name": "Over", "price": 2.6, "point": 2.25}]},
+            {"key": "spreads", "outcomes": [{"name": home, "price": sp[0], "point": -0.5},
+                                            {"name": away, "price": sp[1], "point": 0.5},
+                                            {"name": home, "price": sp2[0], "point": 0.5},
+                                            {"name": away, "price": sp2[1], "point": -0.5}]}]
 
 
 def make_event(sport, eid, home, away, ko, lh, la):
@@ -163,7 +169,7 @@ def make_event(sport, eid, home, away, ko, lh, la):
     p = model.outcome_probs(M)
     pov = model.over_prob(M, 2.5)
     books = [("pinnacle", 0.025, 0.04), ("betfair_ex_eu", 0.02, 0.05), ("draftkings", 0.05, 0.07),
-             ("fanduel", 0.05, 0.07), ("betmgm", 0.055, 0.08)]
+             ("fanduel", 0.05, 0.07), ("betmgm", 0.055, 0.08), ("hardrockbet", 0.06, 0.08)]
     return {"id": eid, "sport_key": sport, "commence_time": ko, "home_team": home, "away_team": away,
             "bookmakers": [{"key": k, "title": k, "markets": book_market(home, away, p, pov, m, nz)}
                            for k, m, nz in books]}

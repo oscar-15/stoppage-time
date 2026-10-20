@@ -24,7 +24,7 @@ def events(sport):
 
 def odds(sport):
     return _get(f"/sports/{sport}/odds",
-                {"bookmakers": config.BOOKMAKERS, "markets": "h2h,totals",
+                {"bookmakers": config.BOOKMAKERS, "markets": config.MARKETS,
                  "oddsFormat": "decimal", "dateFormat": "iso"},
                 f"odds_{sport}.json") or []
 
@@ -66,53 +66,55 @@ def devig_power(prices):
     return [x / s for x in out]
 
 
-def summarize(event):
-    """Collapse all bookmakers into, per outcome: fair prob (median of de-vigged
-    books), best bettable price and which book has it.
-    Returns {("h2h", None, "Home"): {...}, ("totals", 2.5, "Over"): {...}, ...}"""
+def _is_half(pt):
+    """True for x.5 lines (no pushes, clean grading)."""
+    return pt is not None and abs(pt * 2 - round(pt * 2)) < 1e-9 and not float(pt).is_integer()
+
+
+def _groups(event, mk):
+    """Split one bookmaker market into groups of mutually exclusive outcomes:
+    yields (keys, prices). Keys are (market, point, selection)."""
     home, away = event["home_team"], event["away_team"]
-    name_map = {home: "Home", away: "Away", "Draw": "Draw"}
+    side = {home: "Home", away: "Away"}
+    if mk["key"] == "h2h":
+        outs = {({**side, "Draw": "Draw"}).get(o["name"]): o["price"] for o in mk["outcomes"]}
+        if set(outs) == {"Home", "Draw", "Away"}:
+            yield [("h2h", None, k) for k in ("Home", "Draw", "Away")], [outs[k] for k in ("Home", "Draw", "Away")]
+    elif mk["key"] == "totals":
+        by_point = {}
+        for o in mk["outcomes"]:
+            by_point.setdefault(o.get("point"), {})[o["name"]] = o["price"]
+        for pt, d in by_point.items():
+            if _is_half(pt) and "Over" in d and "Under" in d:
+                yield [("totals", float(pt), "Over"), ("totals", float(pt), "Under")], [d["Over"], d["Under"]]
+    elif mk["key"] == "spreads":
+        # Handicap: Home -0.5 pairs with Away +0.5. The point stored is the selection's own.
+        hs = {o.get("point"): o["price"] for o in mk["outcomes"] if side.get(o["name"]) == "Home"}
+        aw = {o.get("point"): o["price"] for o in mk["outcomes"] if side.get(o["name"]) == "Away"}
+        for pt, hp in hs.items():
+            if _is_half(pt) and -pt in aw:
+                yield [("spreads", float(pt), "Home"), ("spreads", float(-pt), "Away")], [hp, aw[-pt]]
+
+
+def summarize(event):
+    """Collapse all bookmakers into, per outcome: market fair prob (median of de-vigged
+    books), sharp fair prob (Pinnacle, else Betfair), and the best bettable price.
+    Returns {("h2h", None, "Home"): {...}, ("totals", 2.5, "Over"): {...},
+             ("spreads", -0.5, "Home"): {...}, ...}"""
     fair, best, sharp = {}, {}, {}
     bet_books = set(b for b in config.BET_BOOKS if b)
-
     for bk in event.get("bookmakers", []):
         for mk in bk.get("markets", []):
-            if mk["key"] == "h2h":
-                outs = {name_map.get(o["name"]): o["price"] for o in mk["outcomes"]}
-                if set(outs) != {"Home", "Draw", "Away"} or min(outs.values()) <= 1:
+            for keys, prices in _groups(event, mk):
+                if min(prices) <= 1:
                     continue
-                keys = [("h2h", None, k) for k in ("Home", "Draw", "Away")]
-                prices = [outs[k[2]] for k in keys]
-            elif mk["key"] == "totals":
-                by_point = {}
-                for o in mk["outcomes"]:
-                    by_point.setdefault(o.get("point"), {})[o["name"]] = o["price"]
-                keys, prices = [], []
-                for pt, d in by_point.items():
-                    if pt is None or "Over" not in d or "Under" not in d:
-                        continue
-                    if abs(pt * 2 - round(pt * 2)) > 1e-9 or float(pt).is_integer():
-                        continue          # only x.5 lines: no pushes, clean grading
-                    ks = [("totals", float(pt), "Over"), ("totals", float(pt), "Under")]
-                    ps = [d["Over"], d["Under"]]
-                    for k, p in zip(ks, devig(ps)):
-                        fair.setdefault(k, []).append(p)
-                    if bk["key"] in config.SHARP_BOOKS:
-                        for k, p in zip(ks, devig_power(ps)):
-                            sharp.setdefault(k, {})[bk["key"]] = p
-                    for k, pr in zip(ks, ps):
-                        _best(best, k, pr, bk["key"], bet_books)
-                continue
-            else:
-                continue
-            for k, p in zip(keys, devig(prices)):
-                fair.setdefault(k, []).append(p)
-            if bk["key"] in config.SHARP_BOOKS:
-                for k, p in zip(keys, devig_power(prices)):
-                    sharp.setdefault(k, {})[bk["key"]] = p
-            for k, pr in zip(keys, prices):
-                _best(best, k, pr, bk["key"], bet_books)
-
+                for k, p in zip(keys, devig(prices)):
+                    fair.setdefault(k, []).append(p)
+                if bk["key"] in config.SHARP_BOOKS:
+                    for k, p in zip(keys, devig_power(prices)):
+                        sharp.setdefault(k, {})[bk["key"]] = p
+                for k, pr in zip(keys, prices):
+                    _best(best, k, pr, bk["key"], bet_books)
     out = {}
     for k, ps in fair.items():
         if k in best:

@@ -63,13 +63,19 @@ SLATE_TZ = os.getenv("SLATE_TZ", "America/Los_Angeles")
 # --- Odds API ---------------------------------------------------------------
 ODDS_API = "https://api.the-odds-api.com/v4"
 ODDS_API_KEY = os.getenv("ODDS_API_KEY", "")
-# Listing up to 10 bookmakers costs the same as one region.
+# Listing up to 10 bookmakers costs the same as one region. Each market costs 1 credit
+# per pull, so h2h,totals,spreads = 3 credits per competition per pull.
+# Caesars (williamhill_us) and Fanatics need a paid Odds API plan; swap them in then.
 BOOKMAKERS = os.getenv(
     "BOOKMAKERS",
-    "pinnacle,betfair_ex_eu,draftkings,fanduel,betmgm,williamhill_us,betrivers,espnbet,bet365,unibet_eu",
+    "pinnacle,betfair_ex_eu,draftkings,fanduel,betmgm,betrivers,espnbet,hardrockbet,ballybet,betparx",
 )
-# Books whose prices we actually "bet" at (US books). Others only inform fair value.
-BET_BOOKS = os.getenv("BET_BOOKS", "draftkings,fanduel,betmgm,williamhill_us,betrivers,espnbet").split(",")
+MARKETS = os.getenv("MARKETS", "h2h,totals,spreads")
+# Books whose prices we actually "bet" at (US-licensed). Others only inform fair value.
+BET_BOOKS = os.getenv(
+    "BET_BOOKS",
+    "draftkings,fanduel,betmgm,williamhill_us,fanatics,betrivers,espnbet,hardrockbet,ballybet,betparx",
+).split(",")
 ODDS_WINDOW_HOURS = float(os.getenv("ODDS_WINDOW_HOURS", 36))   # look this far ahead
 REFRESH_HOURS = float(os.getenv("REFRESH_HOURS", 8))            # re-pull a sport this often
 PREKICK_REFRESH_MIN = 120      # ...and once more inside 2h of a kickoff
@@ -77,6 +83,7 @@ CREDIT_RESERVE = int(os.getenv("CREDIT_RESERVE", 15))
 
 BOOK_NAMES = {
     "draftkings": "DK", "fanduel": "FanDuel", "betmgm": "MGM", "williamhill_us": "Caesars",
-    "betrivers": "BetRivers", "espnbet": "ESPN BET", "pinnacle": "Pinnacle",
-    "bet365": "bet365", "unibet_eu": "Unibet", "betfair_ex_eu": "Betfair",
+    "betrivers": "BetRivers", "espnbet": "theScore Bet", "pinnacle": "Pinnacle",
+    "fanatics": "Fanatics", "hardrockbet": "Hard Rock", "ballybet": "Bally Bet",
+    "betparx": "betPARX", "betfair_ex_eu": "Betfair",
 }
