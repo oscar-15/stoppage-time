@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20T22:01:10Z",
+  "updated": "2026-10-20T22:10:09Z",
   "record": {
     "wins": 0,
     "losses": 0,
@@ -11,12 +11,19 @@
     "beat_close": null,
     "clv_n": 0
   },
-  "credits_remaining": 496,
-  "refreshed": [],
+  "credits_remaining": 492,
+  "refreshed": [
+    "LALIGA",
+    "UCL"
+  ],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
-  "log": []
+  "log": [
+    "rules changed to shop:0.02:10; refreshing odds",
+    "odds: LALIGA 21 games, 0 bets clear the bar",
+    "odds: UCL 9 games, 1 bets clear the bar"
+  ]
 }

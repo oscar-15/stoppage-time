@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "id": "2ebbccdeea2dab59717d5c3d802c3fed:h2h:Away:",
+    "event_id": "2ebbccdeea2dab59717d5c3d802c3fed",
+    "sport_key": "soccer_uefa_champs_league",
+    "comp": "UCL",
+    "comp_name": "Champions League",
+    "home": "Bayern Munich",
+    "away": "Arsenal",
+    "kickoff": "2026-10-21T19:00:00Z",
+    "market": "h2h",
+    "selection": "Away",
+    "point": null,
+    "label": "Arsenal to win",
+    "price": 3.55,
+    "american": "+255",
+    "book": "BetRivers",
+    "status": "pending",
+    "created": "2026-10-20T22:10:09Z",
+    "strategy": "shop",
+    "p": 0.2909,
+    "model_p": 0.2909,
+    "market_p": 0.2817,
+    "ev": 0.0328,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.2909
+  }
+]
