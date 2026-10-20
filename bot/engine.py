@@ -73,37 +73,41 @@ class Engine:
     def _cup_team(self, name):
         fd = names.match(name, list(self.team_league))
         code = self.team_league.get(fd) if fd else None
-        country = None
-        if code:
-            country = (config.LEAGUES.get(code) or config.SUPPORT_LEAGUES.get(code))["elo"]
-        club = names.match_elo(fd, self.elo, country) if fd else None
-        if club is None:   # e.g. a team from a league we don't load
-            club = names.match_elo(name, self.elo, None)
         elo = None
-        if club is not None:
-            row = self.elo[self.elo["Club"] == club]
-            elo = float(row["Elo"].iloc[0]) if len(row) else None
-        prof = self.models[code].profile(fd) if code and self.models.get(code) and self.models[code].knows(fd) else None
-        return elo, prof
+        if self.elo is not None and not self.elo.empty:
+            country = None
+            if code:
+                country = (config.LEAGUES.get(code) or config.SUPPORT_LEAGUES.get(code))["elo"]
+            club = names.match_elo(fd, self.elo, country) if fd else None
+            if club is None:   # e.g. a team from a league we don't load
+                club = names.match_elo(name, self.elo, None)
+            if club is not None:
+                row = self.elo[self.elo["Club"] == club]
+                elo = float(row["Elo"].iloc[0]) if len(row) else None
+        m = self.models.get(code) if code else None
+        prof = m.profile(fd) if m and m.knows(fd) else None
+        return elo, prof, code
 
     def _cup_rates(self, home, away):
-        if self.elo is None or self.elo.empty:
-            return None
-        eh, ph = self._cup_team(home)
-        ea, pa = self._cup_team(away)
-        if eh is None or ea is None:
-            if eh is None: self.unmatched.add(f"CUP elo: {home}")
-            if ea is None: self.unmatched.add(f"CUP elo: {away}")
-            return None
+        eh, ph, ch = self._cup_team(home)
+        ea, pa, ca = self._cup_team(away)
+        base = 1.35  # typical goals per team per game in top leagues
         if ph and pa:
-            base = 1.35  # typical goals per team per game in top leagues
             lh0 = ph[0] * pa[1] / base * 1.10
             la0 = pa[0] * ph[1] / base * 0.90
-            total = min(max(lh0 + la0, 2.0), 4.0)
-        else:
-            total = config.CUP_DEFAULT_TOTAL
-        lh, la = model.bridge_rates(total, eh - ea + config.ELO_HOME_ADV)
-        return lh, la, -0.05
+        if eh is not None and ea is not None:
+            total = min(max(lh0 + la0, 2.0), 4.0) if ph and pa else config.CUP_DEFAULT_TOTAL
+            lh, la = model.bridge_rates(total, eh - ea + config.ELO_HOME_ADV)
+            return lh, la, -0.05
+        if ph and pa:
+            # No ClubElo: use domestic ratings, adjusted for how strong each league is.
+            gap = config.LEAGUE_STRENGTH.get(ch, -0.5) - config.LEAGUE_STRENGTH.get(ca, -0.5)
+            lh, la = lh0 * math.exp(gap / 2), la0 * math.exp(-gap / 2)
+            return min(max(lh, 0.2), 4.5), min(max(la, 0.2), 4.5), -0.05
+        for t, e, p in ((home, eh, ph), (away, ea, pa)):
+            if e is None and p is None:
+                self.unmatched.add(f"CUP: {t}")
+        return None
 
     def probabilities(self, comp, event):
         r = self.rates(comp, event)

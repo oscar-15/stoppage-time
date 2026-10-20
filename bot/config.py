@@ -31,6 +31,12 @@ SUPPORT_LEAGUES = {
     "GRE": {"name": "Super League",     "fd": "G1",  "elo": "GRE"},
 }
 
+# Rough log goal-rate edge of an average team in each league vs an average
+# Premier League side, used for cup games when ClubElo is unreachable.
+LEAGUE_STRENGTH = {"EPL": 0.0, "LALIGA": -0.08, "BUNDESLIGA": -0.10, "SERIEA": -0.10,
+                   "LIGUE1": -0.22, "POR": -0.35, "NED": -0.38, "BEL": -0.50,
+                   "TUR": -0.50, "GRE": -0.55, "SCO": -0.62}
+
 # --- Model ------------------------------------------------------------------
 SEASONS_BACK = int(os.getenv("SEASONS_BACK", 3))   # past seasons used to fit
 XI = float(os.getenv("XI", 0.0019))                # time decay per day (~1yr half-life)

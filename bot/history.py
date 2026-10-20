@@ -67,8 +67,19 @@ def load_league(fd_code: str, today: date, back: int = None, xg_slug: str = None
 
 
 def load_elo(day: date) -> pd.DataFrame:
-    raw = net.get(ELO_URL.format(day=day.isoformat()), fixture="clubelo.csv", as_json=False)
-    if raw is None:
-        return pd.DataFrame(columns=["Club", "Country", "Level", "Elo"])
-    df = pd.read_csv(io.StringIO(net.decode(raw)))
-    return df[["Club", "Country", "Level", "Elo"]]
+    """ClubElo ratings. Keeps the last good copy in data/ so an outage doesn't matter."""
+    keep = config.PRIVATE / "clubelo_last.csv"
+    try:
+        raw = net.get(ELO_URL.format(day=day.isoformat()), fixture="clubelo.csv", as_json=False)
+        if raw:
+            df = pd.read_csv(io.StringIO(net.decode(raw)))[["Club", "Country", "Level", "Elo"]]
+            if len(df) > 100:
+                keep.parent.mkdir(parents=True, exist_ok=True)
+                df.to_csv(keep, index=False)
+                return df
+    except Exception as e:
+        print(f"elo: ClubElo unavailable ({e})")
+    if keep.exists():
+        print("elo: using last saved ratings")
+        return pd.read_csv(keep)
+    return pd.DataFrame(columns=["Club", "Country", "Level", "Elo"])
