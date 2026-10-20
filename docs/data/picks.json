@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "id": "a362cccad837f1ffae61ff43a3536688:totals:Over:2.5",
+    "event_id": "a362cccad837f1ffae61ff43a3536688",
+    "sport_key": "soccer_spain_la_liga",
+    "comp": "LALIGA",
+    "comp_name": "La Liga",
+    "home": "Levante",
+    "away": "Athletic Bilbao",
+    "kickoff": "2026-10-21T18:00:00Z",
+    "market": "totals",
+    "selection": "Over",
+    "point": 2.5,
+    "label": "Over 2.5 goals",
+    "price": 2.02,
+    "american": "+102",
+    "book": "BetRivers",
+    "model_p": 0.5626,
+    "market_p": 0.4852,
+    "p": 0.5239,
+    "ev": 0.0583,
+    "xg": [
+      1.44,
+      1.5
+    ],
+    "status": "pending",
+    "created": "2026-10-20T21:28:32Z"
+  },
+  {
+    "id": "015d619d774655965e17ba67a025634e:h2h:Away:",
+    "event_id": "015d619d774655965e17ba67a025634e",
+    "sport_key": "soccer_uefa_champs_league",
+    "comp": "UCL",
+    "comp_name": "Champions League",
+    "home": "Lille",
+    "away": "Galatasaray",
+    "kickoff": "2026-10-21T16:45:00Z",
+    "market": "h2h",
+    "selection": "Away",
+    "point": null,
+    "label": "Galatasaray to win",
+    "price": 3.15,
+    "american": "+215",
+    "book": "DK",
+    "model_p": 0.386,
+    "market_p": 0.307,
+    "p": 0.3465,
+    "ev": 0.0915,
+    "xg": [
+      1.38,
+      1.46
+    ],
+    "status": "pending",
+    "created": "2026-10-20T21:28:32Z"
+  }
+]

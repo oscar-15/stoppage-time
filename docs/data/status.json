@@ -1,0 +1,37 @@
+{
+  "updated": "2026-10-20T21:28:32Z",
+  "record": {
+    "wins": 0,
+    "losses": 0,
+    "voids": 0,
+    "units": 0,
+    "roi": null,
+    "graded": 0
+  },
+  "credits_remaining": 496,
+  "refreshed": [
+    "LALIGA",
+    "UCL"
+  ],
+  "unmatched_teams": [
+    "CUP: LASK",
+    "CUP: Shakhtar Donetsk",
+    "CUP: Viking FK"
+  ],
+  "log": [
+    "model: EPL fit on 1210 matches (100% with xG), home adv 0.18, rho -0.082",
+    "model: LALIGA fit on 1228 matches (100% with xG), home adv 0.29, rho -0.029",
+    "model: BUNDESLIGA fit on 972 matches (100% with xG), home adv 0.25, rho -0.059",
+    "model: SERIEA fit on 1210 matches (100% with xG), home adv 0.15, rho -0.015",
+    "model: LIGUE1 fit on 981 matches (100% with xG), home adv 0.22, rho -0.028",
+    "model: NED fit on 999 matches (0% with xG), home adv 0.18, rho -0.104",
+    "model: POR fit on 990 matches (0% with xG), home adv 0.16, rho 0.027",
+    "model: BEL fit on 1007 matches (0% with xG), home adv 0.21, rho -0.052",
+    "model: SCO fit on 738 matches (0% with xG), home adv 0.24, rho -0.003",
+    "model: TUR fit on 1100 matches (0% with xG), home adv 0.25, rho -0.105",
+    "model: GRE fit on 757 matches (0% with xG), home adv 0.23, rho -0.153",
+    "elo: 0 clubs",
+    "odds: LALIGA 21 games, 2 bets clear the bar",
+    "odds: UCL 9 games, 2 bets clear the bar"
+  ]
+}
