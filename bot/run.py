@@ -279,7 +279,7 @@ def main():
         log("ODDS_API_KEY is not set: add it under Settings > Secrets > Actions.")
 
     # A new strategy (or pick cap) means the last odds pull was judged by old rules.
-    rules = f"{config.STRATEGY}:{config.SHOP_MIN_EV}:{config.PICKS_PER_DAY}:{config.LEAN_MIN_EV}:{config.LEANS_PER_DAY}:{config.MARKETS}:{config.BOOKMAKERS}"
+    rules = f"v2-slate:{config.STRATEGY}:{config.SHOP_MIN_EV}:{config.PICKS_PER_DAY}:{config.LEAN_MIN_EV}:{config.LEANS_PER_DAY}:{config.MARKETS}:{config.BOOKMAKERS}"
     if state.get("rules") != rules:
         state["last_odds"] = {}
         state["rules"] = rules
