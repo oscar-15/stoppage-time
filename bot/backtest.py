@@ -33,8 +33,12 @@ OU_OPEN = [("P>2.5", "P<2.5"), ("B365>2.5", "B365<2.5"), ("Avg>2.5", "Avg<2.5")]
 OU_CLOSE = [("PC>2.5", "PC<2.5")]
 
 
-def bets_for_league(code, lg, today, test_seasons):
-    df = history.load_league(lg["fd"], today, back=config.SEASONS_BACK + test_seasons)
+def load(lg, today, test_seasons):
+    return history.load_league(lg["fd"], today, back=config.SEASONS_BACK + test_seasons,
+                               xg_slug=lg.get("us"))
+
+
+def bets_for_league(code, df, test_seasons, xg_weight):
     if df.empty:
         return [], []
     seasons = sorted(df["season"].unique())
@@ -47,7 +51,7 @@ def bets_for_league(code, lg, today, test_seasons):
             games = sdf[(sdf["date"] >= wk) & (sdf["date"] < wk + pd.Timedelta(days=7))]
             if games.empty:
                 continue
-            m = model.DixonColes().fit(df[df["date"] < wk], wk)
+            m = model.DixonColes(xg_weight=xg_weight).fit(df[df["date"] < wk], wk)
             if not m.fitted:
                 continue
             for _, g in games.iterrows():
@@ -129,24 +133,51 @@ def top_per_day(bets, k):
     return out
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--test-seasons", type=int, default=3)
-    args = ap.parse_args()
-    today = date.today()
+VARIANTS = [("Goals only", 0.0), ("xG blend", None), ("xG only", 1.0)]
 
+
+def run_variant(data, test_seasons, xg_weight):
     all_bets, all_preds, per_league = [], [], {}
     for code, lg in config.LEAGUES.items():
-        bets, preds = bets_for_league(code, lg, today, args.test_seasons)
-        print(f"{code}: {len(bets)} bets, {len(preds)} matches priced")
+        bets, preds = bets_for_league(code, data[code], test_seasons, xg_weight)
         per_league[code] = {"name": lg["name"], **summarize(bets),
                             "model_logloss": logloss(preds, "model"),
                             "open_logloss": logloss(preds, "open"),
                             "close_logloss": logloss(preds, "close")}
         all_bets += bets
         all_preds += preds
+    return all_bets, all_preds, per_league
 
-    card = top_per_day(all_bets, config.PICKS_PER_DAY)
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--test-seasons", type=int, default=3)
+    args = ap.parse_args()
+    today = date.today()
+
+    data, coverage = {}, {}
+    for code, lg in config.LEAGUES.items():
+        data[code] = load(lg, today, args.test_seasons)
+        df = data[code]
+        coverage[code] = round(float(df["hxg"].notna().mean()), 3) if "hxg" in df and len(df) else 0.0
+        print(f"{code}: {len(df)} matches, {coverage[code]:.0%} with xG")
+
+    variants = []
+    live = None
+    for name, w in VARIANTS:
+        w = config.XG_WEIGHT if w is None else w
+        bets, preds, per_league = run_variant(data, args.test_seasons, w)
+        card = top_per_day(bets, config.PICKS_PER_DAY)
+        row = {"name": name, "xg_weight": w, "card": summarize(card), "all_qualifying": summarize(bets),
+               "by_market": {m: summarize([b for b in card if b["market"] == m]) for m in ("h2h", "totals")},
+               "logloss": {"model": logloss(preds, "model"), "open": logloss(preds, "open"),
+                           "close": logloss(preds, "close")}}
+        variants.append(row)
+        print(name, json.dumps({k: row[k] for k in ("card", "logloss")}))
+        if abs(w - config.XG_WEIGHT) < 1e-9 and live is None:
+            live = (bets, preds, per_league, card, row)
+
+    all_bets, all_preds, per_league, card, row = live
     curve, run = [], 0.0
     for b in sorted(card, key=lambda b: b["date"]):
         run += b["units"]
@@ -157,22 +188,22 @@ def main():
 
     out = {
         "generated": today.isoformat(),
-        "rules": {"model_weight": config.MODEL_WEIGHT, "min_ev": config.MIN_EV,
+        "rules": {"model_weight": config.MODEL_WEIGHT, "min_ev": config.MIN_EV, "xg_weight": config.XG_WEIGHT,
                   "picks_per_day": config.PICKS_PER_DAY, "price_range": [config.MIN_PRICE, config.MAX_PRICE],
-                  "bet_price": "Pinnacle early line (football-data PSH/PSD/PSA, P>2.5/P<2.5)"},
+                  "bet_price": "Pinnacle pre-closing line (football-data PSH/PSD/PSA, P>2.5/P<2.5)"},
         "seasons": sorted({b["season"] for b in all_bets}),
-        "card": summarize(card),
-        "all_qualifying": summarize(all_bets),
-        "by_market": {m: summarize([b for b in card if b["market"] == m]) for m in ("h2h", "totals")},
+        "xg_coverage": coverage,
+        "card": row["card"],
+        "all_qualifying": row["all_qualifying"],
+        "by_market": row["by_market"],
         "by_league": per_league,
-        "logloss": {"model": logloss(all_preds, "model"), "open": logloss(all_preds, "open"),
-                    "close": logloss(all_preds, "close")},
+        "logloss": row["logloss"],
+        "variants": variants,
         "curve": curve,
         "note": "Big 5 leagues only. Cup games have no free history with closing odds, so UCL/UEL picks are unbacktested.",
     }
     config.PUBLIC.mkdir(parents=True, exist_ok=True)
     (config.PUBLIC / "backtest.json").write_text(json.dumps(out, indent=2) + "\n")
-    print(json.dumps({k: out[k] for k in ("card", "all_qualifying", "logloss")}, indent=2))
 
 
 if __name__ == "__main__":

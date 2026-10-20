@@ -91,14 +91,34 @@ def test_full_pipeline(tmp_path):
     picks = json.loads((tmp_path / "pub" / "picks.json").read_text())
     assert picks and all(p["status"] == "pending" for p in picks)
     assert len(picks) <= 2
+    first = len(picks)
     run("2026-10-17T08:00:00Z")      # cup picks lock + grade, league picks made
     picks = json.loads((tmp_path / "pub" / "picks.json").read_text())
     status = json.loads((tmp_path / "pub" / "status.json").read_text())
     graded = [p for p in picks if p["status"] in ("won", "lost")]
-    assert len(graded) == 2
-    assert status["record"]["graded"] == 2
+    assert len(graded) == first
+    assert status["record"]["graded"] == first
     assert all("Mystery" in u for u in status["unmatched_teams"])
     # pick count per slate day never exceeds the limit
     from collections import Counter
     from bot.run import slate_day
     assert max(Counter(slate_day(p["kickoff"]) for p in picks).values()) <= 2
+
+
+def test_xg_join(tmp_path):
+    fx = tmp_path / "fx"
+    subprocess.run([sys.executable, str(ROOT / "tests" / "make_fixtures.py"), str(fx)], check=True)
+    os.environ.update(FIXTURES=str(fx), CACHE_DIR=str(tmp_path / "cache"))
+    try:
+        import importlib
+        from bot import config, history
+        importlib.reload(config)
+        importlib.reload(history)
+        from datetime import date
+        df = history.load_league("E0", date(2026, 10, 14), back=2, xg_slug="EPL")
+        assert df["hxg"].notna().mean() > 0.95          # names learned without any alias list
+        m = model.DixonColes(xg_weight=0.7).fit(df, pd.Timestamp("2026-10-14"))
+        assert m.xg_share > 0.95 and m.fitted
+    finally:
+        for k in ("FIXTURES", "CACHE_DIR"):
+            os.environ.pop(k, None)

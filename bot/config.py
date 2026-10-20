@@ -11,11 +11,11 @@ CACHE = Path(os.getenv("CACHE_DIR", ROOT / "cache"))             # downloaded hi
 # fd = football-data.co.uk file code, odds_key = The Odds API sport key,
 # elo = ClubElo country code
 LEAGUES = {
-    "EPL":        {"name": "Premier League", "fd": "E0",  "odds_key": "soccer_epl",                 "elo": "ENG"},
-    "LALIGA":     {"name": "La Liga",        "fd": "SP1", "odds_key": "soccer_spain_la_liga",       "elo": "ESP"},
-    "BUNDESLIGA": {"name": "Bundesliga",     "fd": "D1",  "odds_key": "soccer_germany_bundesliga",  "elo": "GER"},
-    "SERIEA":     {"name": "Serie A",        "fd": "I1",  "odds_key": "soccer_italy_serie_a",       "elo": "ITA"},
-    "LIGUE1":     {"name": "Ligue 1",        "fd": "F1",  "odds_key": "soccer_france_ligue_one",    "elo": "FRA"},
+    "EPL":        {"name": "Premier League", "us": "EPL",        "fd": "E0",  "odds_key": "soccer_epl",                 "elo": "ENG"},
+    "LALIGA":     {"name": "La Liga",        "us": "La_liga",    "fd": "SP1", "odds_key": "soccer_spain_la_liga",       "elo": "ESP"},
+    "BUNDESLIGA": {"name": "Bundesliga",     "us": "Bundesliga", "fd": "D1",  "odds_key": "soccer_germany_bundesliga",  "elo": "GER"},
+    "SERIEA":     {"name": "Serie A",        "us": "Serie_A",    "fd": "I1",  "odds_key": "soccer_italy_serie_a",       "elo": "ITA"},
+    "LIGUE1":     {"name": "Ligue 1",        "us": "Ligue_1",    "fd": "F1",  "odds_key": "soccer_france_ligue_one",    "elo": "FRA"},
 }
 CUPS = {
     "UCL": {"name": "Champions League", "odds_key": "soccer_uefa_champs_league"},
@@ -35,6 +35,7 @@ SUPPORT_LEAGUES = {
 SEASONS_BACK = int(os.getenv("SEASONS_BACK", 3))   # past seasons used to fit
 XI = float(os.getenv("XI", 0.0019))                # time decay per day (~1yr half-life)
 REG = float(os.getenv("REG", 1.5))                 # pull toward prior for thin data
+XG_WEIGHT = float(os.getenv("XG_WEIGHT", 0.7))      # 0 = goals only
 NEW_TEAM_PRIOR = -0.22                             # promoted teams start below average
 ELO_HOME_ADV = 65.0                                # ClubElo-scale home advantage
 CUP_DEFAULT_TOTAL = 2.85                           # cup total goals if no profile

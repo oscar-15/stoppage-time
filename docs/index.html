@@ -308,6 +308,23 @@ function curveSVG(curve) {
   </svg>`;
 }
 
+function variantsTable(bt) {
+  if (!bt.variants || !bt.variants.length) return "";
+  const live = bt.rules.xg_weight;
+  const rows = bt.variants.map((v) => {
+    const c = v.card, on = Math.abs(v.xg_weight - live) < 1e-9;
+    return `<tr><td>${esc(v.name)}${on ? ' <span style="color:var(--chalk)">● live</span>' : ""}</td>
+      <td>${c.bets ? c.wins + "–" + c.losses : "–"}</td>
+      <td class="${c.roi >= 0 ? "pos" : "neg"}">${c.bets ? sign(c.roi * 100, 1) + "%" : "–"}</td>
+      <td class="${(c.avg_clv ?? 0) >= 0 ? "pos" : "neg"}">${c.avg_clv != null ? sign(c.avg_clv * 100, 1) + "%" : "–"}</td>
+      <td>${v.logloss.model ?? "–"}</td></tr>`;
+  }).join("");
+  return `<details open><summary>Model comparison</summary>
+    <table><thead><tr><th>Ratings from</th><th>Record</th><th>ROI</th><th>CLV</th><th>Log loss</th></tr></thead><tbody>${rows}</tbody></table>
+    <p class="sub">Same picks rules, different team ratings. The closing market's log loss is ${bt.logloss.close ?? "–"}; a model only has a real shot at an edge when it gets close to that and CLV turns positive.</p>
+  </details>`;
+}
+
 function renderBacktest(bt) {
   if (!bt || !bt.card || !bt.card.bets) {
     $("backtest").innerHTML = `<div class="sub">No backtest yet. In GitHub, open <b>Actions → Backtest → Run workflow</b>. It replays past seasons against real closing odds.</div>`;
@@ -334,6 +351,7 @@ function renderBacktest(bt) {
     </div>
     ${curveSVG(bt.curve)}
     <div class="verdict">${verdict} ROI 95% range: ${sign(c.roi_ci95[0] * 100, 1)}% to ${sign(c.roi_ci95[1] * 100, 1)}%. Average closing-line value ${c.avg_clv != null ? sign(c.avg_clv * 100, 2) + "%" : "n/a"}.</div>
+    ${variantsTable(bt)}
     <details><summary>By league (every qualifying bet)</summary>
       <table><thead><tr><th>League</th><th>Bets</th><th>ROI</th><th>CLV</th><th>Log loss model / close</th></tr></thead><tbody>${rows}</tbody></table>
       <p class="sub">Log loss: lower is better. If the model's number is above the closing market's, the market is the better forecaster, which is why the bot blends the two. ${esc(bt.note || "")}</p>

@@ -13,9 +13,11 @@ class DixonColes:
        log(away goals rate) = mu        + att[away] + dfn[home]
     att > 0 scores more than average, dfn > 0 concedes more than average."""
 
-    def __init__(self, xi=None, reg=None):
+    def __init__(self, xi=None, reg=None, xg_weight=None):
         self.xi = config.XI if xi is None else xi
         self.reg = config.REG if reg is None else reg
+        # Share of the rating that comes from expected goals (rest from actual goals).
+        self.xg_weight = config.XG_WEIGHT if xg_weight is None else xg_weight
         self.fitted = False
 
     def fit(self, df, ref_date):
@@ -34,6 +36,16 @@ class DixonColes:
         ai = df["away"].map(ix).to_numpy()
         hg = df["hg"].to_numpy(float)
         ag = df["ag"].to_numpy(float)
+        # Ratings are fit to a blend of xG and goals; xG is far less noisy.
+        th, ta = hg.copy(), ag.copy()
+        if self.xg_weight > 0 and "hxg" in df:
+            hx, ax = df["hxg"].to_numpy(float), df["axg"].to_numpy(float)
+            ok = np.isfinite(hx) & np.isfinite(ax)
+            th[ok] = self.xg_weight * hx[ok] + (1 - self.xg_weight) * hg[ok]
+            ta[ok] = self.xg_weight * ax[ok] + (1 - self.xg_weight) * ag[ok]
+            self.xg_share = float(ok.mean())
+        else:
+            self.xg_share = 0.0
         n = len(self.teams)
 
         # Thin-history teams (usually promoted) get a below-average prior.
@@ -48,9 +60,9 @@ class DixonColes:
             llh = mu + home + att[hi] + dfn[ai]
             lla = mu + att[ai] + dfn[hi]
             lh, la = np.exp(llh), np.exp(lla)
-            ll = np.sum(w * (hg * llh - lh + ag * lla - la))
+            ll = np.sum(w * (th * llh - lh + ta * lla - la))
             pen = 0.5 * self.reg * (np.sum((att - prior_att) ** 2) + np.sum((dfn - prior_dfn) ** 2))
-            rh, ra = w * (hg - lh), w * (ag - la)
+            rh, ra = w * (th - lh), w * (ta - la)
             g = np.empty_like(theta)
             g[0] = rh.sum() + ra.sum()
             g[1] = rh.sum()
@@ -59,7 +71,7 @@ class DixonColes:
             return -(ll - pen), -g
 
         x0 = np.zeros(2 + 2 * n)
-        x0[0] = np.log(max(ag.mean(), 0.5))
+        x0[0] = np.log(max(ta.mean(), 0.5))
         x0[1] = 0.2
         res = minimize(nll, x0, jac=True, method="L-BFGS-B")
         th = res.x

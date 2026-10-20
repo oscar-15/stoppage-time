@@ -21,7 +21,7 @@ def _fixture(name):
     return p.read_bytes()
 
 
-def get(url, params=None, fixture=None, as_json=True, retries=3):
+def get(url, params=None, fixture=None, as_json=True, retries=3, headers=None):
     """Return parsed JSON, or raw bytes when as_json=False. Returns None on 404."""
     if os.environ.get("FIXTURES"):
         try:
@@ -32,7 +32,7 @@ def get(url, params=None, fixture=None, as_json=True, retries=3):
     err = None
     for attempt in range(retries):
         try:
-            r = _session.get(url, params=params, timeout=40)
+            r = _session.get(url, params=params, timeout=40, headers=headers)
             if r.status_code == 404:
                 return None
             if r.status_code == 429 or r.status_code >= 500:

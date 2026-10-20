@@ -12,7 +12,9 @@ Picks lock at kickoff and grade themselves from the final score.
 1. **History.** Pulls a few seasons of results for each league from
    [football-data.co.uk](https://www.football-data.co.uk) (free, includes closing odds).
 2. **Model.** Fits a Dixon-Coles goal model per league: each team gets an attack and
-   defense rating, weighted toward recent games, with a home-advantage term. That
+   defense rating, weighted toward recent games, with a home-advantage term. Ratings
+   are fit to a 70/30 blend of expected goals (xG, from [Understat](https://understat.com))
+   and actual goals, since xG is far less noisy. Set `XG_WEIGHT=0` for goals only. That
    produces a full scoreline grid, so it prices both 1X2 and totals.
 3. **European cups.** Teams from different leagues can't be compared directly, so cup
    games use [ClubElo](http://clubelo.com) ratings to set who's stronger and the

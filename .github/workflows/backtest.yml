@@ -1,6 +1,9 @@
 name: Backtest
 
 on:
+  push:
+    branches: [main]
+    paths: ["bot/**"]       # rerun whenever the model changes
   workflow_dispatch:
     inputs:
       seasons:

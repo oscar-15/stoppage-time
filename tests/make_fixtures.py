@@ -75,6 +75,7 @@ SPORT = {"E0": "soccer_epl", "SP1": "soccer_spain_la_liga", "D1": "soccer_german
          "I1": "soccer_italy_serie_a", "F1": "soccer_france_ligue_one"}
 
 TRUE = {}   # (code, team) -> [att, dfn]
+US_SLUG = {"E0": "EPL", "SP1": "La_liga", "D1": "Bundesliga", "I1": "Serie_A", "F1": "Ligue_1"}
 
 
 def odds_from(probs, margin, noise):
@@ -99,6 +100,7 @@ def make_history(out):
             pairs = [(i, j) for i in range(n) for j in range(n) if i != j]
             rng.shuffle(pairs)
             per_week = n // 2
+            us_dates = []
             rows = ["Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,PSH,PSD,PSA,PSCH,PSCD,PSCA,P>2.5,P<2.5,PC>2.5,PC<2.5"]
             for k, (i, j) in enumerate(pairs):
                 d = start + timedelta(days=7 * (k // per_week) + int(rng.integers(0, 3)))
@@ -114,11 +116,20 @@ def make_history(out):
                 c = odds_from([p["Home"], p["Draw"], p["Away"]], 0.022, 0.03)
                 ou = odds_from([pov, 1 - pov], 0.03, 0.07)
                 cu = odds_from([pov, 1 - pov], 0.025, 0.03)
+                us_dates.append({"id": str(k), "isResult": True, "datetime": f"{d:%Y-%m-%d} 19:00:00",
+                                 "h": {"title": teams[names[i]][0]}, "a": {"title": teams[names[j]][0]},
+                                 "goals": {"h": str(hg), "a": str(ag)},
+                                 "xG": {"h": f"{lh * rng.lognormal(0, 0.25):.4f}", "a": f"{la * rng.lognormal(0, 0.25):.4f}"}})
                 ftr = "H" if hg > ag else "A" if ag > hg else "D"
                 rows.append(f"{code},{d:%d/%m/%Y},{names[i]},{names[j]},{hg},{ag},{ftr},"
                             f"{o[0]},{o[1]},{o[2]},{c[0]},{c[1]},{c[2]},{ou[0]},{ou[1]},{cu[0]},{cu[1]}")
             if len(rows) > 1:
                 (out / f"fd_{season}_{code}.csv").write_text("\n".join(rows) + "\n", encoding="latin-1")
+            if code in US_SLUG and us_dates:
+                us_dates.append({"id": "future", "isResult": False, "datetime": "2026-12-01 19:00:00",
+                                 "h": {"title": "x"}, "a": {"title": "y"}, "goals": {"h": None, "a": None},
+                                 "xG": {"h": None, "a": None}})
+                (out / f"us_{US_SLUG[code]}_{y}.json").write_text(json.dumps({"dates": us_dates, "teams": {}, "players": []}))
         for t, a, d in zip(names, att, dfn):
             TRUE[(code, t)] = (a, d)
 

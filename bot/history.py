@@ -40,7 +40,7 @@ def _parse(text: str, season: str) -> pd.DataFrame:
     return df.drop(columns=["Date"])
 
 
-def load_league(fd_code: str, today: date, back: int = None) -> pd.DataFrame:
+def load_league(fd_code: str, today: date, back: int = None, xg_slug: str = None) -> pd.DataFrame:
     back = config.SEASONS_BACK if back is None else back
     config.CACHE.mkdir(parents=True, exist_ok=True)
     codes = season_codes(today, back)
@@ -58,7 +58,12 @@ def load_league(fd_code: str, today: date, back: int = None) -> pd.DataFrame:
         frames.append(_parse(net.decode(path.read_bytes()), season))
     if not frames:
         return pd.DataFrame(columns=["date", "home", "away", "hg", "ag", "season"])
-    return pd.concat(frames, ignore_index=True).sort_values("date").reset_index(drop=True)
+    df = pd.concat(frames, ignore_index=True).sort_values("date").reset_index(drop=True)
+    if xg_slug:
+        from . import xg
+        df = xg.attach(df, xg_slug, codes)
+        df = df.sort_values("date").reset_index(drop=True)
+    return df
 
 
 def load_elo(day: date) -> pd.DataFrame:
