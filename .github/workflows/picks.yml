@@ -2,7 +2,9 @@ name: Picks
 
 on:
   schedule:
-    - cron: "17 */2 * * *"     # every 2 hours; the bot decides if odds need refreshing
+    # GitHub delays and drops scheduled runs on small repos, so ask often:
+    # a run with nothing to do costs no credits (the bot decides when odds need refreshing).
+    - cron: "7,37 * * * *"
   workflow_dispatch: {}
 
 permissions:
