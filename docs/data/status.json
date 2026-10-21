@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T13:51:04Z",
+  "updated": "2026-10-21T18:41:07Z",
   "record": {
     "wins": 0,
     "losses": 0,
@@ -22,12 +22,18 @@
     "beat_close": null,
     "clv_n": 0
   },
-  "credits_remaining": 466,
-  "refreshed": [],
+  "credits_remaining": 462,
+  "refreshed": [
+    "UCL",
+    "UEL"
+  ],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
-  "log": []
+  "log": [
+    "odds: UCL 11 games, 1 bets clear the bar (h2h 30/30 priced (0 derived), totals 16/18 priced (6 derived))",
+    "odds: UEL 18 games, 2 bets clear the bar (h2h 54/54 priced (0 derived), totals 42/42 priced (36 derived))"
+  ]
 }
