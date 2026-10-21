@@ -36,6 +36,8 @@ jobs:
       - name: Run bot
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NOTIFY_LEANS: ${{ vars.NOTIFY_LEANS || '0' }}
           REFRESH_HOURS: ${{ vars.REFRESH_HOURS || '8' }}
           PICKS_PER_DAY: ${{ vars.PICKS_PER_DAY || '10' }}
           MIN_EV: ${{ vars.MIN_EV || '0.03' }}

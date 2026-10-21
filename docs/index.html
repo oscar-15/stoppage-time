@@ -114,6 +114,16 @@
   .parlay { margin: 16px 0 0; font-size: 14px; color: var(--muted); }
   .parlay b { color: var(--text); }
 
+  /* arbitrage */
+  .arbs { margin-top: 26px; border: 1px solid rgba(255,173,74,.45); border-radius: 18px; padding: 16px; background: rgba(255,173,74,.06); }
+  .arbs h3 { font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: .2em; text-transform: uppercase; color: var(--live); margin: 0 0 4px; }
+  .arb { padding: 12px 0; border-top: 1px solid var(--line); }
+  .arb:first-of-type { border-top: none; }
+  .arb .h { display: flex; justify-content: space-between; gap: 10px; font-weight: 700; }
+  .arb .h .p { color: var(--win); font-variant-numeric: tabular-nums; }
+  .arb .leg { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; font-size: 13.5px; padding: 3px 0; font-variant-numeric: tabular-nums; }
+  .arb .leg span:last-child { color: var(--muted); }
+
   /* leans */
   .leans { margin-top: 26px; }
   .leans h3 { font-family: var(--display); font-weight: 800; font-size: 15px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
@@ -209,6 +219,7 @@
   </header>
 
   <div id="card-area"></div>
+  <div id="arb-area"></div>
   <div id="lean-area"></div>
 
   <section id="slate-sec">
@@ -289,6 +300,17 @@ function card(p, i, now) {
 }
 
 const isLean = (p) => p.tier === "lean";
+
+function renderArbs(arbs) {
+  const now = new Date();
+  const live = (arbs || []).filter((a) => new Date(a.kickoff) > now);
+  if (!live.length) { $("arb-area").innerHTML = ""; return; }
+  $("arb-area").innerHTML = `<div class="arbs"><h3>Arbitrage · ${live.length}</h3>
+    <p class="sub" style="margin:0 0 6px">Bet every outcome, at these books, in these amounts, and you profit whatever happens. Amounts are per $100 total; scale evenly. They vanish fast: confirm every price before placing any leg. Not counted in the record.</p>
+    ${live.map((a, i) => `${i === 3 ? `<details><summary>${live.length - 3} more</summary>` : ""}<div class="arb"><div class="h"><span>${esc(a.home)} v ${esc(a.away)}</span><span class="p">+${(a.profit * 100).toFixed(1)}%</span></div>
+      <div class="gm" style="margin:2px 0 6px">${esc(a.market)} · ${esc(a.comp_name)} · ${esc(fmtTime(a.kickoff))}</div>
+      ${a.legs.map((l) => `<div class="leg"><span>${esc(l.selection)}</span><span>${esc(l.american)} ${esc(l.book)}</span><span>$${l.stake_per_100.toFixed(2)}</span></div>`).join("")}</div>`).join("")}${live.length > 3 ? "</details>" : ""}</div>`;
+}
 
 function renderLeans(all, now) {
   const leans = all.filter(isLean).filter((p) => ["pending", "locked"].includes(p.status) ||
@@ -495,11 +517,12 @@ function renderBacktest(bt) {
 }
 
 (async function init() {
-  const [picks, status, bt, sb, slate] = await Promise.all([getJSON("data/picks.json"), getJSON("data/status.json"), getJSON("data/backtest.json"), getJSON("data/shop_backtest.json"), getJSON("data/slate.json")]);
+  const [picks, status, bt, sb, slate, arbs] = await Promise.all([getJSON("data/picks.json"), getJSON("data/status.json"), getJSON("data/backtest.json"), getJSON("data/shop_backtest.json"), getJSON("data/slate.json"), getJSON("data/arbs.json")]);
   const now = new Date();
   const ps = picks || [];
   $("updated").textContent = status?.updated ? `Updated ${fmtTime(status.updated)}` : "Waiting for the first run";
   renderCards(ps, now);
+  renderArbs(arbs);
   renderLeans(ps, now);
   renderSlate(slate);
   renderRecord(ps, status);

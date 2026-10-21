@@ -215,3 +215,26 @@ def test_lean_tiers():
     assert ("A", "pick") in got and ("A", "lean") in got     # edge grew: pick added, lean kept
     assert ("B", "lean") not in got                           # no lean on a match that has a pick
     assert ("C", "lean") in got
+
+
+def test_arbitrage_and_alert_text():
+    from datetime import datetime, timezone
+    from bot import extras
+    from bot.run import parse_ts
+    ev = {"id": "e1", "sport_key": "soccer_epl", "commence_time": "2026-10-24T14:00:00Z",
+          "home_team": "A", "away_team": "B", "bookmakers": [
+              {"key": "draftkings", "markets": [{"key": "h2h", "outcomes": [
+                  {"name": "A", "price": 2.30}, {"name": "Draw", "price": 3.2}, {"name": "B", "price": 3.4}]}]},
+              {"key": "fanduel", "markets": [{"key": "h2h", "outcomes": [
+                  {"name": "A", "price": 2.0}, {"name": "Draw", "price": 3.9}, {"name": "B", "price": 3.0}]}]}]}
+    now = datetime(2026, 10, 23, tzinfo=timezone.utc)
+    arbs = extras.find_arbs([ev], "EPL", "Premier League", "x", parse_ts, now)
+    assert len(arbs) == 1
+    a = arbs[0]
+    # best prices 2.30 / 3.9 / 3.4 -> implied 0.9864 -> ~1.4% locked in
+    assert 0.013 < a["profit"] < 0.015
+    assert abs(sum(l["stake_per_100"] for l in a["legs"]) - 100) < 0.05
+    payouts = [l["stake_per_100"] * l["price"] for l in a["legs"]]
+    assert max(payouts) - min(payouts) < 0.1                     # same return whatever happens
+    assert "Draw +290 at FanDuel" in extras.arb_message(a)
+    assert extras.notify("t", "b") is False                      # no topic set -> no alert

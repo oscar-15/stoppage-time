@@ -88,6 +88,11 @@ REFRESH_HOURS = float(os.getenv("REFRESH_HOURS", 8))            # re-pull a spor
 PREKICK_REFRESH_MIN = 120      # ...and once more inside 2h of a kickoff
 CREDIT_RESERVE = int(os.getenv("CREDIT_RESERVE", 15))
 
+# Phone alerts via the free ntfy app: set NTFY_TOPIC as a repo secret to turn on.
+NTFY_TOPIC = os.getenv("NTFY_TOPIC", "")
+NOTIFY_LEANS = os.getenv("NOTIFY_LEANS", "0") == "1"
+ARB_MIN_PROFIT = float(os.getenv("ARB_MIN_PROFIT", 0.003))   # ignore rounding-level "arbs"
+
 BOOK_NAMES = {
     "draftkings": "DK", "fanduel": "FanDuel", "betmgm": "MGM", "williamhill_us": "Caesars",
     "betrivers": "BetRivers", "espnbet": "theScore Bet", "pinnacle": "Pinnacle",

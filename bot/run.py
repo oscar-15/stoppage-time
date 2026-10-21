@@ -8,7 +8,7 @@ import numpy as np
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
-from . import config, model, odds, slate as slate_mod
+from . import config, extras, model, odds, slate as slate_mod
 from .engine import Engine
 
 COMPS = {**{k: v for k, v in config.LEAGUES.items()}, **config.CUPS}
@@ -273,6 +273,9 @@ def main():
     picks = load(picks_path, [])
     slate_path = config.PUBLIC / "slate.json"
     slate = {g["id"]: g for g in load(slate_path, [])}
+    arbs_path = config.PUBLIC / "arbs.json"
+    arbs = load(arbs_path, [])
+    new_arbs = []
     state = load(state_path, {})
 
     if not config.ODDS_API_KEY and not os.environ.get("FIXTURES"):
@@ -319,6 +322,10 @@ def main():
                 evs = odds.odds(sport)
                 update_clv(picks, evs, now)
                 slate_mod.update(slate, evs, comp, COMPS[comp]["name"], now, parse_ts, config.ODDS_WINDOW_HOURS)
+                try:
+                    new_arbs += extras.find_arbs(evs, comp, COMPS[comp]["name"], iso(now), parse_ts, now)
+                except Exception as e:          # never let the arb scan block picks
+                    log(f"ERROR arb scan {comp}: {type(e).__name__}: {e}")
                 cs = candidates_for(comp, evs, eng, now)
             except Exception as e:
                 log(f"ERROR {comp}: {type(e).__name__}: {e}")
@@ -339,7 +346,26 @@ def main():
         remaining = odds.credits_remaining() or remaining
 
     # 4. pick the card
+    before = {p["id"] for p in picks}
     picks = build_card(picks, new_cands, refreshed)
+    posted = [p for p in picks if p["id"] not in before]
+
+    # 5. arbitrage: replace refreshed competitions' arbs, drop started games
+    arbs = [a for a in arbs if a["sport_key"] not in refreshed and parse_ts(a["kickoff"]) > now] + new_arbs
+    seen = set(state.get("arbs_alerted", []))
+    fresh_arbs = [a for a in new_arbs if a["id"] not in seen]
+    for a in new_arbs:
+        log(f"arb: {a['home']} v {a['away']} {a['market']} +{a['profit'] * 100:.1f}%")
+
+    # 6. phone alerts for anything new
+    for p in posted:
+        if tier_of(p) == "pick" or config.NOTIFY_LEANS:
+            extras.notify(f"{'New pick' if tier_of(p) == 'pick' else 'New lean'}: {p['label']} {p['american']}",
+                          extras.pick_message(p))
+    for a in fresh_arbs:
+        extras.notify(f"Arbitrage +{a['profit'] * 100:.1f}%: {a['home']} v {a['away']}", extras.arb_message(a),
+                      tags="moneybag")
+    state["arbs_alerted"] = sorted((seen | {a["id"] for a in new_arbs}))[-300:]
     picks.sort(key=lambda p: p["kickoff"], reverse=True)
 
     state["credits"] = remaining
@@ -347,6 +373,7 @@ def main():
     save(picks_path, picks)
     slate = slate_mod.prune(slate, now, parse_ts)
     save(slate_path, sorted(slate.values(), key=lambda g: g["kickoff"]))
+    save(arbs_path, sorted(arbs, key=lambda a: -a["profit"]))
     save(state_path, state)
     save(config.PUBLIC / "status.json", {
         "updated": iso(now),
