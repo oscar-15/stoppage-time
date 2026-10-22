@@ -72,7 +72,7 @@
     "price": 1.53,
     "american": "-189",
     "book": "MGM",
-    "status": "locked",
+    "status": "won",
     "created": "2026-10-21T07:42:40Z",
     "strategy": "shop",
     "p": 0.6578,
@@ -85,7 +85,9 @@
     "close_fair": 0.6551,
     "clv": 0.0022,
     "close_checked": "2026-10-22T17:34:10Z",
-    "locked": "2026-10-22T20:45:57Z"
+    "locked": "2026-10-22T20:45:57Z",
+    "units": 0.53,
+    "final": "1-0"
   },
   {
     "id": "410fd021774146ae969af3713990ed87:h2h:Home:",
@@ -103,7 +105,7 @@
     "price": 1.82,
     "american": "-122",
     "book": "Bally Bet",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-10-21T18:41:07Z",
     "strategy": "shop",
     "p": 0.5539,
@@ -116,7 +118,9 @@
     "close_fair": 0.5602,
     "clv": 0.0195,
     "close_checked": "2026-10-22T17:34:10Z",
-    "locked": "2026-10-22T20:45:57Z"
+    "locked": "2026-10-22T20:45:57Z",
+    "units": -1.0,
+    "final": "1-2"
   },
   {
     "id": "c614844f2e3b782814e4f4e77f98bf2a:totals:Under:2.5",
@@ -134,7 +138,7 @@
     "price": 2.12,
     "american": "+112",
     "book": "Bally Bet",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-10-21T18:41:07Z",
     "strategy": "shop",
     "p": 0.4753,
@@ -147,7 +151,9 @@
     "close_fair": 0.4119,
     "clv": -0.1268,
     "close_checked": "2026-10-22T17:34:10Z",
-    "locked": "2026-10-22T20:45:57Z"
+    "locked": "2026-10-22T20:45:57Z",
+    "units": -1.0,
+    "final": "1-2"
   },
   {
     "id": "13c0a92ee5159d2f1d2e0368811c9421:h2h:Home:",

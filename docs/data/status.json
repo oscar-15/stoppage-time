@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T20:45:57Z",
+  "updated": "2026-10-22T23:57:24Z",
   "record": {
     "wins": 0,
     "losses": 2,
@@ -12,36 +12,26 @@
     "clv_n": 2
   },
   "lean_record": {
-    "wins": 0,
-    "losses": 2,
+    "wins": 1,
+    "losses": 4,
     "voids": 0,
-    "units": -2.0,
-    "roi": -1.0,
-    "graded": 2,
+    "units": -3.47,
+    "roi": -0.694,
+    "graded": 5,
     "avg_clv": -0.0447,
     "beat_close": 0.5,
     "clv_n": 4
   },
-  "credits_remaining": 434,
-  "refreshed": [
-    "EPL",
-    "LALIGA",
-    "LIGUE1",
-    "SERIEA"
-  ],
+  "credits_remaining": 432,
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Olympiakos Piraeus to win (Olympiakos Piraeus v Sparta Prague) @ -189",
-    "lock: Viktoria Plzeň to win (Viktoria Plzeň v PFC Levski Sofia) @ -122",
-    "lock: Under 2.5 goals (Celtic v Celta Vigo) @ +112",
-    "grade: Dinamo Zagreb to win (Dinamo Zagreb v NEC Nijmegen 2-4) -> lost",
-    "odds: EPL 21 games, 0 bets clear the bar (h2h 63/63 priced (0 derived), totals 40/40 priced (36 derived))",
-    "odds: LALIGA 20 games, 1 bets clear the bar (h2h 60/60 priced (0 derived), totals 44/44 priced (36 derived))",
-    "odds: SERIEA 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 42/42 priced (28 derived))",
-    "odds: LIGUE1 19 games, 1 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/40 priced (30 derived))"
+    "grade: Olympiakos Piraeus to win (Olympiakos Piraeus v Sparta Prague 1-0) -> won",
+    "grade: Viktoria Plzeň to win (Viktoria Plzeň v PFC Levski Sofia 1-2) -> lost",
+    "grade: Under 2.5 goals (Celtic v Celta Vigo 1-2) -> lost"
   ]
 }
