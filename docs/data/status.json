@@ -1,39 +1,40 @@
 {
-  "updated": "2026-10-21T18:41:07Z",
+  "updated": "2026-10-22T01:26:29Z",
   "record": {
     "wins": 0,
-    "losses": 0,
+    "losses": 2,
     "voids": 0,
-    "units": 0,
-    "roi": null,
-    "graded": 0,
-    "avg_clv": null,
-    "beat_close": null,
-    "clv_n": 0
+    "units": -2.0,
+    "roi": -1.0,
+    "graded": 2,
+    "avg_clv": 0.05,
+    "beat_close": 0.5,
+    "clv_n": 2
   },
   "lean_record": {
     "wins": 0,
-    "losses": 0,
+    "losses": 1,
     "voids": 0,
-    "units": 0,
-    "roi": null,
-    "graded": 0,
-    "avg_clv": null,
-    "beat_close": null,
-    "clv_n": 0
+    "units": -1.0,
+    "roi": -1.0,
+    "graded": 1,
+    "avg_clv": -0.0736,
+    "beat_close": 0.0,
+    "clv_n": 1
   },
-  "credits_remaining": 462,
-  "refreshed": [
-    "UCL",
-    "UEL"
-  ],
+  "credits_remaining": 460,
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: UCL 11 games, 1 bets clear the bar (h2h 30/30 priced (0 derived), totals 16/18 priced (6 derived))",
-    "odds: UEL 18 games, 2 bets clear the bar (h2h 54/54 priced (0 derived), totals 42/42 priced (36 derived))"
+    "lock: Arsenal to win (Bayern Munich v Arsenal) @ +255",
+    "lock: Under 3.5 goals (Aston Villa v Viking FK) @ +116",
+    "lock: Under 3.5 goals (Sporting Lisbon v LASK) @ +102",
+    "grade: Arsenal to win (Bayern Munich v Arsenal 2-2) -> lost",
+    "grade: Under 3.5 goals (Aston Villa v Viking FK 3-1) -> lost",
+    "grade: Under 3.5 goals (Sporting Lisbon v LASK 2-3) -> lost"
   ]
 }

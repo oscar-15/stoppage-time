@@ -99,7 +99,7 @@
     "price": 3.55,
     "american": "+255",
     "book": "BetRivers",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-10-20T22:10:09Z",
     "strategy": "shop",
     "p": 0.2909,
@@ -110,7 +110,10 @@
     "open_fair": 0.2909,
     "close_fair": 0.336,
     "clv": 0.1927,
-    "close_checked": "2026-10-21T18:41:07Z"
+    "close_checked": "2026-10-21T18:41:07Z",
+    "locked": "2026-10-22T01:26:29Z",
+    "units": -1.0,
+    "final": "2-2"
   },
   {
     "id": "d3b3e714b6af9e5430e3030ed639e6dd:totals:Under:3.5",
@@ -128,7 +131,7 @@
     "price": 2.16,
     "american": "+116",
     "book": "betPARX",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-10-21T07:42:40Z",
     "strategy": "shop",
     "p": 0.4782,
@@ -140,7 +143,10 @@
     "tier": "pick",
     "close_fair": 0.42,
     "clv": -0.0928,
-    "close_checked": "2026-10-21T18:41:07Z"
+    "close_checked": "2026-10-21T18:41:07Z",
+    "locked": "2026-10-22T01:26:29Z",
+    "units": -1.0,
+    "final": "3-1"
   },
   {
     "id": "8fdcaee14b3e8966e09d468a0b17ce18:totals:Under:3.5",
@@ -158,7 +164,7 @@
     "price": 2.02,
     "american": "+102",
     "book": "betPARX",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-10-21T07:42:40Z",
     "strategy": "shop",
     "p": 0.4986,
@@ -170,6 +176,9 @@
     "tier": "lean",
     "close_fair": 0.4586,
     "clv": -0.0736,
-    "close_checked": "2026-10-21T18:41:07Z"
+    "close_checked": "2026-10-21T18:41:07Z",
+    "locked": "2026-10-22T01:26:29Z",
+    "units": -1.0,
+    "final": "2-3"
   }
 ]
