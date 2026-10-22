@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T17:34:10Z",
+  "updated": "2026-10-22T20:45:57Z",
   "record": {
     "wins": 0,
     "losses": 2,
@@ -13,19 +13,21 @@
   },
   "lean_record": {
     "wins": 0,
-    "losses": 1,
+    "losses": 2,
     "voids": 0,
-    "units": -1.0,
+    "units": -2.0,
     "roi": -1.0,
-    "graded": 1,
-    "avg_clv": -0.0736,
-    "beat_close": 0.0,
-    "clv_n": 1
+    "graded": 2,
+    "avg_clv": -0.0447,
+    "beat_close": 0.5,
+    "clv_n": 4
   },
-  "credits_remaining": 444,
+  "credits_remaining": 434,
   "refreshed": [
-    "BUNDESLIGA",
-    "UEL"
+    "EPL",
+    "LALIGA",
+    "LIGUE1",
+    "SERIEA"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -33,8 +35,13 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Dinamo Zagreb to win (Dinamo Zagreb v NEC Nijmegen) @ -161",
-    "odds: BUNDESLIGA 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 44/44 priced (36 derived))",
-    "odds: UEL 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 34/42 priced (32 derived))"
+    "lock: Olympiakos Piraeus to win (Olympiakos Piraeus v Sparta Prague) @ -189",
+    "lock: Viktoria Plzeň to win (Viktoria Plzeň v PFC Levski Sofia) @ -122",
+    "lock: Under 2.5 goals (Celtic v Celta Vigo) @ +112",
+    "grade: Dinamo Zagreb to win (Dinamo Zagreb v NEC Nijmegen 2-4) -> lost",
+    "odds: EPL 21 games, 0 bets clear the bar (h2h 63/63 priced (0 derived), totals 40/40 priced (36 derived))",
+    "odds: LALIGA 20 games, 1 bets clear the bar (h2h 60/60 priced (0 derived), totals 44/44 priced (36 derived))",
+    "odds: SERIEA 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 42/42 priced (28 derived))",
+    "odds: LIGUE1 19 games, 1 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/40 priced (30 derived))"
   ]
 }

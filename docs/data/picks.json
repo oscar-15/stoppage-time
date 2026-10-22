@@ -1,5 +1,32 @@
 [
   {
+    "id": "903eb4941471ffe20d525b02dd3b77aa:h2h:Home:",
+    "event_id": "903eb4941471ffe20d525b02dd3b77aa",
+    "sport_key": "soccer_spain_la_liga",
+    "comp": "LALIGA",
+    "comp_name": "La Liga",
+    "home": "Alavés",
+    "away": "Málaga",
+    "kickoff": "2026-10-23T19:00:00Z",
+    "market": "h2h",
+    "selection": "Home",
+    "point": null,
+    "label": "Alavés to win",
+    "price": 1.71,
+    "american": "-141",
+    "book": "MGM",
+    "status": "pending",
+    "created": "2026-10-22T20:45:57Z",
+    "strategy": "shop",
+    "p": 0.5906,
+    "model_p": 0.5906,
+    "market_p": 0.5848,
+    "ev": 0.0099,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.5906,
+    "tier": "lean"
+  },
+  {
     "id": "8aa36b30d655d6c81ed98bf9ec1b4039:h2h:Draw:",
     "event_id": "8aa36b30d655d6c81ed98bf9ec1b4039",
     "sport_key": "soccer_france_ligue_one",
@@ -24,7 +51,10 @@
     "ev": 0.0293,
     "fair_src": "Pinnacle",
     "open_fair": 0.2859,
-    "tier": "pick"
+    "tier": "pick",
+    "close_fair": 0.285,
+    "clv": 0.0259,
+    "close_checked": "2026-10-22T20:45:57Z"
   },
   {
     "id": "5290ae078657c841a4e1d4ebb626825a:h2h:Home:",
@@ -42,7 +72,7 @@
     "price": 1.53,
     "american": "-189",
     "book": "MGM",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-10-21T07:42:40Z",
     "strategy": "shop",
     "p": 0.6578,
@@ -54,7 +84,8 @@
     "tier": "lean",
     "close_fair": 0.6551,
     "clv": 0.0022,
-    "close_checked": "2026-10-22T17:34:10Z"
+    "close_checked": "2026-10-22T17:34:10Z",
+    "locked": "2026-10-22T20:45:57Z"
   },
   {
     "id": "410fd021774146ae969af3713990ed87:h2h:Home:",
@@ -72,7 +103,7 @@
     "price": 1.82,
     "american": "-122",
     "book": "Bally Bet",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-10-21T18:41:07Z",
     "strategy": "shop",
     "p": 0.5539,
@@ -84,7 +115,8 @@
     "tier": "lean",
     "close_fair": 0.5602,
     "clv": 0.0195,
-    "close_checked": "2026-10-22T17:34:10Z"
+    "close_checked": "2026-10-22T17:34:10Z",
+    "locked": "2026-10-22T20:45:57Z"
   },
   {
     "id": "c614844f2e3b782814e4f4e77f98bf2a:totals:Under:2.5",
@@ -102,7 +134,7 @@
     "price": 2.12,
     "american": "+112",
     "book": "Bally Bet",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-10-21T18:41:07Z",
     "strategy": "shop",
     "p": 0.4753,
@@ -114,7 +146,8 @@
     "tier": "lean",
     "close_fair": 0.4119,
     "clv": -0.1268,
-    "close_checked": "2026-10-22T17:34:10Z"
+    "close_checked": "2026-10-22T17:34:10Z",
+    "locked": "2026-10-22T20:45:57Z"
   },
   {
     "id": "13c0a92ee5159d2f1d2e0368811c9421:h2h:Home:",
@@ -132,7 +165,7 @@
     "price": 1.62,
     "american": "-161",
     "book": "Bally Bet",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-10-22T06:32:39Z",
     "strategy": "shop",
     "p": 0.6206,
@@ -142,7 +175,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.6206,
     "tier": "lean",
-    "locked": "2026-10-22T17:34:10Z"
+    "locked": "2026-10-22T17:34:10Z",
+    "units": -1.0,
+    "final": "2-4"
   },
   {
     "id": "2ebbccdeea2dab59717d5c3d802c3fed:h2h:Away:",
