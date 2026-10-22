@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T12:18:36Z",
+  "updated": "2026-10-22T17:34:10Z",
   "record": {
     "wins": 0,
     "losses": 2,
@@ -22,12 +22,10 @@
     "beat_close": 0.0,
     "clv_n": 1
   },
-  "credits_remaining": 448,
+  "credits_remaining": 444,
   "refreshed": [
-    "EPL",
-    "LALIGA",
-    "LIGUE1",
-    "SERIEA"
+    "BUNDESLIGA",
+    "UEL"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -35,9 +33,8 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: EPL 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 40/40 priced (36 derived))",
-    "odds: LALIGA 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 44/44 priced (36 derived))",
-    "odds: SERIEA 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 42/42 priced (28 derived))",
-    "odds: LIGUE1 19 games, 1 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/40 priced (30 derived))"
+    "lock: Dinamo Zagreb to win (Dinamo Zagreb v NEC Nijmegen) @ -161",
+    "odds: BUNDESLIGA 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 44/44 priced (36 derived))",
+    "odds: UEL 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 34/42 priced (32 derived))"
   ]
 }

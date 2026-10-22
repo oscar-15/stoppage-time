@@ -52,9 +52,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.6578,
     "tier": "lean",
-    "close_fair": 0.6484,
-    "clv": -0.008,
-    "close_checked": "2026-10-22T06:32:39Z"
+    "close_fair": 0.6551,
+    "clv": 0.0022,
+    "close_checked": "2026-10-22T17:34:10Z"
   },
   {
     "id": "410fd021774146ae969af3713990ed87:h2h:Home:",
@@ -82,9 +82,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.5539,
     "tier": "lean",
-    "close_fair": 0.5671,
-    "clv": 0.0321,
-    "close_checked": "2026-10-22T06:32:39Z"
+    "close_fair": 0.5602,
+    "clv": 0.0195,
+    "close_checked": "2026-10-22T17:34:10Z"
   },
   {
     "id": "c614844f2e3b782814e4f4e77f98bf2a:totals:Under:2.5",
@@ -112,9 +112,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.4753,
     "tier": "lean",
-    "close_fair": 0.4383,
-    "clv": -0.0708,
-    "close_checked": "2026-10-22T06:32:39Z"
+    "close_fair": 0.4119,
+    "clv": -0.1268,
+    "close_checked": "2026-10-22T17:34:10Z"
   },
   {
     "id": "13c0a92ee5159d2f1d2e0368811c9421:h2h:Home:",
@@ -132,7 +132,7 @@
     "price": 1.62,
     "american": "-161",
     "book": "Bally Bet",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-10-22T06:32:39Z",
     "strategy": "shop",
     "p": 0.6206,
@@ -141,7 +141,8 @@
     "ev": 0.0054,
     "fair_src": "Pinnacle",
     "open_fair": 0.6206,
-    "tier": "lean"
+    "tier": "lean",
+    "locked": "2026-10-22T17:34:10Z"
   },
   {
     "id": "2ebbccdeea2dab59717d5c3d802c3fed:h2h:Away:",
