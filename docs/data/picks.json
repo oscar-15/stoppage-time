@@ -25,9 +25,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.6578,
     "tier": "lean",
-    "close_fair": 0.6404,
-    "clv": -0.0202,
-    "close_checked": "2026-10-21T18:41:07Z"
+    "close_fair": 0.6484,
+    "clv": -0.008,
+    "close_checked": "2026-10-22T06:32:39Z"
   },
   {
     "id": "410fd021774146ae969af3713990ed87:h2h:Home:",
@@ -54,7 +54,10 @@
     "ev": 0.0081,
     "fair_src": "Pinnacle",
     "open_fair": 0.5539,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.5671,
+    "clv": 0.0321,
+    "close_checked": "2026-10-22T06:32:39Z"
   },
   {
     "id": "c614844f2e3b782814e4f4e77f98bf2a:totals:Under:2.5",
@@ -81,6 +84,36 @@
     "ev": 0.0077,
     "fair_src": "Pinnacle",
     "open_fair": 0.4753,
+    "tier": "lean",
+    "close_fair": 0.4383,
+    "clv": -0.0708,
+    "close_checked": "2026-10-22T06:32:39Z"
+  },
+  {
+    "id": "13c0a92ee5159d2f1d2e0368811c9421:h2h:Home:",
+    "event_id": "13c0a92ee5159d2f1d2e0368811c9421",
+    "sport_key": "soccer_uefa_europa_league",
+    "comp": "UEL",
+    "comp_name": "Europa League",
+    "home": "Dinamo Zagreb",
+    "away": "NEC Nijmegen",
+    "kickoff": "2026-10-22T16:45:00Z",
+    "market": "h2h",
+    "selection": "Home",
+    "point": null,
+    "label": "Dinamo Zagreb to win",
+    "price": 1.62,
+    "american": "-161",
+    "book": "Bally Bet",
+    "status": "pending",
+    "created": "2026-10-22T06:32:39Z",
+    "strategy": "shop",
+    "p": 0.6206,
+    "model_p": 0.6206,
+    "market_p": 0.6173,
+    "ev": 0.0054,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.6206,
     "tier": "lean"
   },
   {
