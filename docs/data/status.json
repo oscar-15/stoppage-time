@@ -1,43 +1,40 @@
 {
-  "updated": "2026-10-23T18:40:06Z",
+  "updated": "2026-10-23T22:00:17Z",
   "record": {
     "wins": 0,
-    "losses": 2,
+    "losses": 3,
     "voids": 0,
-    "units": -2.0,
+    "units": -3.0,
     "roi": -1.0,
-    "graded": 2,
-    "avg_clv": 0.05,
-    "beat_close": 0.5,
-    "clv_n": 2
+    "graded": 3,
+    "avg_clv": 0.0369,
+    "beat_close": 0.667,
+    "clv_n": 3
   },
   "lean_record": {
-    "wins": 1,
-    "losses": 4,
+    "wins": 2,
+    "losses": 5,
     "voids": 0,
-    "units": -3.47,
-    "roi": -0.694,
-    "graded": 5,
-    "avg_clv": -0.0447,
-    "beat_close": 0.5,
-    "clv_n": 4
+    "units": -3.43,
+    "roi": -0.49,
+    "graded": 7,
+    "avg_clv": -0.0298,
+    "beat_close": 0.6,
+    "clv_n": 5
   },
-  "credits_remaining": 412,
-  "refreshed": [
-    "EPL",
-    "LALIGA",
-    "LIGUE1",
-    "SERIEA"
-  ],
+  "credits_remaining": 406,
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: EPL 21 games, 3 bets clear the bar (h2h 63/63 priced (0 derived), totals 42/42 priced (36 derived))",
-    "odds: LALIGA 20 games, 1 bets clear the bar (h2h 60/60 priced (0 derived), totals 46/46 priced (38 derived))",
-    "odds: SERIEA 20 games, 1 bets clear the bar (h2h 60/60 priced (0 derived), totals 42/42 priced (28 derived))",
-    "odds: LIGUE1 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (30 derived))"
+    "lock: Alavés to win (Alavés v Málaga) @ -141",
+    "lock: Under 2.5 goals (Ipswich Town v Nottingham Forest) @ +104",
+    "lock: Draw (Brest v Nice) @ +260",
+    "grade: Under 2.5 goals (Ipswich Town v Nottingham Forest 1-1) -> won",
+    "grade: Draw (Brest v Nice 1-2) -> lost",
+    "grade: Alavés to win (Alavés v Málaga 1-1) -> lost"
   ]
 }
