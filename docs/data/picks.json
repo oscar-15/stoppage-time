@@ -24,7 +24,37 @@
     "ev": 0.0276,
     "fair_src": "Pinnacle",
     "open_fair": 0.2569,
-    "tier": "pick"
+    "tier": "pick",
+    "close_fair": 0.261,
+    "clv": 0.044,
+    "close_checked": "2026-10-23T18:40:06Z"
+  },
+  {
+    "id": "f66e4f29c1b7bcfc5ab58c0b88c8850b:h2h:Draw:",
+    "event_id": "f66e4f29c1b7bcfc5ab58c0b88c8850b",
+    "sport_key": "soccer_epl",
+    "comp": "EPL",
+    "comp_name": "Premier League",
+    "home": "Arsenal",
+    "away": "Everton",
+    "kickoff": "2026-10-24T14:00:00Z",
+    "market": "h2h",
+    "selection": "Draw",
+    "point": null,
+    "label": "Draw",
+    "price": 4.6,
+    "american": "+360",
+    "book": "MGM",
+    "status": "pending",
+    "created": "2026-10-23T18:40:06Z",
+    "strategy": "shop",
+    "p": 0.2186,
+    "model_p": 0.2186,
+    "market_p": 0.2174,
+    "ev": 0.0054,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.2186,
+    "tier": "lean"
   },
   {
     "id": "b7f0880e3da978f9481f7cb5697e2aa5:h2h:Draw:",
@@ -51,7 +81,10 @@
     "ev": 0.0378,
     "fair_src": "Pinnacle",
     "open_fair": 0.3243,
-    "tier": "pick"
+    "tier": "pick",
+    "close_fair": 0.3193,
+    "clv": 0.0219,
+    "close_checked": "2026-10-23T18:40:06Z"
   },
   {
     "id": "aca5dd297dbee71f576f7641569fe578:h2h:Away:",
@@ -78,7 +111,10 @@
     "ev": 0.0107,
     "fair_src": "Pinnacle",
     "open_fair": 0.598,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.5982,
+    "clv": 0.0109,
+    "close_checked": "2026-10-23T18:40:06Z"
   },
   {
     "id": "903eb4941471ffe20d525b02dd3b77aa:h2h:Home:",
@@ -106,9 +142,36 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.5906,
     "tier": "lean",
-    "close_fair": 0.6068,
-    "clv": 0.0376,
-    "close_checked": "2026-10-23T09:32:17Z"
+    "close_fair": 0.6023,
+    "clv": 0.0299,
+    "close_checked": "2026-10-23T18:40:06Z"
+  },
+  {
+    "id": "d0202960708a442401d7fc7bd74a0183:totals:Under:2.5",
+    "event_id": "d0202960708a442401d7fc7bd74a0183",
+    "sport_key": "soccer_epl",
+    "comp": "EPL",
+    "comp_name": "Premier League",
+    "home": "Ipswich Town",
+    "away": "Nottingham Forest",
+    "kickoff": "2026-10-23T19:00:00Z",
+    "market": "totals",
+    "selection": "Under",
+    "point": 2.5,
+    "label": "Under 2.5 goals",
+    "price": 2.04,
+    "american": "+104",
+    "book": "betPARX",
+    "status": "pending",
+    "created": "2026-10-23T18:40:06Z",
+    "strategy": "shop",
+    "p": 0.4934,
+    "model_p": 0.4934,
+    "market_p": 0.4902,
+    "ev": 0.0065,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.4934,
+    "tier": "lean"
   },
   {
     "id": "8aa36b30d655d6c81ed98bf9ec1b4039:h2h:Draw:",
@@ -136,9 +199,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.2859,
     "tier": "pick",
-    "close_fair": 0.275,
-    "clv": -0.0101,
-    "close_checked": "2026-10-23T09:32:17Z"
+    "close_fair": 0.2808,
+    "clv": 0.0109,
+    "close_checked": "2026-10-23T18:40:06Z"
   },
   {
     "id": "5290ae078657c841a4e1d4ebb626825a:h2h:Home:",
