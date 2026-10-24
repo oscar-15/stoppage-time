@@ -1,33 +1,30 @@
 {
-  "updated": "2026-10-24T13:33:23Z",
+  "updated": "2026-10-24T16:53:46Z",
   "record": {
     "wins": 0,
-    "losses": 3,
+    "losses": 4,
     "voids": 0,
-    "units": -3.0,
+    "units": -4.0,
     "roi": -1.0,
-    "graded": 3,
-    "avg_clv": 0.0278,
-    "beat_close": 0.75,
-    "clv_n": 4
+    "graded": 4,
+    "avg_clv": 0.03,
+    "beat_close": 0.8,
+    "clv_n": 5
   },
   "lean_record": {
     "wins": 2,
-    "losses": 6,
+    "losses": 7,
     "voids": 0,
-    "units": -4.43,
-    "roi": -0.5537,
-    "graded": 8,
-    "avg_clv": -0.022,
-    "beat_close": 0.667,
-    "clv_n": 6
+    "units": -5.43,
+    "roi": -0.6033,
+    "graded": 9,
+    "avg_clv": -0.0398,
+    "beat_close": 0.571,
+    "clv_n": 7
   },
-  "credits_remaining": 384,
+  "credits_remaining": 378,
   "refreshed": [
-    "EPL",
-    "LALIGA",
-    "LIGUE1",
-    "SERIEA"
+    "LIGUE1"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -35,12 +32,11 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Draw (Cagliari v Bologna) @ +220",
-    "lock: Manchester City to win (Aston Villa v Manchester City) @ -145",
-    "grade: Manchester City to win (Aston Villa v Manchester City 2-1) -> lost",
-    "odds: EPL 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 42/42 priced (36 derived))",
-    "odds: LALIGA 19 games, 1 bets clear the bar (h2h 57/57 priced (0 derived), totals 44/44 priced (40 derived))",
-    "odds: SERIEA 19 games, 2 bets clear the bar (h2h 57/57 priced (0 derived), totals 40/40 priced (24 derived))",
-    "odds: LIGUE1 17 games, 1 bets clear the bar (h2h 51/51 priced (0 derived), totals 38/38 priced (30 derived))"
+    "lock: Draw (Valencia v Villarreal) @ +300",
+    "lock: Draw (Napoli v AS Roma) @ +240",
+    "lock: Draw (Arsenal v Everton) @ +360",
+    "grade: Draw (Arsenal v Everton 2-0) -> lost",
+    "grade: Draw (Cagliari v Bologna 0-2) -> lost",
+    "odds: LIGUE1 17 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 38/38 priced (30 derived))"
   ]
 }
