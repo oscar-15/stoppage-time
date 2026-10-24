@@ -1,5 +1,32 @@
 [
   {
+    "id": "95cfaecfe96bb7ced1fb6af974a4110b:h2h:Draw:",
+    "event_id": "95cfaecfe96bb7ced1fb6af974a4110b",
+    "sport_key": "soccer_italy_serie_a",
+    "comp": "SERIEA",
+    "comp_name": "Serie A",
+    "home": "Genoa",
+    "away": "Venezia",
+    "kickoff": "2026-10-25T14:00:00Z",
+    "market": "h2h",
+    "selection": "Draw",
+    "point": null,
+    "label": "Draw",
+    "price": 3.4,
+    "american": "+240",
+    "book": "MGM",
+    "status": "pending",
+    "created": "2026-10-24T04:58:18Z",
+    "strategy": "shop",
+    "p": 0.2985,
+    "model_p": 0.2985,
+    "market_p": 0.2941,
+    "ev": 0.0149,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.2985,
+    "tier": "lean"
+  },
+  {
     "id": "0dae715cc56fe201f9e667917c126691:h2h:Draw:",
     "event_id": "0dae715cc56fe201f9e667917c126691",
     "sport_key": "soccer_spain_la_liga",
@@ -25,9 +52,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.2569,
     "tier": "pick",
-    "close_fair": 0.261,
-    "clv": 0.044,
-    "close_checked": "2026-10-23T18:40:06Z"
+    "close_fair": 0.2626,
+    "clv": 0.0503,
+    "close_checked": "2026-10-24T04:58:18Z"
   },
   {
     "id": "f66e4f29c1b7bcfc5ab58c0b88c8850b:h2h:Draw:",
@@ -54,7 +81,10 @@
     "ev": 0.0054,
     "fair_src": "Pinnacle",
     "open_fair": 0.2186,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.2151,
+    "clv": -0.0108,
+    "close_checked": "2026-10-24T04:58:18Z"
   },
   {
     "id": "b7f0880e3da978f9481f7cb5697e2aa5:h2h:Draw:",
@@ -82,9 +112,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.3243,
     "tier": "pick",
-    "close_fair": 0.3193,
-    "clv": 0.0219,
-    "close_checked": "2026-10-23T18:40:06Z"
+    "close_fair": 0.3126,
+    "clv": 0.0003,
+    "close_checked": "2026-10-24T04:58:18Z"
   },
   {
     "id": "aca5dd297dbee71f576f7641569fe578:h2h:Away:",
@@ -112,9 +142,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.598,
     "tier": "lean",
-    "close_fair": 0.5982,
-    "clv": 0.0109,
-    "close_checked": "2026-10-23T18:40:06Z"
+    "close_fair": 0.6017,
+    "clv": 0.0169,
+    "close_checked": "2026-10-24T04:58:18Z"
   },
   {
     "id": "903eb4941471ffe20d525b02dd3b77aa:h2h:Home:",
