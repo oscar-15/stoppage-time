@@ -45,7 +45,7 @@
     "price": 3.7,
     "american": "+270",
     "book": "theScore Bet",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-10-24T13:33:23Z",
     "strategy": "shop",
     "p": 0.273,
@@ -57,7 +57,8 @@
     "tier": "lean",
     "close_fair": 0.2764,
     "clv": 0.0227,
-    "close_checked": "2026-10-24T16:53:46Z"
+    "close_checked": "2026-10-24T16:53:46Z",
+    "locked": "2026-10-24T19:24:53Z"
   },
   {
     "id": "0dae715cc56fe201f9e667917c126691:h2h:Draw:",
@@ -75,7 +76,7 @@
     "price": 4.0,
     "american": "+300",
     "book": "Hard Rock",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-10-23T09:32:17Z",
     "strategy": "shop",
     "p": 0.2569,
@@ -88,7 +89,9 @@
     "close_fair": 0.2597,
     "clv": 0.0388,
     "close_checked": "2026-10-24T13:33:23Z",
-    "locked": "2026-10-24T16:53:46Z"
+    "locked": "2026-10-24T16:53:46Z",
+    "units": -1.0,
+    "final": "1-2"
   },
   {
     "id": "0b4894e9fb123ef3045269f97e339eba:h2h:Draw:",
@@ -106,7 +109,7 @@
     "price": 3.4,
     "american": "+240",
     "book": "theScore Bet",
-    "status": "locked",
+    "status": "won",
     "created": "2026-10-24T13:33:23Z",
     "strategy": "shop",
     "p": 0.296,
@@ -116,7 +119,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.296,
     "tier": "lean",
-    "locked": "2026-10-24T16:53:46Z"
+    "locked": "2026-10-24T16:53:46Z",
+    "units": 2.4,
+    "final": "3-3"
   },
   {
     "id": "f66e4f29c1b7bcfc5ab58c0b88c8850b:h2h:Draw:",

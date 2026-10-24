@@ -1,30 +1,30 @@
 {
-  "updated": "2026-10-24T16:53:46Z",
+  "updated": "2026-10-24T19:24:53Z",
   "record": {
     "wins": 0,
-    "losses": 4,
+    "losses": 5,
     "voids": 0,
-    "units": -4.0,
+    "units": -5.0,
     "roi": -1.0,
-    "graded": 4,
+    "graded": 5,
     "avg_clv": 0.03,
     "beat_close": 0.8,
     "clv_n": 5
   },
   "lean_record": {
-    "wins": 2,
+    "wins": 3,
     "losses": 7,
     "voids": 0,
-    "units": -5.43,
-    "roi": -0.6033,
-    "graded": 9,
-    "avg_clv": -0.0398,
-    "beat_close": 0.571,
-    "clv_n": 7
+    "units": -3.03,
+    "roi": -0.303,
+    "graded": 10,
+    "avg_clv": -0.032,
+    "beat_close": 0.625,
+    "clv_n": 8
   },
-  "credits_remaining": 378,
+  "credits_remaining": 372,
   "refreshed": [
-    "LIGUE1"
+    "BUNDESLIGA"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -32,11 +32,9 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Draw (Valencia v Villarreal) @ +300",
-    "lock: Draw (Napoli v AS Roma) @ +240",
-    "lock: Draw (Arsenal v Everton) @ +360",
-    "grade: Draw (Arsenal v Everton 2-0) -> lost",
-    "grade: Draw (Cagliari v Bologna 0-2) -> lost",
-    "odds: LIGUE1 17 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 38/38 priced (30 derived))"
+    "lock: Draw (RC Lens v Paris FC) @ +270",
+    "grade: Draw (Napoli v AS Roma 3-3) -> won",
+    "grade: Draw (Valencia v Villarreal 1-2) -> lost",
+    "odds: BUNDESLIGA 11 games, 0 bets clear the bar (h2h 33/33 priced (0 derived), totals 26/26 priced (20 derived))"
   ]
 }
