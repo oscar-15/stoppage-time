@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T19:24:53Z",
+  "updated": "2026-10-24T21:50:16Z",
   "record": {
     "wins": 0,
     "losses": 5,
@@ -13,18 +13,20 @@
   },
   "lean_record": {
     "wins": 3,
-    "losses": 7,
+    "losses": 8,
     "voids": 0,
-    "units": -3.03,
-    "roi": -0.303,
-    "graded": 10,
+    "units": -4.03,
+    "roi": -0.3664,
+    "graded": 11,
     "avg_clv": -0.032,
     "beat_close": 0.625,
     "clv_n": 8
   },
-  "credits_remaining": 372,
+  "credits_remaining": 364,
   "refreshed": [
-    "BUNDESLIGA"
+    "EPL",
+    "LALIGA",
+    "SERIEA"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -32,9 +34,9 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Draw (RC Lens v Paris FC) @ +270",
-    "grade: Draw (Napoli v AS Roma 3-3) -> won",
-    "grade: Draw (Valencia v Villarreal 1-2) -> lost",
-    "odds: BUNDESLIGA 11 games, 0 bets clear the bar (h2h 33/33 priced (0 derived), totals 26/26 priced (20 derived))"
+    "grade: Draw (RC Lens v Paris FC 2-1) -> lost",
+    "odds: EPL 26 games, 1 bets clear the bar (h2h 78/78 priced (0 derived), totals 30/36 priced (26 derived))",
+    "odds: LALIGA 15 games, 0 bets clear the bar (h2h 45/45 priced (0 derived), totals 32/32 priced (28 derived))",
+    "odds: SERIEA 15 games, 1 bets clear the bar (h2h 45/45 priced (0 derived), totals 32/32 priced (24 derived))"
   ]
 }
