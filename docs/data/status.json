@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T00:14:15Z",
+  "updated": "2026-10-25T05:11:33Z",
   "record": {
     "wins": 0,
     "losses": 5,
@@ -22,12 +22,18 @@
     "beat_close": 0.625,
     "clv_n": 8
   },
-  "credits_remaining": 364,
-  "refreshed": [],
+  "credits_remaining": 360,
+  "refreshed": [
+    "BUNDESLIGA",
+    "LIGUE1"
+  ],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
-  "log": []
+  "log": [
+    "odds: BUNDESLIGA 11 games, 1 bets clear the bar (h2h 33/33 priced (0 derived), totals 26/26 priced (20 derived))",
+    "odds: LIGUE1 16 games, 1 bets clear the bar (h2h 48/48 priced (0 derived), totals 34/34 priced (26 derived))"
+  ]
 }
