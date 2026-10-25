@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T20:44:33Z",
+  "updated": "2026-10-25T23:10:02Z",
   "record": {
     "wins": 0,
     "losses": 5,
@@ -22,9 +22,9 @@
     "beat_close": 0.667,
     "clv_n": 12
   },
-  "credits_remaining": 336,
+  "credits_remaining": 334,
   "refreshed": [
-    "LALIGA"
+    "LIGUE1"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -32,9 +32,6 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "grade: Draw (Sunderland v Leeds United 0-0) -> won",
-    "grade: Toulouse to win (Toulouse v Troyes 0-0) -> lost",
-    "grade: Over 2.5 goals (Lecce v Juventus 0-2) -> lost",
-    "odds: LALIGA 22 games, 0 bets clear the bar (h2h 39/39 priced (0 derived), totals 32/32 priced (28 derived))"
+    "odds: LIGUE1 19 games, 0 bets clear the bar (h2h 57/57 priced (0 derived), totals 34/34 priced (26 derived))"
   ]
 }
