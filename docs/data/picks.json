@@ -78,7 +78,10 @@
     "ev": 0.0067,
     "fair_src": "Pinnacle",
     "open_fair": 0.6253,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.6436,
+    "clv": 0.0362,
+    "close_checked": "2026-10-25T14:18:54Z"
   },
   {
     "id": "2fd479cbb110c8f057e363bb06195f2b:h2h:Away:",
@@ -105,7 +108,10 @@
     "ev": 0.0062,
     "fair_src": "Pinnacle",
     "open_fair": 0.4472,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.4667,
+    "clv": 0.05,
+    "close_checked": "2026-10-25T14:18:54Z"
   },
   {
     "id": "95cfaecfe96bb7ced1fb6af974a4110b:h2h:Draw:",
@@ -123,7 +129,7 @@
     "price": 3.4,
     "american": "+240",
     "book": "MGM",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-10-24T04:58:18Z",
     "strategy": "shop",
     "p": 0.2985,
@@ -135,7 +141,8 @@
     "tier": "lean",
     "close_fair": 0.2973,
     "clv": 0.0107,
-    "close_checked": "2026-10-25T10:04:57Z"
+    "close_checked": "2026-10-25T10:04:57Z",
+    "locked": "2026-10-25T14:18:54Z"
   },
   {
     "id": "69493b5ebb84f24ab1d6023a30ee89f0:h2h:Home:",
@@ -153,7 +160,7 @@
     "price": 5.0,
     "american": "+400",
     "book": "BetRivers",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-10-24T21:50:16Z",
     "strategy": "shop",
     "p": 0.202,
@@ -165,7 +172,8 @@
     "tier": "lean",
     "close_fair": 0.186,
     "clv": -0.07,
-    "close_checked": "2026-10-25T10:04:57Z"
+    "close_checked": "2026-10-25T10:04:57Z",
+    "locked": "2026-10-25T14:18:54Z"
   },
   {
     "id": "33fb7467b23c91d57dc976d9ab05ea97:h2h:Draw:",
@@ -183,7 +191,7 @@
     "price": 3.6,
     "american": "+260",
     "book": "Bally Bet",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-10-25T10:04:57Z",
     "strategy": "shop",
     "p": 0.2794,
@@ -192,7 +200,8 @@
     "ev": 0.0057,
     "fair_src": "Pinnacle",
     "open_fair": 0.2794,
-    "tier": "lean"
+    "tier": "lean",
+    "locked": "2026-10-25T14:18:54Z"
   },
   {
     "id": "fc6c50376190b578cfeb38c029db8487:h2h:Draw:",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T10:04:57Z",
+  "updated": "2026-10-25T14:18:54Z",
   "record": {
     "wins": 0,
     "losses": 5,
@@ -18,15 +18,14 @@
     "units": -4.03,
     "roi": -0.3664,
     "graded": 11,
-    "avg_clv": -0.032,
-    "beat_close": 0.625,
-    "clv_n": 8
+    "avg_clv": -0.0315,
+    "beat_close": 0.6,
+    "clv_n": 10
   },
-  "credits_remaining": 354,
+  "credits_remaining": 350,
   "refreshed": [
-    "EPL",
-    "LALIGA",
-    "SERIEA"
+    "BUNDESLIGA",
+    "LIGUE1"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -34,8 +33,10 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: EPL 26 games, 2 bets clear the bar (h2h 78/78 priced (0 derived), totals 32/42 priced (28 derived))",
-    "odds: LALIGA 15 games, 0 bets clear the bar (h2h 45/45 priced (0 derived), totals 30/30 priced (26 derived))",
-    "odds: SERIEA 15 games, 2 bets clear the bar (h2h 45/45 priced (0 derived), totals 32/32 priced (20 derived))"
+    "lock: Draw (Genoa v Venezia) @ +240",
+    "lock: Hull City to win (Hull City v Brentford) @ +400",
+    "lock: Draw (Manchester United v Bournemouth) @ +260",
+    "odds: BUNDESLIGA 11 games, 0 bets clear the bar (h2h 33/33 priced (0 derived), totals 26/26 priced (22 derived))",
+    "odds: LIGUE1 16 games, 0 bets clear the bar (h2h 48/48 priced (0 derived), totals 34/34 priced (26 derived))"
   ]
 }
