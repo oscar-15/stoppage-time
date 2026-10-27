@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T04:50:35Z",
+  "updated": "2026-10-27T10:23:54Z",
   "record": {
     "wins": 0,
     "losses": 5,
@@ -23,15 +23,11 @@
     "clv_n": 12
   },
   "credits_remaining": 324,
-  "refreshed": [
-    "SERIEA"
-  ],
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
-  "log": [
-    "odds: SERIEA 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 42/42 priced (30 derived))"
-  ]
+  "log": []
 }
