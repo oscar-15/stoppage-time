@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T15:59:27Z",
+  "updated": "2026-10-27T20:36:30Z",
   "record": {
     "wins": 0,
     "losses": 5,
@@ -23,15 +23,13 @@
     "clv_n": 12
   },
   "credits_remaining": 322,
-  "refreshed": [
-    "SERIEA"
-  ],
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: SERIEA 20 games, 1 bets clear the bar (h2h 60/60 priced (0 derived), totals 42/42 priced (30 derived))"
+    "lock: Como to win (Torino v Como) @ -120"
   ]
 }

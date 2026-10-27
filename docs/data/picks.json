@@ -15,7 +15,7 @@
     "price": 1.83,
     "american": "-120",
     "book": "MGM",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-10-27T15:59:27Z",
     "strategy": "shop",
     "p": 0.5507,
@@ -24,7 +24,8 @@
     "ev": 0.0077,
     "fair_src": "Pinnacle",
     "open_fair": 0.5507,
-    "tier": "lean"
+    "tier": "lean",
+    "locked": "2026-10-27T20:36:30Z"
   },
   {
     "id": "63af660d4d0d52f8ac7685172ef939c4:totals:Over:2.5",
