@@ -24,7 +24,10 @@
     "ev": 0.0189,
     "fair_src": "Pinnacle (derived)",
     "open_fair": 0.4739,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.4798,
+    "clv": 0.0316,
+    "close_checked": "2026-10-29T01:43:25Z"
   },
   {
     "id": "7d989a0a7bae47eb957731e97c5bd9c1:h2h:Away:",
