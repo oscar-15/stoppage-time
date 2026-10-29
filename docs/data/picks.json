@@ -15,7 +15,7 @@
     "price": 2.15,
     "american": "+115",
     "book": "Bally Bet",
-    "status": "pending",
+    "status": "won",
     "created": "2026-10-28T17:20:04Z",
     "strategy": "shop",
     "p": 0.4739,
@@ -27,7 +27,10 @@
     "tier": "lean",
     "close_fair": 0.5027,
     "clv": 0.0807,
-    "close_checked": "2026-10-29T15:29:40Z"
+    "close_checked": "2026-10-29T15:29:40Z",
+    "locked": "2026-10-29T20:30:24Z",
+    "units": 1.15,
+    "final": "5-1"
   },
   {
     "id": "7d989a0a7bae47eb957731e97c5bd9c1:h2h:Away:",
