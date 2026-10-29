@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T01:43:25Z",
+  "updated": "2026-10-29T08:21:57Z",
   "record": {
     "wins": 0,
     "losses": 5,
@@ -22,9 +22,11 @@
     "beat_close": 0.667,
     "clv_n": 12
   },
-  "credits_remaining": 314,
+  "credits_remaining": 308,
   "refreshed": [
-    "SERIEA"
+    "BUNDESLIGA",
+    "LALIGA",
+    "LIGUE1"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -32,6 +34,8 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: SERIEA 12 games, 0 bets clear the bar (h2h 36/36 priced (0 derived), totals 26/26 priced (18 derived))"
+    "odds: LALIGA 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 44/44 priced (34 derived))",
+    "odds: BUNDESLIGA 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 42/42 priced (36 derived))",
+    "odds: LIGUE1 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 42/42 priced (34 derived))"
   ]
 }
