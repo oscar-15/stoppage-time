@@ -15,7 +15,7 @@
     "price": 1.61,
     "american": "-164",
     "book": "Hard Rock",
-    "status": "pending",
+    "status": "won",
     "created": "2026-10-30T06:21:16Z",
     "strategy": "shop",
     "p": 0.6298,
@@ -27,7 +27,10 @@
     "tier": "lean",
     "close_fair": 0.6476,
     "clv": 0.0426,
-    "close_checked": "2026-10-31T08:48:24Z"
+    "close_checked": "2026-10-31T08:48:24Z",
+    "locked": "2026-10-31T15:15:37Z",
+    "units": 0.61,
+    "final": "0-2"
   },
   {
     "id": "667cf69986b200753742c90cb9c5126c:totals:Over:3.5",
