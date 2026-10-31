@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T15:15:37Z",
+  "updated": "2026-10-31T19:31:10Z",
   "record": {
     "wins": 0,
     "losses": 5,
@@ -22,15 +22,24 @@
     "beat_close": 0.714,
     "clv_n": 14
   },
-  "credits_remaining": 266,
-  "refreshed": [],
+  "credits_remaining": 256,
+  "refreshed": [
+    "BUNDESLIGA",
+    "EPL",
+    "LALIGA",
+    "LIGUE1",
+    "SERIEA"
+  ],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Atlético Madrid to win (Levante v Atlético Madrid) @ -164",
-    "grade: Atlético Madrid to win (Levante v Atlético Madrid 0-2) -> won"
+    "odds: EPL 15 games, 0 bets clear the bar (h2h 42/42 priced (0 derived), totals 28/28 priced (20 derived))",
+    "odds: LALIGA 17 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 34/34 priced (22 derived))",
+    "odds: BUNDESLIGA 12 games, 0 bets clear the bar (h2h 36/36 priced (0 derived), totals 26/26 priced (22 derived))",
+    "odds: SERIEA 8 games, 0 bets clear the bar (h2h 24/24 priced (0 derived), totals 16/16 priced (10 derived))",
+    "odds: LIGUE1 15 games, 1 bets clear the bar (h2h 45/45 priced (0 derived), totals 36/36 priced (30 derived))"
   ]
 }
