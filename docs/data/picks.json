@@ -15,7 +15,7 @@
     "price": 4.25,
     "american": "+325",
     "book": "Hard Rock",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-10-31T19:31:10Z",
     "strategy": "shop",
     "p": 0.237,
@@ -27,7 +27,10 @@
     "tier": "lean",
     "close_fair": 0.2359,
     "clv": 0.0027,
-    "close_checked": "2026-11-01T09:08:27Z"
+    "close_checked": "2026-11-01T09:08:27Z",
+    "locked": "2026-11-01T16:17:10Z",
+    "units": -1.0,
+    "final": "5-1"
   },
   {
     "id": "005711684f3e51024ac40c1ee69978e9:h2h:Away:",
