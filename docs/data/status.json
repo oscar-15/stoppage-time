@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T16:17:10Z",
+  "updated": "2026-11-01T20:46:44Z",
   "record": {
     "wins": 0,
     "losses": 5,
@@ -22,15 +22,22 @@
     "beat_close": 0.733,
     "clv_n": 15
   },
-  "credits_remaining": 488,
-  "refreshed": [],
+  "credits_remaining": 480,
+  "refreshed": [
+    "EPL",
+    "LALIGA",
+    "LIGUE1",
+    "SERIEA"
+  ],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Auxerre to win (Strasbourg v Auxerre) @ +325",
-    "grade: Auxerre to win (Strasbourg v Auxerre 5-1) -> lost"
+    "odds: EPL 12 games, 0 bets clear the bar (h2h 36/36 priced (0 derived), totals 24/24 priced (20 derived))",
+    "odds: LALIGA 12 games, 0 bets clear the bar (h2h 36/36 priced (0 derived), totals 22/24 priced (14 derived))",
+    "odds: SERIEA 13 games, 0 bets clear the bar (h2h 39/39 priced (0 derived), totals 26/26 priced (22 derived))",
+    "odds: LIGUE1 11 games, 0 bets clear the bar (h2h 33/33 priced (0 derived), totals 24/24 priced (22 derived))"
   ]
 }
