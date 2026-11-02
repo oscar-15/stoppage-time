@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T06:44:45Z",
+  "updated": "2026-11-02T16:59:11Z",
   "record": {
     "wins": 0,
     "losses": 5,
@@ -22,7 +22,7 @@
     "beat_close": 0.733,
     "clv_n": 15
   },
-  "credits_remaining": 470,
+  "credits_remaining": 460,
   "refreshed": [
     "EPL",
     "LALIGA",
@@ -36,10 +36,10 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: EPL 12 games, 1 bets clear the bar (h2h 36/36 priced (0 derived), totals 24/24 priced (20 derived))",
+    "odds: EPL 21 games, 1 bets clear the bar (h2h 36/63 priced (0 derived), totals 24/48 priced (20 derived))",
     "odds: LALIGA 11 games, 0 bets clear the bar (h2h 33/33 priced (0 derived), totals 22/22 priced (14 derived))",
-    "odds: SERIEA 12 games, 0 bets clear the bar (h2h 36/36 priced (0 derived), totals 28/28 priced (24 derived))",
-    "odds: LIGUE1 10 games, 0 bets clear the bar (h2h 30/30 priced (0 derived), totals 22/22 priced (22 derived))",
-    "odds: UCL 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (30 derived))"
+    "odds: SERIEA 12 games, 0 bets clear the bar (h2h 36/36 priced (0 derived), totals 30/30 priced (26 derived))",
+    "odds: LIGUE1 19 games, 0 bets clear the bar (h2h 30/57 priced (0 derived), totals 22/46 priced (22 derived))",
+    "odds: UCL 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (28 derived))"
   ]
 }
