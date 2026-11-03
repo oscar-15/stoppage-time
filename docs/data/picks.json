@@ -1,5 +1,32 @@
 [
   {
+    "id": "6d386ed81fabf67aa19fbd442c0d8c60:h2h:Away:",
+    "event_id": "6d386ed81fabf67aa19fbd442c0d8c60",
+    "sport_key": "soccer_uefa_champs_league",
+    "comp": "UCL",
+    "comp_name": "Champions League",
+    "home": "Borussia Dortmund",
+    "away": "Real Betis",
+    "kickoff": "2026-11-04T20:00:00Z",
+    "market": "h2h",
+    "selection": "Away",
+    "point": null,
+    "label": "Real Betis to win",
+    "price": 4.75,
+    "american": "+375",
+    "book": "Bally Bet",
+    "status": "pending",
+    "created": "2026-11-03T14:36:24Z",
+    "strategy": "shop",
+    "p": 0.2147,
+    "model_p": 0.2147,
+    "market_p": 0.2105,
+    "ev": 0.0198,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.2147,
+    "tier": "lean"
+  },
+  {
     "id": "adf608a0e9be02eb1d8b0a6f464a12b1:totals:Over:3.5",
     "event_id": "adf608a0e9be02eb1d8b0a6f464a12b1",
     "sport_key": "soccer_uefa_champs_league",
@@ -24,7 +51,10 @@
     "ev": 0.0143,
     "fair_src": "Pinnacle",
     "open_fair": 0.5228,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.5119,
+    "clv": -0.0069,
+    "close_checked": "2026-11-03T14:36:24Z"
   },
   {
     "id": "bc0b6614c9714816038d5a0ff8963144:h2h:Home:",
@@ -51,7 +81,10 @@
     "ev": 0.0182,
     "fair_src": "Pinnacle",
     "open_fair": 0.4526,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.4483,
+    "clv": 0.0087,
+    "close_checked": "2026-11-03T14:36:24Z"
   },
   {
     "id": "0f552d9c6990c69474f50ff2fb54e9a3:h2h:Home:",
