@@ -42,7 +42,7 @@
     "price": 1.94,
     "american": "-106",
     "book": "Bally Bet",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-11-03T06:32:05Z",
     "strategy": "shop",
     "p": 0.5228,
@@ -54,7 +54,8 @@
     "tier": "lean",
     "close_fair": 0.5119,
     "clv": -0.0069,
-    "close_checked": "2026-11-03T14:36:24Z"
+    "close_checked": "2026-11-03T14:36:24Z",
+    "locked": "2026-11-03T20:36:56Z"
   },
   {
     "id": "bc0b6614c9714816038d5a0ff8963144:h2h:Home:",
@@ -72,7 +73,7 @@
     "price": 2.25,
     "american": "+125",
     "book": "BetRivers",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-11-03T06:32:05Z",
     "strategy": "shop",
     "p": 0.4526,
@@ -84,7 +85,8 @@
     "tier": "lean",
     "close_fair": 0.4483,
     "clv": 0.0087,
-    "close_checked": "2026-11-03T14:36:24Z"
+    "close_checked": "2026-11-03T14:36:24Z",
+    "locked": "2026-11-03T20:36:56Z"
   },
   {
     "id": "0f552d9c6990c69474f50ff2fb54e9a3:h2h:Home:",

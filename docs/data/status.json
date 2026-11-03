@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T14:36:24Z",
+  "updated": "2026-11-03T20:36:56Z",
   "record": {
     "wins": 0,
     "losses": 6,
@@ -18,22 +18,19 @@
     "units": -6.14,
     "roi": -0.2791,
     "graded": 22,
-    "avg_clv": -0.0069,
-    "beat_close": 0.733,
-    "clv_n": 15
+    "avg_clv": -0.006,
+    "beat_close": 0.706,
+    "clv_n": 17
   },
   "credits_remaining": 450,
-  "refreshed": [
-    "UCL",
-    "UEL"
-  ],
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: UCL 18 games, 1 bets clear the bar (h2h 54/54 priced (0 derived), totals 36/36 priced (24 derived))",
-    "odds: UEL 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 42/42 priced (38 derived))"
+    "lock: Over 3.5 goals (LASK v ŠK Slovan Bratislava) @ -106",
+    "lock: Manchester United to win (Manchester United v AS Roma) @ +125"
   ]
 }
