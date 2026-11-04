@@ -1,39 +1,39 @@
 {
-  "updated": "2026-11-04T15:43:09Z",
+  "updated": "2026-11-04T21:49:30Z",
   "record": {
     "wins": 0,
-    "losses": 6,
+    "losses": 7,
     "voids": 0,
-    "units": -6.0,
+    "units": -7.0,
     "roi": -1.0,
-    "graded": 6,
+    "graded": 7,
     "avg_clv": 0.0277,
     "beat_close": 0.833,
     "clv_n": 6
   },
   "lean_record": {
-    "wins": 9,
+    "wins": 10,
     "losses": 15,
     "voids": 0,
-    "units": -3.95,
-    "roi": -0.1646,
-    "graded": 24,
-    "avg_clv": -0.006,
-    "beat_close": 0.706,
-    "clv_n": 17
+    "units": -2.88,
+    "roi": -0.1152,
+    "graded": 25,
+    "avg_clv": -0.0036,
+    "beat_close": 0.684,
+    "clv_n": 19
   },
-  "credits_remaining": 440,
-  "refreshed": [
-    "UCL",
-    "UEL"
-  ],
+  "credits_remaining": 438,
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: UCL 9 games, 1 bets clear the bar (h2h 27/27 priced (0 derived), totals 20/20 priced (14 derived))",
-    "odds: UEL 18 games, 2 bets clear the bar (h2h 54/54 priced (0 derived), totals 44/44 priced (40 derived))"
+    "lock: Real Betis to win (Borussia Dortmund v Real Betis) @ +375",
+    "lock: Over 3.5 goals (Fenerbahce v Liverpool) @ +107",
+    "lock: Under 3.5 goals (AEK Athens v Real Madrid) @ +123",
+    "grade: Over 3.5 goals (Fenerbahce v Liverpool 3-2) -> won",
+    "grade: Under 3.5 goals (AEK Athens v Real Madrid 2-3) -> lost"
   ]
 }
