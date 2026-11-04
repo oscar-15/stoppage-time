@@ -24,6 +24,36 @@
     "ev": 0.0198,
     "fair_src": "Pinnacle",
     "open_fair": 0.2147,
+    "tier": "lean",
+    "close_fair": 0.221,
+    "clv": 0.0496,
+    "close_checked": "2026-11-04T00:52:52Z"
+  },
+  {
+    "id": "e901dbcdd6e2255fb24d84032b9d437a:totals:Over:3.5",
+    "event_id": "e901dbcdd6e2255fb24d84032b9d437a",
+    "sport_key": "soccer_uefa_champs_league",
+    "comp": "UCL",
+    "comp_name": "Champions League",
+    "home": "Fenerbahce",
+    "away": "Liverpool",
+    "kickoff": "2026-11-04T17:45:00Z",
+    "market": "totals",
+    "selection": "Over",
+    "point": 3.5,
+    "label": "Over 3.5 goals",
+    "price": 2.07,
+    "american": "+107",
+    "book": "BetRivers",
+    "status": "pending",
+    "created": "2026-11-04T00:52:52Z",
+    "strategy": "shop",
+    "p": 0.4906,
+    "model_p": 0.4906,
+    "market_p": 0.4831,
+    "ev": 0.0156,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.4906,
     "tier": "lean"
   },
   {
@@ -42,7 +72,7 @@
     "price": 1.94,
     "american": "-106",
     "book": "Bally Bet",
-    "status": "locked",
+    "status": "won",
     "created": "2026-11-03T06:32:05Z",
     "strategy": "shop",
     "p": 0.5228,
@@ -55,7 +85,9 @@
     "close_fair": 0.5119,
     "clv": -0.0069,
     "close_checked": "2026-11-03T14:36:24Z",
-    "locked": "2026-11-03T20:36:56Z"
+    "locked": "2026-11-03T20:36:56Z",
+    "units": 0.94,
+    "final": "4-0"
   },
   {
     "id": "bc0b6614c9714816038d5a0ff8963144:h2h:Home:",
@@ -73,7 +105,7 @@
     "price": 2.25,
     "american": "+125",
     "book": "BetRivers",
-    "status": "locked",
+    "status": "won",
     "created": "2026-11-03T06:32:05Z",
     "strategy": "shop",
     "p": 0.4526,
@@ -86,7 +118,9 @@
     "close_fair": 0.4483,
     "clv": 0.0087,
     "close_checked": "2026-11-03T14:36:24Z",
-    "locked": "2026-11-03T20:36:56Z"
+    "locked": "2026-11-03T20:36:56Z",
+    "units": 1.25,
+    "final": "3-2"
   },
   {
     "id": "0f552d9c6990c69474f50ff2fb54e9a3:h2h:Home:",
