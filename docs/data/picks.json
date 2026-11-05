@@ -24,7 +24,10 @@
     "ev": 0.04,
     "fair_src": "Pinnacle",
     "open_fair": 0.219,
-    "tier": "pick"
+    "tier": "pick",
+    "close_fair": 0.2132,
+    "clv": 0.0129,
+    "close_checked": "2026-11-05T02:15:51Z"
   },
   {
     "id": "b828d43ba5fa1c8cdd2e34aabea9d0ce:h2h:Away:",
@@ -51,7 +54,10 @@
     "ev": 0.0139,
     "fair_src": "Pinnacle",
     "open_fair": 0.312,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.3102,
+    "clv": 0.0082,
+    "close_checked": "2026-11-05T02:15:51Z"
   },
   {
     "id": "6d386ed81fabf67aa19fbd442c0d8c60:h2h:Away:",
@@ -69,7 +75,7 @@
     "price": 4.75,
     "american": "+375",
     "book": "Bally Bet",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-11-03T14:36:24Z",
     "strategy": "shop",
     "p": 0.2147,
@@ -82,7 +88,9 @@
     "close_fair": 0.2014,
     "clv": -0.0432,
     "close_checked": "2026-11-04T15:43:09Z",
-    "locked": "2026-11-04T21:49:30Z"
+    "locked": "2026-11-04T21:49:30Z",
+    "units": -1.0,
+    "final": "2-1"
   },
   {
     "id": "e901dbcdd6e2255fb24d84032b9d437a:totals:Over:3.5",
