@@ -25,9 +25,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.219,
     "tier": "pick",
-    "close_fair": 0.2132,
-    "clv": 0.0129,
-    "close_checked": "2026-11-05T02:15:51Z"
+    "close_fair": 0.182,
+    "clv": -0.1355,
+    "close_checked": "2026-11-05T17:57:39Z"
   },
   {
     "id": "b828d43ba5fa1c8cdd2e34aabea9d0ce:h2h:Away:",
@@ -55,9 +55,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.312,
     "tier": "lean",
-    "close_fair": 0.3102,
-    "clv": 0.0082,
-    "close_checked": "2026-11-05T02:15:51Z"
+    "close_fair": 0.3142,
+    "clv": 0.0212,
+    "close_checked": "2026-11-05T17:57:39Z"
   },
   {
     "id": "6d386ed81fabf67aa19fbd442c0d8c60:h2h:Away:",

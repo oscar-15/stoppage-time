@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T09:47:27Z",
+  "updated": "2026-11-05T17:57:39Z",
   "record": {
     "wins": 0,
     "losses": 7,
@@ -22,13 +22,14 @@
     "beat_close": 0.684,
     "clv_n": 19
   },
-  "credits_remaining": 424,
+  "credits_remaining": 412,
   "refreshed": [
     "BUNDESLIGA",
     "EPL",
     "LALIGA",
     "LIGUE1",
-    "SERIEA"
+    "SERIEA",
+    "UEL"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -38,8 +39,9 @@
   "log": [
     "odds: EPL 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 46/46 priced (40 derived))",
     "odds: LALIGA 20 games, 0 bets clear the bar (h2h 30/30 priced (0 derived), totals 20/20 priced (12 derived))",
-    "odds: BUNDESLIGA 18 games, 0 bets clear the bar (h2h 48/48 priced (0 derived), totals 34/34 priced (26 derived))",
+    "odds: BUNDESLIGA 18 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 34/34 priced (26 derived))",
     "odds: SERIEA 20 games, 0 bets clear the bar (h2h 30/30 priced (0 derived), totals 22/22 priced (18 derived))",
-    "odds: LIGUE1 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 40/40 priced (34 derived))"
+    "odds: LIGUE1 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (32 derived))",
+    "odds: UEL 17 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 36/36 priced (30 derived))"
   ]
 }
