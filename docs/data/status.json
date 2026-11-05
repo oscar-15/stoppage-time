@@ -1,47 +1,38 @@
 {
-  "updated": "2026-11-05T17:57:39Z",
+  "updated": "2026-11-05T23:33:46Z",
   "record": {
     "wins": 0,
-    "losses": 7,
+    "losses": 8,
     "voids": 0,
-    "units": -7.0,
+    "units": -8.0,
     "roi": -1.0,
-    "graded": 7,
-    "avg_clv": 0.0277,
-    "beat_close": 0.833,
-    "clv_n": 6
+    "graded": 8,
+    "avg_clv": 0.0044,
+    "beat_close": 0.714,
+    "clv_n": 7
   },
   "lean_record": {
-    "wins": 10,
+    "wins": 11,
     "losses": 16,
     "voids": 0,
-    "units": -3.88,
-    "roi": -0.1492,
-    "graded": 26,
-    "avg_clv": -0.0036,
-    "beat_close": 0.684,
-    "clv_n": 19
+    "units": -1.63,
+    "roi": -0.0604,
+    "graded": 27,
+    "avg_clv": -0.0024,
+    "beat_close": 0.7,
+    "clv_n": 20
   },
-  "credits_remaining": 412,
-  "refreshed": [
-    "BUNDESLIGA",
-    "EPL",
-    "LALIGA",
-    "LIGUE1",
-    "SERIEA",
-    "UEL"
-  ],
+  "credits_remaining": 410,
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: EPL 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 46/46 priced (40 derived))",
-    "odds: LALIGA 20 games, 0 bets clear the bar (h2h 30/30 priced (0 derived), totals 20/20 priced (12 derived))",
-    "odds: BUNDESLIGA 18 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 34/34 priced (26 derived))",
-    "odds: SERIEA 20 games, 0 bets clear the bar (h2h 30/30 priced (0 derived), totals 22/22 priced (18 derived))",
-    "odds: LIGUE1 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (32 derived))",
-    "odds: UEL 17 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 36/36 priced (30 derived))"
+    "lock: FC Ararat-Armenia to win (Torreense v FC Ararat-Armenia) @ +375",
+    "lock: Union Saint-Gilloise to win (Celta Vigo v Union Saint-Gilloise) @ +225",
+    "grade: FC Ararat-Armenia to win (Torreense v FC Ararat-Armenia 3-2) -> lost",
+    "grade: Union Saint-Gilloise to win (Celta Vigo v Union Saint-Gilloise 1-2) -> won"
   ]
 }
