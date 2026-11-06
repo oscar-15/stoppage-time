@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T19:16:17Z",
+  "updated": "2026-11-06T23:48:24Z",
   "record": {
     "wins": 0,
     "losses": 8,
@@ -13,18 +13,21 @@
   },
   "lean_record": {
     "wins": 11,
-    "losses": 16,
+    "losses": 17,
     "voids": 0,
-    "units": -1.63,
-    "roi": -0.0604,
-    "graded": 27,
-    "avg_clv": -0.0024,
-    "beat_close": 0.7,
-    "clv_n": 20
+    "units": -2.63,
+    "roi": -0.0939,
+    "graded": 28,
+    "avg_clv": -0.0007,
+    "beat_close": 0.714,
+    "clv_n": 21
   },
-  "credits_remaining": 388,
+  "credits_remaining": 378,
   "refreshed": [
-    "BUNDESLIGA"
+    "EPL",
+    "LALIGA",
+    "LIGUE1",
+    "SERIEA"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -32,6 +35,11 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: BUNDESLIGA 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (30 derived))"
+    "lock: Under 2.5 goals (Hamburger SV v Borussia Monchengladbach) @ +135",
+    "grade: Under 2.5 goals (Hamburger SV v Borussia Monchengladbach 3-1) -> lost",
+    "odds: EPL 19 games, 0 bets clear the bar (h2h 57/57 priced (0 derived), totals 42/42 priced (36 derived))",
+    "odds: LALIGA 19 games, 1 bets clear the bar (h2h 57/57 priced (0 derived), totals 18/18 priced (10 derived))",
+    "odds: SERIEA 19 games, 0 bets clear the bar (h2h 57/57 priced (0 derived), totals 20/20 priced (16 derived))",
+    "odds: LIGUE1 17 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 36/36 priced (30 derived))"
   ]
 }
