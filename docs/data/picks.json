@@ -25,9 +25,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.2195,
     "tier": "pick",
-    "close_fair": 0.2169,
-    "clv": 0.0194,
-    "close_checked": "2026-11-06T19:16:17Z"
+    "close_fair": 0.2533,
+    "clv": 0.1903,
+    "close_checked": "2026-11-07T05:47:55Z"
   },
   {
     "id": "3903e98a54db0f2cc23095407fe9dad8:h2h:Home:",
@@ -58,6 +58,33 @@
     "close_fair": 0.48,
     "clv": 0.0079,
     "close_checked": "2026-11-06T23:48:24Z"
+  },
+  {
+    "id": "cdb5f9dd39e79db69659c76cd96d0bbe:h2h:Home:",
+    "event_id": "cdb5f9dd39e79db69659c76cd96d0bbe",
+    "sport_key": "soccer_germany_bundesliga",
+    "comp": "BUNDESLIGA",
+    "comp_name": "Bundesliga",
+    "home": "RB Leipzig",
+    "away": "Augsburg",
+    "kickoff": "2026-11-07T14:30:00Z",
+    "market": "h2h",
+    "selection": "Home",
+    "point": null,
+    "label": "RB Leipzig to win",
+    "price": 1.48,
+    "american": "-208",
+    "book": "MGM",
+    "status": "pending",
+    "created": "2026-11-07T05:47:55Z",
+    "strategy": "shop",
+    "p": 0.6833,
+    "model_p": 0.6833,
+    "market_p": 0.6757,
+    "ev": 0.0113,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.6833,
+    "tier": "lean"
   },
   {
     "id": "de935794b7d93f3607ac9ad54d18f4c7:h2h:Draw:",
