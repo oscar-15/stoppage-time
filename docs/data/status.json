@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T12:51:36Z",
+  "updated": "2026-11-07T17:59:38Z",
   "record": {
     "wins": 0,
     "losses": 8,
@@ -7,28 +7,24 @@
     "units": -8.0,
     "roi": -1.0,
     "graded": 8,
-    "avg_clv": 0.0044,
-    "beat_close": 0.714,
-    "clv_n": 7
+    "avg_clv": 0.0323,
+    "beat_close": 0.75,
+    "clv_n": 8
   },
   "lean_record": {
-    "wins": 11,
-    "losses": 17,
+    "wins": 12,
+    "losses": 19,
     "voids": 0,
-    "units": -2.63,
-    "roi": -0.0939,
-    "graded": 28,
-    "avg_clv": -0.0007,
-    "beat_close": 0.714,
-    "clv_n": 21
+    "units": -4.15,
+    "roi": -0.1339,
+    "graded": 31,
+    "avg_clv": -0.0013,
+    "beat_close": 0.708,
+    "clv_n": 24
   },
-  "credits_remaining": 366,
+  "credits_remaining": 358,
   "refreshed": [
-    "BUNDESLIGA",
-    "EPL",
-    "LALIGA",
-    "LIGUE1",
-    "SERIEA"
+    "LIGUE1"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -36,10 +32,13 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: EPL 19 games, 0 bets clear the bar (h2h 57/57 priced (0 derived), totals 42/42 priced (38 derived))",
-    "odds: LALIGA 19 games, 0 bets clear the bar (h2h 57/57 priced (0 derived), totals 20/20 priced (10 derived))",
-    "odds: BUNDESLIGA 17 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 36/36 priced (28 derived))",
-    "odds: SERIEA 19 games, 0 bets clear the bar (h2h 57/57 priced (0 derived), totals 18/18 priced (14 derived))",
-    "odds: LIGUE1 17 games, 2 bets clear the bar (h2h 51/51 priced (0 derived), totals 36/36 priced (28 derived))"
+    "lock: Werder Bremen to win (VfB Stuttgart v Werder Bremen) @ +370",
+    "lock: Fulham to win (Fulham v Newcastle United) @ +110",
+    "lock: RB Leipzig to win (RB Leipzig v Augsburg) @ -208",
+    "lock: Draw (Málaga v Real Racing Club de Santander) @ +270",
+    "grade: Fulham to win (Fulham v Newcastle United 1-1) -> lost",
+    "grade: RB Leipzig to win (RB Leipzig v Augsburg 5-2) -> won",
+    "grade: Draw (Málaga v Real Racing Club de Santander 1-2) -> lost",
+    "odds: LIGUE1 17 games, 1 bets clear the bar (h2h 51/51 priced (0 derived), totals 36/36 priced (28 derived))"
   ]
 }

@@ -1,1349 +1,5 @@
 [
   {
-    "id": "5c87852253fd11eea5d34ad723356607",
-    "comp": "EPL",
-    "comp_name": "Premier League",
-    "kickoff": "2026-11-07T12:30:00Z",
-    "home": "Leeds United",
-    "away": "Tottenham Hotspur",
-    "source": "Pinnacle",
-    "result": {
-      "home": {
-        "p": 0.3444,
-        "fair": "+190",
-        "us": {
-          "price": 2.8,
-          "american": "+180",
-          "book": "FanDuel"
-        },
-        "edge": -0.0357
-      },
-      "draw": {
-        "p": 0.2841,
-        "fair": "+252",
-        "us": {
-          "price": 3.4,
-          "american": "+240",
-          "book": "MGM"
-        },
-        "edge": -0.0339
-      },
-      "away": {
-        "p": 0.3715,
-        "fair": "+169",
-        "us": {
-          "price": 2.55,
-          "american": "+155",
-          "book": "FanDuel"
-        },
-        "edge": -0.0528
-      }
-    },
-    "xg": [
-      1.27,
-      1.33
-    ],
-    "pinnacle_total_line": 2.5,
-    "totals": [
-      {
-        "line": 1.5,
-        "over": {
-          "p": 0.7402,
-          "fair": "-285"
-        },
-        "under": {
-          "p": 0.2598,
-          "fair": "+285"
-        }
-      },
-      {
-        "line": 2.5,
-        "over": {
-          "p": 0.4833,
-          "fair": "+107",
-          "us": {
-            "price": 1.93,
-            "american": "-108",
-            "book": "BetRivers"
-          },
-          "edge": -0.0672
-        },
-        "under": {
-          "p": 0.5167,
-          "fair": "-107",
-          "us": {
-            "price": 1.85,
-            "american": "-118",
-            "book": "BetRivers"
-          },
-          "edge": -0.0441
-        }
-      },
-      {
-        "line": 3.5,
-        "over": {
-          "p": 0.2655,
-          "fair": "+277"
-        },
-        "under": {
-          "p": 0.7345,
-          "fair": "-277"
-        }
-      }
-    ],
-    "btts": {
-      "yes": {
-        "p": 0.5366,
-        "fair": "-116"
-      },
-      "no": {
-        "p": 0.4634,
-        "fair": "+116"
-      }
-    },
-    "handicaps": [
-      {
-        "line": -1.5,
-        "home": {
-          "p": 0.1549,
-          "fair": "+546"
-        },
-        "away": {
-          "p": 0.8451,
-          "fair": "-546"
-        }
-      },
-      {
-        "line": -0.5,
-        "home": {
-          "p": 0.3485,
-          "fair": "+187"
-        },
-        "away": {
-          "p": 0.6515,
-          "fair": "-187"
-        }
-      },
-      {
-        "line": 0.5,
-        "home": {
-          "p": 0.6244,
-          "fair": "-166"
-        },
-        "away": {
-          "p": 0.3756,
-          "fair": "+166"
-        }
-      },
-      {
-        "line": 1.5,
-        "home": {
-          "p": 0.8271,
-          "fair": "-479"
-        },
-        "away": {
-          "p": 0.1729,
-          "fair": "+479"
-        }
-      }
-    ],
-    "scores": [
-      {
-        "score": "1-1",
-        "p": 0.1315
-      },
-      {
-        "score": "0-1",
-        "p": 0.092
-      },
-      {
-        "score": "1-0",
-        "p": 0.0878
-      },
-      {
-        "score": "1-2",
-        "p": 0.0834
-      }
-    ],
-    "updated": "2026-11-06T23:48:24Z"
-  },
-  {
-    "id": "de935794b7d93f3607ac9ad54d18f4c7",
-    "comp": "LALIGA",
-    "comp_name": "La Liga",
-    "kickoff": "2026-11-07T13:00:00Z",
-    "home": "Málaga",
-    "away": "Real Racing Club de Santander",
-    "source": "Pinnacle",
-    "result": {
-      "home": {
-        "p": 0.4338,
-        "fair": "+131",
-        "us": {
-          "price": 2.35,
-          "american": "+135",
-          "book": "BetRivers"
-        },
-        "edge": 0.0195
-      },
-      "draw": {
-        "p": 0.2604,
-        "fair": "+284",
-        "us": {
-          "price": 3.65,
-          "american": "+265",
-          "book": "DK"
-        },
-        "edge": -0.0495
-      },
-      "away": {
-        "p": 0.3058,
-        "fair": "+227",
-        "us": {
-          "price": 3.05,
-          "american": "+205",
-          "book": "DK"
-        },
-        "edge": -0.0674
-      }
-    },
-    "xg": [
-      1.66,
-      1.36
-    ],
-    "pinnacle_total_line": 2.75,
-    "totals": [
-      {
-        "line": 1.5,
-        "over": {
-          "p": 0.8091,
-          "fair": "-424"
-        },
-        "under": {
-          "p": 0.1909,
-          "fair": "+424"
-        }
-      },
-      {
-        "line": 2.5,
-        "over": {
-          "p": 0.5809,
-          "fair": "-139",
-          "us": {
-            "price": 1.62,
-            "american": "-161",
-            "book": "betPARX"
-          },
-          "edge": -0.0589
-        },
-        "under": {
-          "p": 0.4191,
-          "fair": "+139",
-          "us": {
-            "price": 2.25,
-            "american": "+125",
-            "book": "BetRivers"
-          },
-          "edge": -0.0571
-        }
-      },
-      {
-        "line": 3.5,
-        "over": {
-          "p": 0.3569,
-          "fair": "+180"
-        },
-        "under": {
-          "p": 0.6431,
-          "fair": "-180"
-        }
-      }
-    ],
-    "btts": {
-      "yes": {
-        "p": 0.6075,
-        "fair": "-155"
-      },
-      "no": {
-        "p": 0.3925,
-        "fair": "+155"
-      }
-    },
-    "handicaps": [
-      {
-        "line": -1.5,
-        "home": {
-          "p": 0.2305,
-          "fair": "+334"
-        },
-        "away": {
-          "p": 0.7695,
-          "fair": "-334"
-        }
-      },
-      {
-        "line": -0.5,
-        "home": {
-          "p": 0.4388,
-          "fair": "+128"
-        },
-        "away": {
-          "p": 0.5612,
-          "fair": "-128"
-        }
-      },
-      {
-        "line": 0.5,
-        "home": {
-          "p": 0.6892,
-          "fair": "-222"
-        },
-        "away": {
-          "p": 0.3108,
-          "fair": "+222"
-        }
-      },
-      {
-        "line": 1.5,
-        "home": {
-          "p": 0.8597,
-          "fair": "-613"
-        },
-        "away": {
-          "p": 0.1403,
-          "fair": "+613"
-        }
-      }
-    ],
-    "scores": [
-      {
-        "score": "1-1",
-        "p": 0.1158
-      },
-      {
-        "score": "2-1",
-        "p": 0.0913
-      },
-      {
-        "score": "1-0",
-        "p": 0.0754
-      },
-      {
-        "score": "1-2",
-        "p": 0.0751
-      }
-    ],
-    "updated": "2026-11-07T12:51:36Z"
-  },
-  {
-    "id": "52b256088d29b4abb82e0c63ea9852fe",
-    "comp": "SERIEA",
-    "comp_name": "Serie A",
-    "kickoff": "2026-11-07T14:00:00Z",
-    "home": "Cagliari",
-    "away": "Frosinone",
-    "source": "Pinnacle",
-    "result": {
-      "home": {
-        "p": 0.3131,
-        "fair": "+219",
-        "us": {
-          "price": 3.0,
-          "american": "+200",
-          "book": "FanDuel"
-        },
-        "edge": -0.0606
-      },
-      "draw": {
-        "p": 0.2586,
-        "fair": "+287",
-        "us": {
-          "price": 3.8,
-          "american": "+280",
-          "book": "theScore Bet"
-        },
-        "edge": -0.0175
-      },
-      "away": {
-        "p": 0.4283,
-        "fair": "+133",
-        "us": {
-          "price": 2.2,
-          "american": "+120",
-          "book": "FanDuel"
-        },
-        "edge": -0.0577
-      }
-    },
-    "xg": [
-      1.54,
-      1.82
-    ],
-    "pinnacle_total_line": 3.25,
-    "totals": [
-      {
-        "line": 1.5,
-        "over": {
-          "p": 0.8539,
-          "fair": "-584"
-        },
-        "under": {
-          "p": 0.1461,
-          "fair": "+584"
-        }
-      },
-      {
-        "line": 2.5,
-        "over": {
-          "p": 0.6532,
-          "fair": "-188"
-        },
-        "under": {
-          "p": 0.3468,
-          "fair": "+188"
-        }
-      },
-      {
-        "line": 3.5,
-        "over": {
-          "p": 0.4337,
-          "fair": "+131",
-          "us": {
-            "price": 2.25,
-            "american": "+125",
-            "book": "betPARX"
-          },
-          "edge": -0.0242
-        },
-        "under": {
-          "p": 0.5663,
-          "fair": "-131",
-          "us": {
-            "price": 1.67,
-            "american": "-149",
-            "book": "MGM"
-          },
-          "edge": -0.0543
-        }
-      }
-    ],
-    "btts": {
-      "yes": {
-        "p": 0.6639,
-        "fair": "-197"
-      },
-      "no": {
-        "p": 0.3361,
-        "fair": "+197"
-      }
-    },
-    "handicaps": [
-      {
-        "line": -1.5,
-        "home": {
-          "p": 0.1565,
-          "fair": "+539"
-        },
-        "away": {
-          "p": 0.8435,
-          "fair": "-539"
-        }
-      },
-      {
-        "line": -0.5,
-        "home": {
-          "p": 0.3247,
-          "fair": "+208"
-        },
-        "away": {
-          "p": 0.6753,
-          "fair": "-208"
-        }
-      },
-      {
-        "line": 0.5,
-        "home": {
-          "p": 0.5601,
-          "fair": "-127"
-        },
-        "away": {
-          "p": 0.4399,
-          "fair": "+127"
-        }
-      },
-      {
-        "line": 1.5,
-        "home": {
-          "p": 0.7593,
-          "fair": "-316"
-        },
-        "away": {
-          "p": 0.2407,
-          "fair": "+316"
-        }
-      }
-    ],
-    "scores": [
-      {
-        "score": "1-1",
-        "p": 0.1021
-      },
-      {
-        "score": "1-2",
-        "p": 0.0885
-      },
-      {
-        "score": "2-1",
-        "p": 0.075
-      },
-      {
-        "score": "2-2",
-        "p": 0.0683
-      }
-    ],
-    "updated": "2026-11-07T12:51:36Z"
-  },
-  {
-    "id": "0d53a5dbd9d4f4716e923b97e92dfb0d",
-    "comp": "SERIEA",
-    "comp_name": "Serie A",
-    "kickoff": "2026-11-07T14:00:00Z",
-    "home": "Torino",
-    "away": "Lecce",
-    "source": "Pinnacle",
-    "result": {
-      "home": {
-        "p": 0.5316,
-        "fair": "-113",
-        "us": {
-          "price": 1.8,
-          "american": "-125",
-          "book": "MGM"
-        },
-        "edge": -0.0432
-      },
-      "draw": {
-        "p": 0.2645,
-        "fair": "+278",
-        "us": {
-          "price": 3.75,
-          "american": "+275",
-          "book": "MGM"
-        },
-        "edge": -0.0082
-      },
-      "away": {
-        "p": 0.204,
-        "fair": "+390",
-        "us": {
-          "price": 4.5,
-          "american": "+350",
-          "book": "FanDuel"
-        },
-        "edge": -0.0821
-      }
-    },
-    "xg": [
-      1.75,
-      1.01
-    ],
-    "pinnacle_total_line": 2.5,
-    "totals": [
-      {
-        "line": 1.5,
-        "over": {
-          "p": 0.7682,
-          "fair": "-331"
-        },
-        "under": {
-          "p": 0.2318,
-          "fair": "+331"
-        }
-      },
-      {
-        "line": 2.5,
-        "over": {
-          "p": 0.5217,
-          "fair": "-109",
-          "us": {
-            "price": 1.83,
-            "american": "-120",
-            "book": "betPARX"
-          },
-          "edge": -0.0452
-        },
-        "under": {
-          "p": 0.4783,
-          "fair": "+109",
-          "us": {
-            "price": 1.95,
-            "american": "-105",
-            "book": "MGM"
-          },
-          "edge": -0.0674
-        }
-      },
-      {
-        "line": 3.5,
-        "over": {
-          "p": 0.2999,
-          "fair": "+233"
-        },
-        "under": {
-          "p": 0.7001,
-          "fair": "-233"
-        }
-      }
-    ],
-    "btts": {
-      "yes": {
-        "p": 0.5321,
-        "fair": "-114"
-      },
-      "no": {
-        "p": 0.4679,
-        "fair": "+114"
-      }
-    },
-    "handicaps": [
-      {
-        "line": -1.5,
-        "home": {
-          "p": 0.3042,
-          "fair": "+229"
-        },
-        "away": {
-          "p": 0.6958,
-          "fair": "-229"
-        }
-      },
-      {
-        "line": -0.5,
-        "home": {
-          "p": 0.5404,
-          "fair": "-118"
-        },
-        "away": {
-          "p": 0.4596,
-          "fair": "+118"
-        }
-      },
-      {
-        "line": 0.5,
-        "home": {
-          "p": 0.7872,
-          "fair": "-370"
-        },
-        "away": {
-          "p": 0.2128,
-          "fair": "+370"
-        }
-      },
-      {
-        "line": 1.5,
-        "home": {
-          "p": 0.9219,
-          "fair": "-1180"
-        },
-        "away": {
-          "p": 0.0781,
-          "fair": "+1180"
-        }
-      }
-    ],
-    "scores": [
-      {
-        "score": "1-1",
-        "p": 0.1175
-      },
-      {
-        "score": "1-0",
-        "p": 0.1047
-      },
-      {
-        "score": "2-1",
-        "p": 0.0979
-      },
-      {
-        "score": "2-0",
-        "p": 0.0965
-      }
-    ],
-    "updated": "2026-11-07T12:51:36Z"
-  },
-  {
-    "id": "cdb5f9dd39e79db69659c76cd96d0bbe",
-    "comp": "BUNDESLIGA",
-    "comp_name": "Bundesliga",
-    "kickoff": "2026-11-07T14:30:00Z",
-    "home": "RB Leipzig",
-    "away": "Augsburg",
-    "source": "Pinnacle",
-    "result": {
-      "home": {
-        "p": 0.6816,
-        "fair": "-214",
-        "us": {
-          "price": 1.44,
-          "american": "-227",
-          "book": "MGM"
-        },
-        "edge": -0.0185
-      },
-      "draw": {
-        "p": 0.1701,
-        "fair": "+488",
-        "us": {
-          "price": 5.5,
-          "american": "+450",
-          "book": "MGM"
-        },
-        "edge": -0.0646
-      },
-      "away": {
-        "p": 0.1483,
-        "fair": "+574",
-        "us": {
-          "price": 6.0,
-          "american": "+500",
-          "book": "FanDuel"
-        },
-        "edge": -0.1101
-      }
-    },
-    "xg": [
-      2.83,
-      1.32
-    ],
-    "pinnacle_total_line": 4.0,
-    "totals": [
-      {
-        "line": 1.5,
-        "over": {
-          "p": 0.9218,
-          "fair": "-1179"
-        },
-        "under": {
-          "p": 0.0782,
-          "fair": "+1179"
-        }
-      },
-      {
-        "line": 2.5,
-        "over": {
-          "p": 0.7831,
-          "fair": "-361"
-        },
-        "under": {
-          "p": 0.2169,
-          "fair": "+361"
-        }
-      },
-      {
-        "line": 3.5,
-        "over": {
-          "p": 0.5954,
-          "fair": "-147",
-          "us": {
-            "price": 1.61,
-            "american": "-164",
-            "book": "MGM"
-          },
-          "edge": -0.0415
-        },
-        "under": {
-          "p": 0.4046,
-          "fair": "+147",
-          "us": {
-            "price": 2.35,
-            "american": "+135",
-            "book": "betPARX"
-          },
-          "edge": -0.0491
-        }
-      }
-    ],
-    "btts": {
-      "yes": {
-        "p": 0.6929,
-        "fair": "-226"
-      },
-      "no": {
-        "p": 0.3071,
-        "fair": "+226"
-      }
-    },
-    "handicaps": [
-      {
-        "line": -1.5,
-        "home": {
-          "p": 0.4878,
-          "fair": "+105"
-        },
-        "away": {
-          "p": 0.5122,
-          "fair": "-105"
-        }
-      },
-      {
-        "line": -0.5,
-        "home": {
-          "p": 0.6843,
-          "fair": "-217"
-        },
-        "away": {
-          "p": 0.3157,
-          "fair": "+217"
-        }
-      },
-      {
-        "line": 0.5,
-        "home": {
-          "p": 0.849,
-          "fair": "-562"
-        },
-        "away": {
-          "p": 0.151,
-          "fair": "+562"
-        }
-      },
-      {
-        "line": 1.5,
-        "home": {
-          "p": 0.9392,
-          "fair": "-1544"
-        },
-        "away": {
-          "p": 0.0608,
-          "fair": "+1544"
-        }
-      }
-    ],
-    "scores": [
-      {
-        "score": "2-1",
-        "p": 0.0833
-      },
-      {
-        "score": "3-1",
-        "p": 0.0786
-      },
-      {
-        "score": "2-0",
-        "p": 0.0631
-      },
-      {
-        "score": "1-1",
-        "p": 0.0618
-      }
-    ],
-    "updated": "2026-11-07T12:51:36Z"
-  },
-  {
-    "id": "fe97f5adf397dd6b0a8a9e0a5272f307",
-    "comp": "BUNDESLIGA",
-    "comp_name": "Bundesliga",
-    "kickoff": "2026-11-07T14:30:00Z",
-    "home": "FSV Mainz 05",
-    "away": "Bayern Munich",
-    "source": "Pinnacle",
-    "result": {
-      "home": {
-        "p": 0.0964,
-        "fair": "+938",
-        "us": {
-          "price": 8.5,
-          "american": "+750",
-          "book": "FanDuel"
-        },
-        "edge": -0.1808
-      },
-      "draw": {
-        "p": 0.1319,
-        "fair": "+658",
-        "us": {
-          "price": 7.0,
-          "american": "+600",
-          "book": "theScore Bet"
-        },
-        "edge": -0.0768
-      },
-      "away": {
-        "p": 0.7717,
-        "fair": "-338",
-        "us": {
-          "price": 1.31,
-          "american": "-323",
-          "book": "MGM"
-        },
-        "edge": 0.011
-      }
-    },
-    "xg": [
-      1.04,
-      3.04
-    ],
-    "pinnacle_total_line": 4.0,
-    "totals": [
-      {
-        "line": 1.5,
-        "over": {
-          "p": 0.9168,
-          "fair": "-1103"
-        },
-        "under": {
-          "p": 0.0832,
-          "fair": "+1103"
-        }
-      },
-      {
-        "line": 2.5,
-        "over": {
-          "p": 0.7735,
-          "fair": "-342"
-        },
-        "under": {
-          "p": 0.2265,
-          "fair": "+342"
-        }
-      },
-      {
-        "line": 3.5,
-        "over": {
-          "p": 0.5821,
-          "fair": "-139",
-          "us": {
-            "price": 1.64,
-            "american": "-156",
-            "book": "betPARX"
-          },
-          "edge": -0.0453
-        },
-        "under": {
-          "p": 0.4179,
-          "fair": "+139",
-          "us": {
-            "price": 2.2,
-            "american": "+120",
-            "book": "MGM"
-          },
-          "edge": -0.0807
-        }
-      }
-    ],
-    "btts": {
-      "yes": {
-        "p": 0.6189,
-        "fair": "-162"
-      },
-      "no": {
-        "p": 0.3811,
-        "fair": "+162"
-      }
-    },
-    "handicaps": [
-      {
-        "line": -1.5,
-        "home": {
-          "p": 0.0321,
-          "fair": "+3014"
-        },
-        "away": {
-          "p": 0.9679,
-          "fair": "-3014"
-        }
-      },
-      {
-        "line": -0.5,
-        "home": {
-          "p": 0.0942,
-          "fair": "+962"
-        },
-        "away": {
-          "p": 0.9058,
-          "fair": "-962"
-        }
-      },
-      {
-        "line": 0.5,
-        "home": {
-          "p": 0.2305,
-          "fair": "+334"
-        },
-        "away": {
-          "p": 0.7695,
-          "fair": "-334"
-        }
-      },
-      {
-        "line": 1.5,
-        "home": {
-          "p": 0.4166,
-          "fair": "+140"
-        },
-        "away": {
-          "p": 0.5834,
-          "fair": "-140"
-        }
-      }
-    ],
-    "scores": [
-      {
-        "score": "1-3",
-        "p": 0.0824
-      },
-      {
-        "score": "1-2",
-        "p": 0.0813
-      },
-      {
-        "score": "0-3",
-        "p": 0.0791
-      },
-      {
-        "score": "0-2",
-        "p": 0.078
-      }
-    ],
-    "updated": "2026-11-07T12:51:36Z"
-  },
-  {
-    "id": "3ef62ef56758041178c5280225fe5db7",
-    "comp": "BUNDESLIGA",
-    "comp_name": "Bundesliga",
-    "kickoff": "2026-11-07T14:30:00Z",
-    "home": "Borussia Dortmund",
-    "away": "Elversberg",
-    "source": "Pinnacle",
-    "result": {
-      "home": {
-        "p": 0.7545,
-        "fair": "-307",
-        "us": {
-          "price": 1.33,
-          "american": "-303",
-          "book": "MGM"
-        },
-        "edge": 0.0034
-      },
-      "draw": {
-        "p": 0.149,
-        "fair": "+571",
-        "us": {
-          "price": 6.0,
-          "american": "+500",
-          "book": "MGM"
-        },
-        "edge": -0.1059
-      },
-      "away": {
-        "p": 0.0965,
-        "fair": "+936",
-        "us": {
-          "price": 8.5,
-          "american": "+750",
-          "book": "betPARX"
-        },
-        "edge": -0.1795
-      }
-    },
-    "xg": [
-      2.73,
-      0.91
-    ],
-    "pinnacle_total_line": 3.5,
-    "totals": [
-      {
-        "line": 1.5,
-        "over": {
-          "p": 0.8816,
-          "fair": "-745"
-        },
-        "under": {
-          "p": 0.1184,
-          "fair": "+745"
-        }
-      },
-      {
-        "line": 2.5,
-        "over": {
-          "p": 0.7046,
-          "fair": "-239"
-        },
-        "under": {
-          "p": 0.2954,
-          "fair": "+239"
-        }
-      },
-      {
-        "line": 3.5,
-        "over": {
-          "p": 0.4936,
-          "fair": "+103",
-          "us": {
-            "price": 1.98,
-            "american": "-102",
-            "book": "MGM"
-          },
-          "edge": -0.0227
-        },
-        "under": {
-          "p": 0.5064,
-          "fair": "-103",
-          "us": {
-            "price": 1.83,
-            "american": "-120",
-            "book": "betPARX"
-          },
-          "edge": -0.0733
-        }
-      }
-    ],
-    "btts": {
-      "yes": {
-        "p": 0.5611,
-        "fair": "-128"
-      },
-      "no": {
-        "p": 0.4389,
-        "fair": "+128"
-      }
-    },
-    "handicaps": [
-      {
-        "line": -1.5,
-        "home": {
-          "p": 0.5507,
-          "fair": "-123"
-        },
-        "away": {
-          "p": 0.4493,
-          "fair": "+123"
-        }
-      },
-      {
-        "line": -0.5,
-        "home": {
-          "p": 0.7534,
-          "fair": "-306"
-        },
-        "away": {
-          "p": 0.2466,
-          "fair": "+306"
-        }
-      },
-      {
-        "line": 0.5,
-        "home": {
-          "p": 0.9045,
-          "fair": "-948"
-        },
-        "away": {
-          "p": 0.0955,
-          "fair": "+948"
-        }
-      },
-      {
-        "line": 1.5,
-        "home": {
-          "p": 0.9697,
-          "fair": "-3199"
-        },
-        "away": {
-          "p": 0.0303,
-          "fair": "+3199"
-        }
-      }
-    ],
-    "scores": [
-      {
-        "score": "2-0",
-        "p": 0.0979
-      },
-      {
-        "score": "3-0",
-        "p": 0.0893
-      },
-      {
-        "score": "2-1",
-        "p": 0.0889
-      },
-      {
-        "score": "3-1",
-        "p": 0.081
-      }
-    ],
-    "updated": "2026-11-07T12:51:36Z"
-  },
-  {
-    "id": "4ca4c7a2a1c15e9121f9a7eaa7f42ddb",
-    "comp": "BUNDESLIGA",
-    "comp_name": "Bundesliga",
-    "kickoff": "2026-11-07T14:30:00Z",
-    "home": "SC Paderborn",
-    "away": "Eintracht Frankfurt",
-    "source": "Pinnacle",
-    "result": {
-      "home": {
-        "p": 0.3412,
-        "fair": "+193",
-        "us": {
-          "price": 2.8,
-          "american": "+180",
-          "book": "BetRivers"
-        },
-        "edge": -0.0447
-      },
-      "draw": {
-        "p": 0.2523,
-        "fair": "+296",
-        "us": {
-          "price": 3.8,
-          "american": "+280",
-          "book": "MGM"
-        },
-        "edge": -0.0411
-      },
-      "away": {
-        "p": 0.4065,
-        "fair": "+146",
-        "us": {
-          "price": 2.4,
-          "american": "+140",
-          "book": "MGM"
-        },
-        "edge": -0.0244
-      }
-    },
-    "xg": [
-      1.6,
-      1.76
-    ],
-    "pinnacle_total_line": 3.25,
-    "totals": [
-      {
-        "line": 1.5,
-        "over": {
-          "p": 0.8539,
-          "fair": "-584"
-        },
-        "under": {
-          "p": 0.1461,
-          "fair": "+584"
-        }
-      },
-      {
-        "line": 2.5,
-        "over": {
-          "p": 0.6532,
-          "fair": "-188"
-        },
-        "under": {
-          "p": 0.3468,
-          "fair": "+188"
-        }
-      },
-      {
-        "line": 3.5,
-        "over": {
-          "p": 0.4337,
-          "fair": "+131",
-          "us": {
-            "price": 2.18,
-            "american": "+118",
-            "book": "BetRivers"
-          },
-          "edge": -0.0545
-        },
-        "under": {
-          "p": 0.5663,
-          "fair": "-131",
-          "us": {
-            "price": 1.65,
-            "american": "-154",
-            "book": "BetRivers"
-          },
-          "edge": -0.0656
-        }
-      }
-    ],
-    "btts": {
-      "yes": {
-        "p": 0.6663,
-        "fair": "-200"
-      },
-      "no": {
-        "p": 0.3337,
-        "fair": "+200"
-      }
-    },
-    "handicaps": [
-      {
-        "line": -1.5,
-        "home": {
-          "p": 0.1731,
-          "fair": "+478"
-        },
-        "away": {
-          "p": 0.8269,
-          "fair": "-478"
-        }
-      },
-      {
-        "line": -0.5,
-        "home": {
-          "p": 0.3489,
-          "fair": "+187"
-        },
-        "away": {
-          "p": 0.6511,
-          "fair": "-187"
-        }
-      },
-      {
-        "line": 0.5,
-        "home": {
-          "p": 0.5858,
-          "fair": "-141"
-        },
-        "away": {
-          "p": 0.4142,
-          "fair": "+141"
-        }
-      },
-      {
-        "line": 1.5,
-        "home": {
-          "p": 0.7792,
-          "fair": "-353"
-        },
-        "away": {
-          "p": 0.2208,
-          "fair": "+353"
-        }
-      }
-    ],
-    "scores": [
-      {
-        "score": "1-1",
-        "p": 0.1026
-      },
-      {
-        "score": "1-2",
-        "p": 0.086
-      },
-      {
-        "score": "2-1",
-        "p": 0.0783
-      },
-      {
-        "score": "2-2",
-        "p": 0.0689
-      }
-    ],
-    "updated": "2026-11-07T12:51:36Z"
-  },
-  {
     "id": "842fcc5b9feb8c63054a661ad1fc8926",
     "comp": "EPL",
     "comp_name": "Premier League",
@@ -2529,163 +1185,163 @@
     "source": "Pinnacle",
     "result": {
       "home": {
-        "p": 0.1981,
-        "fair": "+405",
+        "p": 0.1692,
+        "fair": "+491",
         "us": {
-          "price": 4.7,
-          "american": "+370",
-          "book": "FanDuel"
-        },
-        "edge": -0.069
-      },
-      "draw": {
-        "p": 0.2327,
-        "fair": "+330",
-        "us": {
-          "price": 4.1,
-          "american": "+310",
+          "price": 5.5,
+          "american": "+450",
           "book": "DK"
         },
-        "edge": -0.046
+        "edge": -0.0695
+      },
+      "draw": {
+        "p": 0.2225,
+        "fair": "+349",
+        "us": {
+          "price": 4.2,
+          "american": "+320",
+          "book": "DK"
+        },
+        "edge": -0.0655
       },
       "away": {
-        "p": 0.5692,
-        "fair": "-132",
+        "p": 0.6083,
+        "fair": "-155",
         "us": {
-          "price": 1.77,
-          "american": "-130",
-          "book": "MGM"
+          "price": 1.63,
+          "american": "-159",
+          "book": "Bally Bet"
         },
-        "edge": 0.0075
+        "edge": -0.0084
       }
     },
     "xg": [
-      1.04,
-      1.9
+      0.97,
+      2.0
     ],
     "pinnacle_total_line": 2.75,
     "totals": [
       {
         "line": 1.5,
         "over": {
-          "p": 0.7974,
-          "fair": "-394"
+          "p": 0.801,
+          "fair": "-403"
         },
         "under": {
-          "p": 0.2026,
-          "fair": "+394"
+          "p": 0.199,
+          "fair": "+403"
         }
       },
       {
         "line": 2.5,
         "over": {
-          "p": 0.5639,
-          "fair": "-129",
+          "p": 0.5697,
+          "fair": "-132",
           "us": {
-            "price": 1.69,
-            "american": "-145",
-            "book": "MGM"
-          },
-          "edge": -0.047
-        },
-        "under": {
-          "p": 0.4361,
-          "fair": "+129",
-          "us": {
-            "price": 2.15,
-            "american": "+115",
+            "price": 1.68,
+            "american": "-147",
             "book": "Bally Bet"
           },
-          "edge": -0.0624
+          "edge": -0.043
+        },
+        "under": {
+          "p": 0.4303,
+          "fair": "+132",
+          "us": {
+            "price": 2.14,
+            "american": "+114",
+            "book": "Bally Bet"
+          },
+          "edge": -0.0791
         }
       },
       {
         "line": 3.5,
         "over": {
-          "p": 0.34,
-          "fair": "+194"
+          "p": 0.3457,
+          "fair": "+189"
         },
         "under": {
-          "p": 0.66,
-          "fair": "-194"
+          "p": 0.6543,
+          "fair": "-189"
         }
       }
     ],
     "btts": {
       "yes": {
-        "p": 0.5555,
-        "fair": "-125"
+        "p": 0.5407,
+        "fair": "-118"
       },
       "no": {
-        "p": 0.4445,
-        "fair": "+125"
+        "p": 0.4593,
+        "fair": "+118"
       }
     },
     "handicaps": [
       {
         "line": -1.5,
         "home": {
-          "p": 0.0733,
-          "fair": "+1265"
+          "p": 0.0593,
+          "fair": "+1587"
         },
         "away": {
-          "p": 0.9267,
-          "fair": "-1265"
+          "p": 0.9407,
+          "fair": "-1587"
         }
       },
       {
         "line": -0.5,
         "home": {
-          "p": 0.1984,
-          "fair": "+404"
+          "p": 0.1702,
+          "fair": "+488"
         },
         "away": {
-          "p": 0.8016,
-          "fair": "-404"
+          "p": 0.8298,
+          "fair": "-488"
         }
       },
       {
         "line": 0.5,
         "home": {
-          "p": 0.4305,
-          "fair": "+132"
+          "p": 0.3907,
+          "fair": "+156"
         },
         "away": {
-          "p": 0.5695,
-          "fair": "-132"
+          "p": 0.6093,
+          "fair": "-156"
         }
       },
       {
         "line": 1.5,
         "home": {
-          "p": 0.6635,
-          "fair": "-197"
+          "p": 0.6259,
+          "fair": "-167"
         },
         "away": {
-          "p": 0.3365,
-          "fair": "+197"
+          "p": 0.3741,
+          "fair": "+167"
         }
       }
     ],
     "scores": [
       {
         "score": "1-1",
-        "p": 0.1096
-      },
-      {
-        "score": "1-2",
-        "p": 0.0992
+        "p": 0.1044
       },
       {
         "score": "0-2",
-        "p": 0.0954
+        "p": 0.103
+      },
+      {
+        "score": "1-2",
+        "p": 0.0995
       },
       {
         "score": "0-1",
-        "p": 0.095
+        "p": 0.0979
       }
     ],
-    "updated": "2026-11-07T12:51:36Z"
+    "updated": "2026-11-07T17:59:38Z"
   },
   {
     "id": "f110107bca066ac1a598c89661c88fa3",
@@ -3033,38 +1689,38 @@
     "source": "Pinnacle",
     "result": {
       "home": {
-        "p": 0.8321,
-        "fair": "-496",
+        "p": 0.8546,
+        "fair": "-588",
         "us": {
-          "price": 1.18,
-          "american": "-556",
-          "book": "DK"
+          "price": 1.17,
+          "american": "-588",
+          "book": "theScore Bet"
         },
-        "edge": -0.0181
+        "edge": -0.0001
       },
       "draw": {
-        "p": 0.1099,
-        "fair": "+810",
+        "p": 0.0967,
+        "fair": "+934",
         "us": {
-          "price": 8.0,
-          "american": "+700",
-          "book": "FanDuel"
+          "price": 8.5,
+          "american": "+750",
+          "book": "DK"
         },
-        "edge": -0.1209
+        "edge": -0.1778
       },
       "away": {
-        "p": 0.058,
-        "fair": "+1625",
+        "p": 0.0486,
+        "fair": "+1956",
         "us": {
-          "price": 15.0,
-          "american": "+1400",
-          "book": "BetRivers"
+          "price": 16.0,
+          "american": "+1500",
+          "book": "DK"
         },
-        "edge": -0.1304
+        "edge": -0.222
       }
     },
     "xg": [
-      2.91,
+      3.11,
       0.65
     ],
     "pinnacle_total_line": 3.5,
@@ -3072,56 +1728,56 @@
       {
         "line": 1.5,
         "over": {
-          "p": 0.8739,
-          "fair": "-693"
+          "p": 0.8914,
+          "fair": "-821"
         },
         "under": {
-          "p": 0.1261,
-          "fair": "+693"
+          "p": 0.1086,
+          "fair": "+821"
         }
       },
       {
         "line": 2.5,
         "over": {
-          "p": 0.6917,
-          "fair": "-224"
+          "p": 0.7243,
+          "fair": "-263"
         },
         "under": {
-          "p": 0.3083,
-          "fair": "+224"
+          "p": 0.2757,
+          "fair": "+263"
         }
       },
       {
         "line": 3.5,
         "over": {
-          "p": 0.4781,
-          "fair": "+109",
+          "p": 0.5179,
+          "fair": "-107",
+          "us": {
+            "price": 1.85,
+            "american": "-118",
+            "book": "BetRivers"
+          },
+          "edge": -0.0418
+        },
+        "under": {
+          "p": 0.4821,
+          "fair": "+107",
           "us": {
             "price": 1.89,
             "american": "-112",
-            "book": "MGM"
-          },
-          "edge": -0.0963
-        },
-        "under": {
-          "p": 0.5219,
-          "fair": "-109",
-          "us": {
-            "price": 1.91,
-            "american": "-110",
             "book": "BetRivers"
           },
-          "edge": -0.0033
+          "edge": -0.0889
         }
       }
     ],
     "btts": {
       "yes": {
-        "p": 0.4571,
+        "p": 0.4567,
         "fair": "+119"
       },
       "no": {
-        "p": 0.5429,
+        "p": 0.5433,
         "fair": "-119"
       }
     },
@@ -3129,67 +1785,67 @@
       {
         "line": -1.5,
         "home": {
-          "p": 0.6404,
-          "fair": "-178"
+          "p": 0.6787,
+          "fair": "-211"
         },
         "away": {
-          "p": 0.3596,
-          "fair": "+178"
+          "p": 0.3213,
+          "fair": "+211"
         }
       },
       {
         "line": -0.5,
         "home": {
-          "p": 0.8275,
-          "fair": "-480"
+          "p": 0.8508,
+          "fair": "-570"
         },
         "away": {
-          "p": 0.1725,
-          "fair": "+480"
+          "p": 0.1492,
+          "fair": "+570"
         }
       },
       {
         "line": 0.5,
         "home": {
-          "p": 0.9467,
-          "fair": "-1775"
+          "p": 0.9552,
+          "fair": "-2131"
         },
         "away": {
-          "p": 0.0533,
-          "fair": "+1775"
+          "p": 0.0448,
+          "fair": "+2131"
         }
       },
       {
         "line": 1.5,
         "home": {
-          "p": 0.9866,
-          "fair": "-7379"
+          "p": 0.989,
+          "fair": "-8984"
         },
         "away": {
-          "p": 0.0134,
-          "fair": "+7379"
+          "p": 0.011,
+          "fair": "+8984"
         }
       }
     ],
     "scores": [
       {
-        "score": "2-0",
-        "p": 0.1197
+        "score": "3-0",
+        "p": 0.1173
       },
       {
-        "score": "3-0",
-        "p": 0.1163
+        "score": "2-0",
+        "p": 0.113
       },
       {
         "score": "4-0",
-        "p": 0.0847
+        "p": 0.0913
       },
       {
-        "score": "1-0",
-        "p": 0.0794
+        "score": "3-1",
+        "p": 0.0757
       }
     ],
-    "updated": "2026-11-07T12:51:36Z"
+    "updated": "2026-11-07T17:59:38Z"
   },
   {
     "id": "23bf8ea47358ef82f65aa7398a2b3921",
@@ -4557,50 +3213,50 @@
     "source": "Pinnacle",
     "result": {
       "home": {
-        "p": 0.4422,
-        "fair": "+126",
+        "p": 0.438,
+        "fair": "+128",
         "us": {
           "price": 2.2,
           "american": "+120",
           "book": "DK"
         },
-        "edge": -0.0271
+        "edge": -0.0364
       },
       "draw": {
-        "p": 0.2669,
-        "fair": "+275",
+        "p": 0.2675,
+        "fair": "+274",
         "us": {
           "price": 3.7,
           "american": "+270",
           "book": "theScore Bet"
         },
-        "edge": -0.0125
+        "edge": -0.0101
       },
       "away": {
-        "p": 0.2909,
-        "fair": "+244",
+        "p": 0.2944,
+        "fair": "+240",
         "us": {
-          "price": 3.3,
-          "american": "+230",
-          "book": "Bally Bet"
+          "price": 3.2,
+          "american": "+220",
+          "book": "FanDuel"
         },
-        "edge": -0.04
+        "edge": -0.0578
       }
     },
     "xg": [
-      1.63,
-      1.29
+      1.62,
+      1.3
     ],
     "pinnacle_total_line": 2.75,
     "totals": [
       {
         "line": 1.5,
         "over": {
-          "p": 0.7947,
+          "p": 0.7948,
           "fair": "-387"
         },
         "under": {
-          "p": 0.2053,
+          "p": 0.2052,
           "fair": "+387"
         }
       },
@@ -4620,11 +3276,11 @@
           "p": 0.4406,
           "fair": "+127",
           "us": {
-            "price": 2.3,
-            "american": "+130",
+            "price": 2.28,
+            "american": "+128",
             "book": "Bally Bet"
           },
-          "edge": 0.0134
+          "edge": 0.0046
         }
       },
       {
@@ -4641,79 +3297,79 @@
     ],
     "btts": {
       "yes": {
-        "p": 0.5889,
-        "fair": "-143"
+        "p": 0.5896,
+        "fair": "-144"
       },
       "no": {
-        "p": 0.4111,
-        "fair": "+143"
+        "p": 0.4104,
+        "fair": "+144"
       }
     },
     "handicaps": [
       {
         "line": -1.5,
         "home": {
-          "p": 0.2353,
-          "fair": "+325"
+          "p": 0.2321,
+          "fair": "+331"
         },
         "away": {
-          "p": 0.7647,
-          "fair": "-325"
+          "p": 0.7679,
+          "fair": "-331"
         }
       },
       {
         "line": -0.5,
         "home": {
-          "p": 0.4486,
-          "fair": "+123"
+          "p": 0.4446,
+          "fair": "+125"
         },
         "away": {
-          "p": 0.5514,
-          "fair": "-123"
+          "p": 0.5554,
+          "fair": "-125"
         }
       },
       {
         "line": 0.5,
         "home": {
-          "p": 0.7027,
-          "fair": "-236"
+          "p": 0.699,
+          "fair": "-232"
         },
         "away": {
-          "p": 0.2973,
-          "fair": "+236"
+          "p": 0.301,
+          "fair": "+232"
         }
       },
       {
         "line": 1.5,
         "home": {
-          "p": 0.8702,
-          "fair": "-670"
+          "p": 0.8679,
+          "fair": "-657"
         },
         "away": {
-          "p": 0.1298,
-          "fair": "+670"
+          "p": 0.1321,
+          "fair": "+657"
         }
       }
     ],
     "scores": [
       {
         "score": "1-1",
-        "p": 0.1189
+        "p": 0.1191
       },
       {
         "score": "2-1",
-        "p": 0.0925
+        "p": 0.0921
       },
       {
         "score": "1-0",
-        "p": 0.0821
+        "p": 0.0816
       },
       {
         "score": "1-2",
-        "p": 0.0731
+        "p": 0.0737
       }
     ],
-    "updated": "2026-11-07T12:51:36Z"
+    "updated": "2026-11-07T17:59:38Z"
   },
   {
     "id": "c70f9f21f48464daa93973147502e183",
@@ -5092,7 +3748,7 @@
       }
     },
     "xg": [
-      1.11,
+      1.1,
       2.0
     ],
     "pinnacle_total_line": 3.0,
@@ -5100,56 +3756,56 @@
       {
         "line": 1.5,
         "over": {
-          "p": 0.8209,
-          "fair": "-458"
+          "p": 0.8203,
+          "fair": "-456"
         },
         "under": {
-          "p": 0.1791,
-          "fair": "+458"
+          "p": 0.1797,
+          "fair": "+456"
         }
       },
       {
         "line": 2.5,
         "over": {
-          "p": 0.5998,
-          "fair": "-150",
+          "p": 0.5989,
+          "fair": "-149",
           "us": {
             "price": 1.57,
             "american": "-175",
             "book": "MGM"
           },
-          "edge": -0.0583
+          "edge": -0.0598
         },
         "under": {
-          "p": 0.4002,
-          "fair": "+150",
+          "p": 0.4011,
+          "fair": "+149",
           "us": {
             "price": 2.35,
             "american": "+135",
             "book": "BetRivers"
           },
-          "edge": -0.0596
+          "edge": -0.0573
         }
       },
       {
         "line": 3.5,
         "over": {
-          "p": 0.3762,
-          "fair": "+166"
+          "p": 0.3752,
+          "fair": "+167"
         },
         "under": {
-          "p": 0.6238,
-          "fair": "-166"
+          "p": 0.6248,
+          "fair": "-167"
         }
       }
     ],
     "btts": {
       "yes": {
-        "p": 0.5836,
+        "p": 0.5828,
         "fair": "-140"
       },
       "no": {
-        "p": 0.4164,
+        "p": 0.4172,
         "fair": "+140"
       }
     },
@@ -5157,44 +3813,44 @@
       {
         "line": -1.5,
         "home": {
-          "p": 0.0767,
-          "fair": "+1203"
+          "p": 0.0766,
+          "fair": "+1205"
         },
         "away": {
-          "p": 0.9233,
-          "fair": "-1203"
+          "p": 0.9234,
+          "fair": "-1205"
         }
       },
       {
         "line": -0.5,
         "home": {
-          "p": 0.2007,
-          "fair": "+398"
+          "p": 0.2006,
+          "fair": "+399"
         },
         "away": {
-          "p": 0.7993,
-          "fair": "-398"
+          "p": 0.7994,
+          "fair": "-399"
         }
       },
       {
         "line": 0.5,
         "home": {
-          "p": 0.4249,
+          "p": 0.425,
           "fair": "+135"
         },
         "away": {
-          "p": 0.5751,
+          "p": 0.575,
           "fair": "-135"
         }
       },
       {
         "line": 1.5,
         "home": {
-          "p": 0.6526,
+          "p": 0.6529,
           "fair": "-188"
         },
         "away": {
-          "p": 0.3474,
+          "p": 0.3471,
           "fair": "+188"
         }
       }
@@ -5202,22 +3858,22 @@
     "scores": [
       {
         "score": "1-1",
-        "p": 0.1041
+        "p": 0.1043
       },
       {
         "score": "1-2",
-        "p": 0.099
+        "p": 0.0991
       },
       {
         "score": "0-2",
-        "p": 0.0895
+        "p": 0.0897
       },
       {
         "score": "0-1",
-        "p": 0.0846
+        "p": 0.0849
       }
     ],
-    "updated": "2026-11-07T12:51:36Z"
+    "updated": "2026-11-07T17:59:38Z"
   },
   {
     "id": "54fae64b1421d836e07a17cad0536c73",
@@ -5385,7 +4041,7 @@
         "p": 0.0778
       }
     ],
-    "updated": "2026-11-07T12:51:36Z"
+    "updated": "2026-11-07T17:59:38Z"
   },
   {
     "id": "cc9731ee7796fe0d532f11ca2aa522c9",
@@ -5397,163 +4053,163 @@
     "source": "Pinnacle",
     "result": {
       "home": {
-        "p": 0.3511,
-        "fair": "+185",
+        "p": 0.3456,
+        "fair": "+189",
         "us": {
           "price": 2.75,
           "american": "+175",
           "book": "FanDuel"
         },
-        "edge": -0.0345
+        "edge": -0.0496
       },
       "draw": {
-        "p": 0.2697,
+        "p": 0.2694,
         "fair": "+271",
         "us": {
           "price": 3.5,
           "american": "+250",
           "book": "MGM"
         },
-        "edge": -0.0559
+        "edge": -0.0571
       },
       "away": {
-        "p": 0.3792,
-        "fair": "+164",
+        "p": 0.385,
+        "fair": "+160",
         "us": {
           "price": 2.5,
           "american": "+150",
           "book": "DK"
         },
-        "edge": -0.0521
+        "edge": -0.0375
       }
     },
     "xg": [
-      1.33,
-      1.4
+      1.32,
+      1.41
     ],
     "pinnacle_total_line": 2.75,
     "totals": [
       {
         "line": 1.5,
         "over": {
-          "p": 0.7626,
-          "fair": "-321"
+          "p": 0.7634,
+          "fair": "-323"
         },
         "under": {
-          "p": 0.2374,
-          "fair": "+321"
+          "p": 0.2366,
+          "fair": "+323"
         }
       },
       {
         "line": 2.5,
         "over": {
-          "p": 0.5134,
+          "p": 0.5145,
           "fair": "-106",
           "us": {
             "price": 1.83,
             "american": "-120",
             "book": "MGM"
           },
-          "edge": -0.0604
+          "edge": -0.0585
         },
         "under": {
-          "p": 0.4866,
+          "p": 0.4855,
           "fair": "+106",
           "us": {
             "price": 1.93,
             "american": "-108",
             "book": "Bally Bet"
           },
-          "edge": -0.0609
+          "edge": -0.0629
         }
       },
       {
         "line": 3.5,
         "over": {
-          "p": 0.2923,
-          "fair": "+242"
+          "p": 0.2932,
+          "fair": "+241"
         },
         "under": {
-          "p": 0.7077,
-          "fair": "-242"
+          "p": 0.7068,
+          "fair": "-241"
         }
       }
     ],
     "btts": {
       "yes": {
-        "p": 0.5601,
-        "fair": "-127"
+        "p": 0.5607,
+        "fair": "-128"
       },
       "no": {
-        "p": 0.4399,
-        "fair": "+127"
+        "p": 0.4393,
+        "fair": "+128"
       }
     },
     "handicaps": [
       {
         "line": -1.5,
         "home": {
-          "p": 0.1602,
-          "fair": "+524"
+          "p": 0.1567,
+          "fair": "+538"
         },
         "away": {
-          "p": 0.8398,
-          "fair": "-524"
+          "p": 0.8433,
+          "fair": "-538"
         }
       },
       {
         "line": -0.5,
         "home": {
-          "p": 0.3516,
-          "fair": "+184"
+          "p": 0.3462,
+          "fair": "+189"
         },
         "away": {
-          "p": 0.6484,
-          "fair": "-184"
+          "p": 0.6538,
+          "fair": "-189"
         }
       },
       {
         "line": 0.5,
         "home": {
-          "p": 0.6203,
-          "fair": "-163"
+          "p": 0.6144,
+          "fair": "-159"
         },
         "away": {
-          "p": 0.3797,
-          "fair": "+163"
+          "p": 0.3856,
+          "fair": "+159"
         }
       },
       {
         "line": 1.5,
         "home": {
-          "p": 0.8208,
-          "fair": "-458"
+          "p": 0.8166,
+          "fair": "-445"
         },
         "away": {
-          "p": 0.1792,
-          "fair": "+458"
+          "p": 0.1834,
+          "fair": "+445"
         }
       }
     ],
     "scores": [
       {
         "score": "1-1",
-        "p": 0.1276
+        "p": 0.1274
       },
       {
         "score": "0-1",
-        "p": 0.085
+        "p": 0.0856
       },
       {
         "score": "1-2",
-        "p": 0.0847
+        "p": 0.0855
       },
       {
         "score": "2-1",
-        "p": 0.081
+        "p": 0.0803
       }
     ],
-    "updated": "2026-11-07T12:51:36Z"
+    "updated": "2026-11-07T17:59:38Z"
   },
   {
     "id": "3e9954446f26494c04c4967db523d375",
@@ -5578,11 +4234,11 @@
         "p": 0.2906,
         "fair": "+244",
         "us": {
-          "price": 3.4,
-          "american": "+240",
-          "book": "theScore Bet"
+          "price": 3.35,
+          "american": "+235",
+          "book": "DK"
         },
-        "edge": -0.012
+        "edge": -0.0266
       },
       "away": {
         "p": 0.3792,
@@ -5721,7 +4377,7 @@
         "p": 0.085
       }
     ],
-    "updated": "2026-11-07T12:51:36Z"
+    "updated": "2026-11-07T17:59:38Z"
   },
   {
     "id": "c1b9696d88719cb8832d794b986cdd68",
@@ -7065,7 +5721,7 @@
         "p": 0.0685
       }
     ],
-    "updated": "2026-11-07T12:51:36Z"
+    "updated": "2026-11-07T17:59:38Z"
   },
   {
     "id": "dd247b356d8fc53e4b4f9bfcfe09c924",
