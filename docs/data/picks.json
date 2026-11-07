@@ -1,5 +1,59 @@
 [
   {
+    "id": "a529e5762f18d97981194ec3668dc3d3:h2h:Away:",
+    "event_id": "a529e5762f18d97981194ec3668dc3d3",
+    "sport_key": "soccer_france_ligue_one",
+    "comp": "LIGUE1",
+    "comp_name": "Ligue 1",
+    "home": "Le Mans FC",
+    "away": "AS Monaco",
+    "kickoff": "2026-11-08T16:15:00Z",
+    "market": "h2h",
+    "selection": "Away",
+    "point": null,
+    "label": "AS Monaco to win",
+    "price": 1.74,
+    "american": "-135",
+    "book": "MGM",
+    "status": "pending",
+    "created": "2026-11-07T12:51:36Z",
+    "strategy": "shop",
+    "p": 0.5804,
+    "model_p": 0.5804,
+    "market_p": 0.5747,
+    "ev": 0.0098,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.5804,
+    "tier": "lean"
+  },
+  {
+    "id": "8553a80cf1ae5cbe3e7a69b76ce8167f:h2h:Away:",
+    "event_id": "8553a80cf1ae5cbe3e7a69b76ce8167f",
+    "sport_key": "soccer_france_ligue_one",
+    "comp": "LIGUE1",
+    "comp_name": "Ligue 1",
+    "home": "Auxerre",
+    "away": "Paris FC",
+    "kickoff": "2026-11-07T18:00:00Z",
+    "market": "h2h",
+    "selection": "Away",
+    "point": null,
+    "label": "Paris FC to win",
+    "price": 1.77,
+    "american": "-130",
+    "book": "MGM",
+    "status": "pending",
+    "created": "2026-11-07T12:51:36Z",
+    "strategy": "shop",
+    "p": 0.5692,
+    "model_p": 0.5692,
+    "market_p": 0.565,
+    "ev": 0.0075,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.5692,
+    "tier": "lean"
+  },
+  {
     "id": "716d6e3f3e91c47a6efaa2e93d570533:h2h:Away:",
     "event_id": "716d6e3f3e91c47a6efaa2e93d570533",
     "sport_key": "soccer_germany_bundesliga",
@@ -25,9 +79,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.2195,
     "tier": "pick",
-    "close_fair": 0.2533,
-    "clv": 0.1903,
-    "close_checked": "2026-11-07T05:47:55Z"
+    "close_fair": 0.2612,
+    "clv": 0.2279,
+    "close_checked": "2026-11-07T12:51:36Z"
   },
   {
     "id": "3903e98a54db0f2cc23095407fe9dad8:h2h:Home:",
@@ -55,9 +109,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.4797,
     "tier": "lean",
-    "close_fair": 0.48,
-    "clv": 0.0079,
-    "close_checked": "2026-11-06T23:48:24Z"
+    "close_fair": 0.4819,
+    "clv": 0.0119,
+    "close_checked": "2026-11-07T12:51:36Z"
   },
   {
     "id": "cdb5f9dd39e79db69659c76cd96d0bbe:h2h:Home:",
@@ -84,7 +138,10 @@
     "ev": 0.0113,
     "fair_src": "Pinnacle",
     "open_fair": 0.6833,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.6816,
+    "clv": 0.0088,
+    "close_checked": "2026-11-07T12:51:36Z"
   },
   {
     "id": "de935794b7d93f3607ac9ad54d18f4c7:h2h:Draw:",
@@ -111,7 +168,10 @@
     "ev": 0.0052,
     "fair_src": "Pinnacle",
     "open_fair": 0.2717,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.2604,
+    "clv": -0.0365,
+    "close_checked": "2026-11-07T12:51:36Z"
   },
   {
     "id": "295076c39e49863cb54db085ac3cd340:totals:Under:2.5",
