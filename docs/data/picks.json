@@ -30,6 +30,33 @@
     "close_checked": "2026-11-07T17:59:38Z"
   },
   {
+    "id": "339a6465fa5153fd8f31e487cf557cf0:h2h:Away:",
+    "event_id": "339a6465fa5153fd8f31e487cf557cf0",
+    "sport_key": "soccer_spain_la_liga",
+    "comp": "LALIGA",
+    "comp_name": "La Liga",
+    "home": "Real Sociedad",
+    "away": "Rayo Vallecano",
+    "kickoff": "2026-11-08T15:15:00Z",
+    "market": "h2h",
+    "selection": "Away",
+    "point": null,
+    "label": "Rayo Vallecano to win",
+    "price": 4.6,
+    "american": "+360",
+    "book": "BetRivers",
+    "status": "pending",
+    "created": "2026-11-07T21:42:56Z",
+    "strategy": "shop",
+    "p": 0.2198,
+    "model_p": 0.2198,
+    "market_p": 0.2174,
+    "ev": 0.0112,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.2198,
+    "tier": "lean"
+  },
+  {
     "id": "8553a80cf1ae5cbe3e7a69b76ce8167f:h2h:Away:",
     "event_id": "8553a80cf1ae5cbe3e7a69b76ce8167f",
     "sport_key": "soccer_france_ligue_one",
@@ -45,7 +72,7 @@
     "price": 1.77,
     "american": "-130",
     "book": "MGM",
-    "status": "pending",
+    "status": "won",
     "created": "2026-11-07T12:51:36Z",
     "strategy": "shop",
     "p": 0.5692,
@@ -57,7 +84,10 @@
     "tier": "lean",
     "close_fair": 0.6083,
     "clv": 0.0767,
-    "close_checked": "2026-11-07T17:59:38Z"
+    "close_checked": "2026-11-07T17:59:38Z",
+    "locked": "2026-11-07T21:42:56Z",
+    "units": 0.77,
+    "final": "0-1"
   },
   {
     "id": "716d6e3f3e91c47a6efaa2e93d570533:h2h:Away:",
@@ -75,7 +105,7 @@
     "price": 4.7,
     "american": "+370",
     "book": "betPARX",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-11-06T11:59:19Z",
     "strategy": "shop",
     "p": 0.2195,
@@ -88,7 +118,9 @@
     "close_fair": 0.2612,
     "clv": 0.2279,
     "close_checked": "2026-11-07T12:51:36Z",
-    "locked": "2026-11-07T17:59:38Z"
+    "locked": "2026-11-07T17:59:38Z",
+    "units": -1.0,
+    "final": "1-0"
   },
   {
     "id": "3903e98a54db0f2cc23095407fe9dad8:h2h:Home:",

@@ -1,30 +1,33 @@
 {
-  "updated": "2026-11-07T17:59:38Z",
+  "updated": "2026-11-07T21:42:56Z",
   "record": {
     "wins": 0,
-    "losses": 8,
+    "losses": 9,
     "voids": 0,
-    "units": -8.0,
+    "units": -9.0,
     "roi": -1.0,
-    "graded": 8,
+    "graded": 9,
     "avg_clv": 0.0323,
     "beat_close": 0.75,
     "clv_n": 8
   },
   "lean_record": {
-    "wins": 12,
+    "wins": 13,
     "losses": 19,
     "voids": 0,
-    "units": -4.15,
-    "roi": -0.1339,
-    "graded": 31,
-    "avg_clv": -0.0013,
-    "beat_close": 0.708,
-    "clv_n": 24
+    "units": -3.38,
+    "roi": -0.1056,
+    "graded": 32,
+    "avg_clv": 0.0019,
+    "beat_close": 0.72,
+    "clv_n": 25
   },
-  "credits_remaining": 358,
+  "credits_remaining": 346,
   "refreshed": [
-    "LIGUE1"
+    "BUNDESLIGA",
+    "EPL",
+    "LALIGA",
+    "SERIEA"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -32,13 +35,12 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Werder Bremen to win (VfB Stuttgart v Werder Bremen) @ +370",
-    "lock: Fulham to win (Fulham v Newcastle United) @ +110",
-    "lock: RB Leipzig to win (RB Leipzig v Augsburg) @ -208",
-    "lock: Draw (Málaga v Real Racing Club de Santander) @ +270",
-    "grade: Fulham to win (Fulham v Newcastle United 1-1) -> lost",
-    "grade: RB Leipzig to win (RB Leipzig v Augsburg 5-2) -> won",
-    "grade: Draw (Málaga v Real Racing Club de Santander 1-2) -> lost",
-    "odds: LIGUE1 17 games, 1 bets clear the bar (h2h 51/51 priced (0 derived), totals 36/36 priced (28 derived))"
+    "lock: Paris FC to win (Auxerre v Paris FC) @ -130",
+    "grade: Paris FC to win (Auxerre v Paris FC 0-1) -> won",
+    "grade: Werder Bremen to win (VfB Stuttgart v Werder Bremen 1-0) -> lost",
+    "odds: EPL 15 games, 0 bets clear the bar (h2h 45/45 priced (0 derived), totals 36/36 priced (32 derived))",
+    "odds: LALIGA 16 games, 1 bets clear the bar (h2h 45/45 priced (0 derived), totals 12/14 priced (4 derived))",
+    "odds: BUNDESLIGA 12 games, 0 bets clear the bar (h2h 36/36 priced (0 derived), totals 24/24 priced (22 derived))",
+    "odds: SERIEA 16 games, 0 bets clear the bar (h2h 45/45 priced (0 derived), totals 20/20 priced (18 derived))"
   ]
 }
