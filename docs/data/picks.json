@@ -15,7 +15,7 @@
     "price": 3.4,
     "american": "+240",
     "book": "Hard Rock",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-11-08T15:00:26Z",
     "strategy": "shop",
     "p": 0.2958,
@@ -27,7 +27,10 @@
     "tier": "lean",
     "close_fair": 0.2682,
     "clv": -0.0882,
-    "close_checked": "2026-11-08T19:30:13Z"
+    "close_checked": "2026-11-08T19:30:13Z",
+    "locked": "2026-11-08T23:04:45Z",
+    "units": -1.0,
+    "final": "1-2"
   },
   {
     "id": "4e917e19b59093a02a0e12bcf9a5ecc4:h2h:Draw:",
@@ -45,7 +48,7 @@
     "price": 3.8,
     "american": "+280",
     "book": "theScore Bet",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-11-08T07:55:04Z",
     "strategy": "shop",
     "p": 0.2654,
@@ -57,7 +60,10 @@
     "tier": "lean",
     "close_fair": 0.2562,
     "clv": -0.0265,
-    "close_checked": "2026-11-08T19:30:13Z"
+    "close_checked": "2026-11-08T19:30:13Z",
+    "locked": "2026-11-08T23:04:45Z",
+    "units": -1.0,
+    "final": "1-2"
   },
   {
     "id": "a529e5762f18d97981194ec3668dc3d3:h2h:Away:",
