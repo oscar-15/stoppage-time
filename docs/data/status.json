@@ -1,31 +1,32 @@
 {
-  "updated": "2026-11-08T15:00:26Z",
+  "updated": "2026-11-08T19:30:13Z",
   "record": {
     "wins": 0,
-    "losses": 9,
+    "losses": 11,
     "voids": 0,
-    "units": -9.0,
+    "units": -11.0,
     "roi": -1.0,
-    "graded": 9,
-    "avg_clv": 0.0323,
-    "beat_close": 0.75,
-    "clv_n": 8
+    "graded": 11,
+    "avg_clv": 0.03,
+    "beat_close": 0.778,
+    "clv_n": 9
   },
   "lean_record": {
-    "wins": 13,
-    "losses": 19,
+    "wins": 15,
+    "losses": 21,
     "voids": 0,
-    "units": -3.38,
-    "roi": -0.1056,
-    "graded": 32,
-    "avg_clv": 0.0019,
-    "beat_close": 0.72,
-    "clv_n": 25
+    "units": -0.43,
+    "roi": -0.0119,
+    "graded": 36,
+    "avg_clv": 0.0047,
+    "beat_close": 0.741,
+    "clv_n": 27
   },
-  "credits_remaining": 332,
+  "credits_remaining": 320,
   "refreshed": [
     "LALIGA",
-    "LIGUE1"
+    "LIGUE1",
+    "SERIEA"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -33,10 +34,17 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Brentford to win (Brighton and Hove Albion v Brentford) @ +300",
-    "lock: Sunderland to win (Sunderland v Chelsea) @ +275",
-    "lock: Lille to win (Rennes v Lille) @ +220",
-    "odds: LALIGA 15 games, 1 bets clear the bar (h2h 45/45 priced (0 derived), totals 18/18 priced (8 derived))",
-    "odds: LIGUE1 15 games, 0 bets clear the bar (h2h 45/45 priced (0 derived), totals 32/34 priced (24 derived))"
+    "lock: AS Monaco to win (Le Mans FC v AS Monaco) @ -135",
+    "lock: Draw (Le Havre v Lorient) @ +240",
+    "lock: Rayo Vallecano to win (Real Sociedad v Rayo Vallecano) @ +360",
+    "grade: Brentford to win (Brighton and Hove Albion v Brentford 2-0) -> lost",
+    "grade: Sunderland to win (Sunderland v Chelsea 1-0) -> won",
+    "grade: AS Monaco to win (Le Mans FC v AS Monaco 1-1) -> lost",
+    "grade: Draw (Le Havre v Lorient 0-2) -> lost",
+    "grade: Lille to win (Rennes v Lille 1-2) -> won",
+    "grade: Rayo Vallecano to win (Real Sociedad v Rayo Vallecano 1-0) -> lost",
+    "odds: LALIGA 13 games, 0 bets clear the bar (h2h 39/39 priced (0 derived), totals 18/20 priced (10 derived))",
+    "odds: SERIEA 11 games, 0 bets clear the bar (h2h 33/33 priced (0 derived), totals 12/12 priced (8 derived))",
+    "odds: LIGUE1 10 games, 0 bets clear the bar (h2h 30/30 priced (0 derived), totals 22/22 priced (16 derived))"
   ]
 }
