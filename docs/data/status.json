@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T23:04:45Z",
+  "updated": "2026-11-09T02:36:02Z",
   "record": {
     "wins": 0,
     "losses": 11,
@@ -29,10 +29,5 @@
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
-  "log": [
-    "lock: Atlético Madrid to win (Atlético Madrid v Barcelona) @ +240",
-    "lock: Draw (RC Lens v Marseille) @ +280",
-    "grade: Draw (RC Lens v Marseille 1-2) -> lost",
-    "grade: Atlético Madrid to win (Atlético Madrid v Barcelona 1-2) -> lost"
-  ]
+  "log": []
 }
