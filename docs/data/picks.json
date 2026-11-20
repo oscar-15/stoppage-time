@@ -72,7 +72,7 @@
     "price": 2.02,
     "american": "+102",
     "book": "betPARX",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-11-19T07:50:32Z",
     "strategy": "shop",
     "p": 0.4986,
@@ -84,7 +84,10 @@
     "tier": "lean",
     "close_fair": 0.5068,
     "clv": 0.0237,
-    "close_checked": "2026-11-20T16:02:23Z"
+    "close_checked": "2026-11-20T16:02:23Z",
+    "locked": "2026-11-20T22:37:11Z",
+    "units": -1.0,
+    "final": "1-1"
   },
   {
     "id": "dd247b356d8fc53e4b4f9bfcfe09c924:h2h:Home:",
