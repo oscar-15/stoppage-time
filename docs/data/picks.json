@@ -1,5 +1,32 @@
 [
   {
+    "id": "ca93df81e976fbe345a6175bb24e3f19:h2h:Away:",
+    "event_id": "ca93df81e976fbe345a6175bb24e3f19",
+    "sport_key": "soccer_germany_bundesliga",
+    "comp": "BUNDESLIGA",
+    "comp_name": "Bundesliga",
+    "home": "Union Berlin",
+    "away": "RB Leipzig",
+    "kickoff": "2026-11-21T14:30:00Z",
+    "market": "h2h",
+    "selection": "Away",
+    "point": null,
+    "label": "RB Leipzig to win",
+    "price": 1.53,
+    "american": "-189",
+    "book": "MGM",
+    "status": "pending",
+    "created": "2026-11-20T06:59:19Z",
+    "strategy": "shop",
+    "p": 0.6602,
+    "model_p": 0.6602,
+    "market_p": 0.6536,
+    "ev": 0.0101,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.6602,
+    "tier": "lean"
+  },
+  {
     "id": "cae480fb1195f0032554a268cb80eb44:totals:Over:4.5",
     "event_id": "cae480fb1195f0032554a268cb80eb44",
     "sport_key": "soccer_germany_bundesliga",
@@ -25,9 +52,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.4986,
     "tier": "lean",
-    "close_fair": 0.5137,
-    "clv": 0.0376,
-    "close_checked": "2026-11-19T17:17:09Z"
+    "close_fair": 0.5124,
+    "clv": 0.035,
+    "close_checked": "2026-11-20T06:59:19Z"
   },
   {
     "id": "dd247b356d8fc53e4b4f9bfcfe09c924:h2h:Home:",
