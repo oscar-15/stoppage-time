@@ -24,7 +24,10 @@
     "ev": 0.014,
     "fair_src": "Pinnacle",
     "open_fair": 0.6259,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.626,
+    "clv": 0.0141,
+    "close_checked": "2026-11-21T23:45:59Z"
   },
   {
     "id": "4c08b213ed416e8f41e038f42a42b962:h2h:Home:",
@@ -51,7 +54,10 @@
     "ev": 0.0154,
     "fair_src": "Pinnacle",
     "open_fair": 0.5737,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.5704,
+    "clv": 0.0097,
+    "close_checked": "2026-11-21T23:45:59Z"
   },
   {
     "id": "230a356290e1a358e9dd2f7fa23de3b9:h2h:Draw:",
@@ -78,7 +84,10 @@
     "ev": 0.0065,
     "fair_src": "Pinnacle",
     "open_fair": 0.2119,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.2081,
+    "clv": -0.0115,
+    "close_checked": "2026-11-21T23:45:59Z"
   },
   {
     "id": "13ac2151b9f6893cedb7f509e64eb070:h2h:Away:",
@@ -96,7 +105,7 @@
     "price": 3.6,
     "american": "+260",
     "book": "Hard Rock",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-11-21T03:27:33Z",
     "strategy": "shop",
     "p": 0.2825,
@@ -108,7 +117,10 @@
     "tier": "lean",
     "close_fair": 0.2834,
     "clv": 0.0202,
-    "close_checked": "2026-11-21T19:05:25Z"
+    "close_checked": "2026-11-21T19:05:25Z",
+    "locked": "2026-11-21T23:45:59Z",
+    "units": -1.0,
+    "final": "1-1"
   },
   {
     "id": "9130b46991ab991f808daf307f004469:totals:Under:2.5",
@@ -126,7 +138,7 @@
     "price": 2.38,
     "american": "+138",
     "book": "betPARX",
-    "status": "pending",
+    "status": "won",
     "created": "2026-11-21T19:05:25Z",
     "strategy": "shop",
     "p": 0.4315,
@@ -135,7 +147,10 @@
     "ev": 0.027,
     "fair_src": "Pinnacle (derived)",
     "open_fair": 0.4315,
-    "tier": "lean"
+    "tier": "lean",
+    "locked": "2026-11-21T23:45:59Z",
+    "units": 1.38,
+    "final": "1-1"
   },
   {
     "id": "71bf9fe98c3e3be39cd1d059f8d71ae8:totals:Under:2.5",
@@ -153,7 +168,7 @@
     "price": 2.25,
     "american": "+125",
     "book": "betPARX",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-11-20T16:02:23Z",
     "strategy": "shop",
     "p": 0.4521,
@@ -166,7 +181,9 @@
     "close_fair": 0.459,
     "clv": 0.0327,
     "close_checked": "2026-11-21T11:40:35Z",
-    "locked": "2026-11-21T19:05:25Z"
+    "locked": "2026-11-21T19:05:25Z",
+    "units": -1.0,
+    "final": "2-2"
   },
   {
     "id": "1bb4951d418dcb641c608e085b87a1c3:h2h:Draw:",
@@ -184,7 +201,7 @@
     "price": 3.6,
     "american": "+260",
     "book": "Hard Rock",
-    "status": "locked",
+    "status": "won",
     "created": "2026-11-21T03:27:33Z",
     "strategy": "shop",
     "p": 0.2919,
@@ -197,7 +214,9 @@
     "close_fair": 0.2871,
     "clv": 0.0336,
     "close_checked": "2026-11-21T11:40:35Z",
-    "locked": "2026-11-21T19:05:25Z"
+    "locked": "2026-11-21T19:05:25Z",
+    "units": 2.6,
+    "final": "1-1"
   },
   {
     "id": "ebe638278f4d70eaf211ad5be9795fa0:h2h:Home:",

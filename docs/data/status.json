@@ -1,30 +1,33 @@
 {
-  "updated": "2026-11-21T19:05:25Z",
+  "updated": "2026-11-21T23:45:59Z",
   "record": {
-    "wins": 0,
+    "wins": 1,
     "losses": 12,
     "voids": 0,
-    "units": -12.0,
-    "roi": -1.0,
-    "graded": 12,
+    "units": -9.4,
+    "roi": -0.7231,
+    "graded": 13,
     "avg_clv": 0.0304,
     "beat_close": 0.8,
     "clv_n": 10
   },
   "lean_record": {
-    "wins": 18,
-    "losses": 26,
+    "wins": 19,
+    "losses": 28,
     "voids": 0,
-    "units": -1.29,
-    "roi": -0.0293,
-    "graded": 44,
-    "avg_clv": 0.0011,
-    "beat_close": 0.697,
-    "clv_n": 33
+    "units": -1.91,
+    "roi": -0.0406,
+    "graded": 47,
+    "avg_clv": 0.0017,
+    "beat_close": 0.706,
+    "clv_n": 34
   },
-  "credits_remaining": 256,
+  "credits_remaining": 242,
   "refreshed": [
-    "LIGUE1"
+    "BUNDESLIGA",
+    "EPL",
+    "LALIGA",
+    "SERIEA"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -32,20 +35,15 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Under 2.5 goals (Newcastle United v Arsenal) @ +125",
-    "lock: Draw (Sevilla v Real Betis) @ +260",
-    "lock: Rayo Vallecano to win (Rayo Vallecano v Valencia) @ +105",
-    "lock: Draw (Aston Villa v Sunderland) @ +300",
-    "lock: RB Leipzig to win (Union Berlin v RB Leipzig) @ -189",
-    "lock: Borussia Dortmund to win (Borussia Monchengladbach v Borussia Dortmund) @ -164",
-    "lock: Draw (Alavés v Deportivo La Coruña) @ +230",
-    "lock: Over 3.5 goals (Manchester City v Fulham) @ +117",
-    "grade: Draw (Aston Villa v Sunderland 0-0) -> won",
-    "grade: Over 3.5 goals (Manchester City v Fulham 1-1) -> lost",
-    "grade: RB Leipzig to win (Union Berlin v RB Leipzig 1-5) -> won",
-    "grade: Borussia Dortmund to win (Borussia Monchengladbach v Borussia Dortmund 0-1) -> won",
-    "grade: Rayo Vallecano to win (Rayo Vallecano v Valencia 0-1) -> lost",
-    "grade: Draw (Alavés v Deportivo La Coruña 3-1) -> lost",
-    "odds: LIGUE1 16 games, 1 bets clear the bar (h2h 48/48 priced (0 derived), totals 34/34 priced (30 derived))"
+    "lock: Toulouse to win (RC Lens v Toulouse) @ +260",
+    "lock: Under 2.5 goals (AS Monaco v Auxerre) @ +138",
+    "grade: Under 2.5 goals (Newcastle United v Arsenal 2-2) -> lost",
+    "grade: Toulouse to win (RC Lens v Toulouse 1-1) -> lost",
+    "grade: Under 2.5 goals (AS Monaco v Auxerre 1-1) -> won",
+    "grade: Draw (Sevilla v Real Betis 1-1) -> won",
+    "odds: EPL 22 games, 1 bets clear the bar (h2h 66/66 priced (0 derived), totals 30/48 priced (28 derived))",
+    "odds: LALIGA 15 games, 0 bets clear the bar (h2h 45/45 priced (0 derived), totals 32/32 priced (18 derived))",
+    "odds: BUNDESLIGA 11 games, 0 bets clear the bar (h2h 33/33 priced (0 derived), totals 22/22 priced (20 derived))",
+    "odds: SERIEA 16 games, 1 bets clear the bar (h2h 48/48 priced (0 derived), totals 36/36 priced (18 derived))"
   ]
 }
