@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T06:31:53Z",
+  "updated": "2026-11-22T14:51:25Z",
   "record": {
     "wins": 1,
     "losses": 12,
@@ -18,13 +18,17 @@
     "units": -1.91,
     "roi": -0.0406,
     "graded": 47,
-    "avg_clv": 0.0017,
-    "beat_close": 0.706,
-    "clv_n": 34
+    "avg_clv": 0.0013,
+    "beat_close": 0.686,
+    "clv_n": 35
   },
-  "credits_remaining": 240,
+  "credits_remaining": 230,
   "refreshed": [
-    "LIGUE1"
+    "BUNDESLIGA",
+    "EPL",
+    "LALIGA",
+    "LIGUE1",
+    "SERIEA"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -32,6 +36,11 @@
     "CUP: Viking FK"
   ],
   "log": [
+    "lock: Draw (Hull City v Brighton and Hove Albion) @ +375",
+    "odds: EPL 22 games, 1 bets clear the bar (h2h 66/66 priced (0 derived), totals 30/30 priced (28 derived))",
+    "odds: LALIGA 15 games, 1 bets clear the bar (h2h 45/45 priced (0 derived), totals 32/32 priced (20 derived))",
+    "odds: BUNDESLIGA 11 games, 0 bets clear the bar (h2h 33/33 priced (0 derived), totals 24/24 priced (22 derived))",
+    "odds: SERIEA 15 games, 1 bets clear the bar (h2h 45/45 priced (0 derived), totals 32/34 priced (18 derived))",
     "odds: LIGUE1 12 games, 0 bets clear the bar (h2h 36/36 priced (0 derived), totals 26/26 priced (24 derived))"
   ]
 }
