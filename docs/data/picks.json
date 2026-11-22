@@ -69,7 +69,7 @@
     "price": 1.62,
     "american": "-161",
     "book": "MGM",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-11-21T11:40:35Z",
     "strategy": "shop",
     "p": 0.6259,
@@ -81,7 +81,8 @@
     "tier": "lean",
     "close_fair": 0.6359,
     "clv": 0.0301,
-    "close_checked": "2026-11-22T14:51:25Z"
+    "close_checked": "2026-11-22T14:51:25Z",
+    "locked": "2026-11-22T21:00:06Z"
   },
   {
     "id": "4c08b213ed416e8f41e038f42a42b962:h2h:Home:",
@@ -99,7 +100,7 @@
     "price": 1.77,
     "american": "-130",
     "book": "Hard Rock",
-    "status": "pending",
+    "status": "won",
     "created": "2026-11-21T11:40:35Z",
     "strategy": "shop",
     "p": 0.5737,
@@ -111,7 +112,10 @@
     "tier": "lean",
     "close_fair": 0.5485,
     "clv": -0.0291,
-    "close_checked": "2026-11-22T14:51:25Z"
+    "close_checked": "2026-11-22T14:51:25Z",
+    "locked": "2026-11-22T21:00:06Z",
+    "units": 0.77,
+    "final": "4-0"
   },
   {
     "id": "9718f9ea901236855faf57f77a0bd5b3:h2h:Draw:",
@@ -129,7 +133,7 @@
     "price": 4.25,
     "american": "+325",
     "book": "Hard Rock",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-11-22T14:51:25Z",
     "strategy": "shop",
     "p": 0.241,
@@ -138,7 +142,10 @@
     "ev": 0.0241,
     "fair_src": "Pinnacle",
     "open_fair": 0.241,
-    "tier": "pick"
+    "tier": "pick",
+    "locked": "2026-11-22T21:00:06Z",
+    "units": -1.0,
+    "final": "3-2"
   },
   {
     "id": "230a356290e1a358e9dd2f7fa23de3b9:h2h:Draw:",
@@ -156,7 +163,7 @@
     "price": 4.75,
     "american": "+375",
     "book": "Hard Rock",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-11-21T11:40:35Z",
     "strategy": "shop",
     "p": 0.2119,
@@ -169,7 +176,9 @@
     "close_fair": 0.2081,
     "clv": -0.0115,
     "close_checked": "2026-11-21T23:45:59Z",
-    "locked": "2026-11-22T14:51:25Z"
+    "locked": "2026-11-22T14:51:25Z",
+    "units": -1.0,
+    "final": "2-0"
   },
   {
     "id": "13ac2151b9f6893cedb7f509e64eb070:h2h:Away:",
