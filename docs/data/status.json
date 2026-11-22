@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T23:45:59Z",
+  "updated": "2026-11-22T06:31:53Z",
   "record": {
     "wins": 1,
     "losses": 12,
@@ -22,12 +22,9 @@
     "beat_close": 0.706,
     "clv_n": 34
   },
-  "credits_remaining": 242,
+  "credits_remaining": 240,
   "refreshed": [
-    "BUNDESLIGA",
-    "EPL",
-    "LALIGA",
-    "SERIEA"
+    "LIGUE1"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -35,15 +32,6 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Toulouse to win (RC Lens v Toulouse) @ +260",
-    "lock: Under 2.5 goals (AS Monaco v Auxerre) @ +138",
-    "grade: Under 2.5 goals (Newcastle United v Arsenal 2-2) -> lost",
-    "grade: Toulouse to win (RC Lens v Toulouse 1-1) -> lost",
-    "grade: Under 2.5 goals (AS Monaco v Auxerre 1-1) -> won",
-    "grade: Draw (Sevilla v Real Betis 1-1) -> won",
-    "odds: EPL 22 games, 1 bets clear the bar (h2h 66/66 priced (0 derived), totals 30/48 priced (28 derived))",
-    "odds: LALIGA 15 games, 0 bets clear the bar (h2h 45/45 priced (0 derived), totals 32/32 priced (18 derived))",
-    "odds: BUNDESLIGA 11 games, 0 bets clear the bar (h2h 33/33 priced (0 derived), totals 22/22 priced (20 derived))",
-    "odds: SERIEA 16 games, 1 bets clear the bar (h2h 48/48 priced (0 derived), totals 36/36 priced (18 derived))"
+    "odds: LIGUE1 12 games, 0 bets clear the bar (h2h 36/36 priced (0 derived), totals 26/26 priced (24 derived))"
   ]
 }
