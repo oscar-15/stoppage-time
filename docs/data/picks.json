@@ -24,7 +24,37 @@
     "ev": 0.0172,
     "fair_src": "Pinnacle",
     "open_fair": 0.3083,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.3093,
+    "clv": 0.0207,
+    "close_checked": "2026-11-23T01:33:35Z"
+  },
+  {
+    "id": "aa77e2a08a1a003b0bbb62a5f8e8ae42:h2h:Away:",
+    "event_id": "aa77e2a08a1a003b0bbb62a5f8e8ae42",
+    "sport_key": "soccer_epl",
+    "comp": "EPL",
+    "comp_name": "Premier League",
+    "home": "Brentford",
+    "away": "Everton",
+    "kickoff": "2026-11-23T20:00:00Z",
+    "market": "h2h",
+    "selection": "Away",
+    "point": null,
+    "label": "Everton to win",
+    "price": 3.3,
+    "american": "+230",
+    "book": "Hard Rock",
+    "status": "pending",
+    "created": "2026-11-23T01:33:35Z",
+    "strategy": "shop",
+    "p": 0.3093,
+    "model_p": 0.3093,
+    "market_p": 0.303,
+    "ev": 0.0207,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.3093,
+    "tier": "pick"
   },
   {
     "id": "99776445d5a5f4ed008f9a6d6a1495b7:h2h:Away:",
@@ -51,7 +81,10 @@
     "ev": 0.0095,
     "fair_src": "Pinnacle",
     "open_fair": 0.5048,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.4918,
+    "clv": -0.0164,
+    "close_checked": "2026-11-23T01:33:35Z"
   },
   {
     "id": "e22f82b10fe71d230248b88fef87e58f:h2h:Away:",
@@ -69,7 +102,7 @@
     "price": 1.62,
     "american": "-161",
     "book": "MGM",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-11-21T11:40:35Z",
     "strategy": "shop",
     "p": 0.6259,
@@ -82,7 +115,9 @@
     "close_fair": 0.6359,
     "clv": 0.0301,
     "close_checked": "2026-11-22T14:51:25Z",
-    "locked": "2026-11-22T21:00:06Z"
+    "locked": "2026-11-22T21:00:06Z",
+    "units": -1.0,
+    "final": "4-4"
   },
   {
     "id": "4c08b213ed416e8f41e038f42a42b962:h2h:Home:",
