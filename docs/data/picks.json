@@ -1,5 +1,32 @@
 [
   {
+    "id": "e422af92d1fc06c0a330838c1c2f2e08:totals:Over:3.5",
+    "event_id": "e422af92d1fc06c0a330838c1c2f2e08",
+    "sport_key": "soccer_uefa_champs_league",
+    "comp": "UCL",
+    "comp_name": "Champions League",
+    "home": "Galatasaray",
+    "away": "Aston Villa",
+    "kickoff": "2026-11-24T17:45:00Z",
+    "market": "totals",
+    "selection": "Over",
+    "point": 3.5,
+    "label": "Over 3.5 goals",
+    "price": 1.94,
+    "american": "-106",
+    "book": "BetRivers",
+    "status": "pending",
+    "created": "2026-11-23T09:42:03Z",
+    "strategy": "shop",
+    "p": 0.5255,
+    "model_p": 0.5255,
+    "market_p": 0.5155,
+    "ev": 0.0195,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.5255,
+    "tier": "lean"
+  },
+  {
     "id": "aa77e2a08a1a003b0bbb62a5f8e8ae42:h2h:Away:",
     "event_id": "aa77e2a08a1a003b0bbb62a5f8e8ae42",
     "sport_key": "soccer_epl",
@@ -25,9 +52,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.3083,
     "tier": "lean",
-    "close_fair": 0.3093,
-    "clv": 0.0207,
-    "close_checked": "2026-11-23T01:33:35Z"
+    "close_fair": 0.2963,
+    "clv": -0.0221,
+    "close_checked": "2026-11-23T09:42:03Z"
   },
   {
     "id": "aa77e2a08a1a003b0bbb62a5f8e8ae42:h2h:Away:",
@@ -54,7 +81,10 @@
     "ev": 0.0207,
     "fair_src": "Pinnacle",
     "open_fair": 0.3093,
-    "tier": "pick"
+    "tier": "pick",
+    "close_fair": 0.2963,
+    "clv": -0.0221,
+    "close_checked": "2026-11-23T09:42:03Z"
   },
   {
     "id": "99776445d5a5f4ed008f9a6d6a1495b7:h2h:Away:",
@@ -82,9 +112,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.5048,
     "tier": "lean",
-    "close_fair": 0.4918,
-    "clv": -0.0164,
-    "close_checked": "2026-11-23T01:33:35Z"
+    "close_fair": 0.4893,
+    "clv": -0.0214,
+    "close_checked": "2026-11-23T09:42:03Z"
   },
   {
     "id": "e22f82b10fe71d230248b88fef87e58f:h2h:Away:",
