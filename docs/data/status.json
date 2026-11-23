@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T09:42:03Z",
+  "updated": "2026-11-23T21:59:44Z",
   "record": {
     "wins": 1,
     "losses": 13,
@@ -7,26 +7,23 @@
     "units": -10.4,
     "roi": -0.7429,
     "graded": 14,
-    "avg_clv": 0.0304,
-    "beat_close": 0.8,
-    "clv_n": 10
+    "avg_clv": 0.0256,
+    "beat_close": 0.727,
+    "clv_n": 11
   },
   "lean_record": {
     "wins": 20,
-    "losses": 30,
+    "losses": 31,
     "voids": 0,
-    "units": -3.14,
-    "roi": -0.0628,
-    "graded": 50,
-    "avg_clv": 0.0013,
-    "beat_close": 0.676,
-    "clv_n": 37
+    "units": -4.14,
+    "roi": -0.0812,
+    "graded": 51,
+    "avg_clv": 0.0001,
+    "beat_close": 0.641,
+    "clv_n": 39
   },
-  "credits_remaining": 210,
+  "credits_remaining": 206,
   "refreshed": [
-    "EPL",
-    "LALIGA",
-    "SERIEA",
     "UCL"
   ],
   "unmatched_teams": [
@@ -35,9 +32,10 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: EPL 21 games, 0 bets clear the bar (h2h 63/63 priced (0 derived), totals 46/46 priced (40 derived))",
-    "odds: LALIGA 23 games, 0 bets clear the bar (h2h 63/69 priced (0 derived), totals 24/28 priced (16 derived))",
-    "odds: SERIEA 21 games, 0 bets clear the bar (h2h 63/63 priced (0 derived), totals 44/44 priced (32 derived))",
-    "odds: UCL 18 games, 1 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (26 derived))"
+    "lock: Everton to win (Brentford v Everton) @ +230",
+    "lock: Everton to win (Brentford v Everton) @ +230",
+    "lock: Fiorentina to win (Monza v Fiorentina) @ +100",
+    "grade: Fiorentina to win (Monza v Fiorentina 3-0) -> lost",
+    "odds: UCL 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 40/40 priced (30 derived))"
   ]
 }
