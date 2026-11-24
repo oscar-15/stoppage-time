@@ -1,41 +1,36 @@
 {
-  "updated": "2026-11-23T21:59:44Z",
+  "updated": "2026-11-24T05:55:00Z",
   "record": {
     "wins": 1,
-    "losses": 13,
+    "losses": 14,
     "voids": 0,
-    "units": -10.4,
-    "roi": -0.7429,
-    "graded": 14,
+    "units": -11.4,
+    "roi": -0.76,
+    "graded": 15,
     "avg_clv": 0.0256,
     "beat_close": 0.727,
     "clv_n": 11
   },
   "lean_record": {
     "wins": 20,
-    "losses": 31,
+    "losses": 32,
     "voids": 0,
-    "units": -4.14,
-    "roi": -0.0812,
-    "graded": 51,
+    "units": -5.14,
+    "roi": -0.0988,
+    "graded": 52,
     "avg_clv": 0.0001,
     "beat_close": 0.641,
     "clv_n": 39
   },
-  "credits_remaining": 206,
-  "refreshed": [
-    "UCL"
-  ],
+  "credits_remaining": 204,
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Everton to win (Brentford v Everton) @ +230",
-    "lock: Everton to win (Brentford v Everton) @ +230",
-    "lock: Fiorentina to win (Monza v Fiorentina) @ +100",
-    "grade: Fiorentina to win (Monza v Fiorentina 3-0) -> lost",
-    "odds: UCL 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 40/40 priced (30 derived))"
+    "grade: Everton to win (Brentford v Everton 4-0) -> lost",
+    "grade: Everton to win (Brentford v Everton 4-0) -> lost"
   ]
 }

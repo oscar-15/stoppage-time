@@ -45,7 +45,7 @@
     "price": 3.3,
     "american": "+230",
     "book": "Hard Rock",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-11-22T14:51:25Z",
     "strategy": "shop",
     "p": 0.3083,
@@ -58,7 +58,9 @@
     "close_fair": 0.2963,
     "clv": -0.0221,
     "close_checked": "2026-11-23T09:42:03Z",
-    "locked": "2026-11-23T21:59:44Z"
+    "locked": "2026-11-23T21:59:44Z",
+    "units": -1.0,
+    "final": "4-0"
   },
   {
     "id": "aa77e2a08a1a003b0bbb62a5f8e8ae42:h2h:Away:",
@@ -76,7 +78,7 @@
     "price": 3.3,
     "american": "+230",
     "book": "Hard Rock",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-11-23T01:33:35Z",
     "strategy": "shop",
     "p": 0.3093,
@@ -89,7 +91,9 @@
     "close_fair": 0.2963,
     "clv": -0.0221,
     "close_checked": "2026-11-23T09:42:03Z",
-    "locked": "2026-11-23T21:59:44Z"
+    "locked": "2026-11-23T21:59:44Z",
+    "units": -1.0,
+    "final": "4-0"
   },
   {
     "id": "99776445d5a5f4ed008f9a6d6a1495b7:h2h:Away:",
