@@ -1,5 +1,32 @@
 [
   {
+    "id": "a7c87fac9e9cbcfc02ad0e0b29ca89e2:h2h:Home:",
+    "event_id": "a7c87fac9e9cbcfc02ad0e0b29ca89e2",
+    "sport_key": "soccer_uefa_champs_league",
+    "comp": "UCL",
+    "comp_name": "Champions League",
+    "home": "Slavia Praha",
+    "away": "Villarreal",
+    "kickoff": "2026-11-25T17:45:00Z",
+    "market": "h2h",
+    "selection": "Home",
+    "point": null,
+    "label": "Slavia Praha to win",
+    "price": 3.2,
+    "american": "+220",
+    "book": "Hard Rock",
+    "status": "pending",
+    "created": "2026-11-24T17:29:32Z",
+    "strategy": "shop",
+    "p": 0.3196,
+    "model_p": 0.3196,
+    "market_p": 0.3125,
+    "ev": 0.0226,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.3196,
+    "tier": "pick"
+  },
+  {
     "id": "e422af92d1fc06c0a330838c1c2f2e08:totals:Over:3.5",
     "event_id": "e422af92d1fc06c0a330838c1c2f2e08",
     "sport_key": "soccer_uefa_champs_league",
@@ -25,9 +52,9 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.5255,
     "tier": "lean",
-    "close_fair": 0.4865,
-    "clv": -0.0562,
-    "close_checked": "2026-11-23T21:59:44Z"
+    "close_fair": 0.3956,
+    "clv": -0.2326,
+    "close_checked": "2026-11-24T17:29:32Z"
   },
   {
     "id": "aa77e2a08a1a003b0bbb62a5f8e8ae42:h2h:Away:",
