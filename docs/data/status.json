@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T17:29:32Z",
+  "updated": "2026-11-25T01:33:30Z",
   "record": {
     "wins": 1,
     "losses": 14,
@@ -13,16 +13,16 @@
   },
   "lean_record": {
     "wins": 20,
-    "losses": 32,
+    "losses": 33,
     "voids": 0,
-    "units": -5.14,
-    "roi": -0.0988,
-    "graded": 52,
-    "avg_clv": 0.0001,
-    "beat_close": 0.641,
-    "clv_n": 39
+    "units": -6.14,
+    "roi": -0.1158,
+    "graded": 53,
+    "avg_clv": -0.0057,
+    "beat_close": 0.625,
+    "clv_n": 40
   },
-  "credits_remaining": 202,
+  "credits_remaining": 198,
   "refreshed": [
     "UCL"
   ],
@@ -32,6 +32,8 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: UCL 18 games, 2 bets clear the bar (h2h 54/54 priced (0 derived), totals 46/46 priced (40 derived))"
+    "lock: Over 3.5 goals (Galatasaray v Aston Villa) @ -106",
+    "grade: Over 3.5 goals (Galatasaray v Aston Villa 1-0) -> lost",
+    "odds: UCL 9 games, 3 bets clear the bar (h2h 27/27 priced (0 derived), totals 24/24 priced (22 derived))"
   ]
 }

@@ -1,5 +1,32 @@
 [
   {
+    "id": "01a61442fe04f8751b62eb251f234079:totals:Over:3.5",
+    "event_id": "01a61442fe04f8751b62eb251f234079",
+    "sport_key": "soccer_uefa_champs_league",
+    "comp": "UCL",
+    "comp_name": "Champions League",
+    "home": "Sporting Lisbon",
+    "away": "Manchester United",
+    "kickoff": "2026-11-25T20:00:00Z",
+    "market": "totals",
+    "selection": "Over",
+    "point": 3.5,
+    "label": "Over 3.5 goals",
+    "price": 2.43,
+    "american": "+143",
+    "book": "BetRivers",
+    "status": "pending",
+    "created": "2026-11-25T01:33:30Z",
+    "strategy": "shop",
+    "p": 0.4184,
+    "model_p": 0.4184,
+    "market_p": 0.4115,
+    "ev": 0.0166,
+    "fair_src": "Pinnacle (derived)",
+    "open_fair": 0.4184,
+    "tier": "lean"
+  },
+  {
     "id": "a7c87fac9e9cbcfc02ad0e0b29ca89e2:h2h:Home:",
     "event_id": "a7c87fac9e9cbcfc02ad0e0b29ca89e2",
     "sport_key": "soccer_uefa_champs_league",
@@ -24,7 +51,10 @@
     "ev": 0.0226,
     "fair_src": "Pinnacle",
     "open_fair": 0.3196,
-    "tier": "pick"
+    "tier": "pick",
+    "close_fair": 0.3173,
+    "clv": 0.0155,
+    "close_checked": "2026-11-25T01:33:30Z"
   },
   {
     "id": "e422af92d1fc06c0a330838c1c2f2e08:totals:Over:3.5",
@@ -42,7 +72,7 @@
     "price": 1.94,
     "american": "-106",
     "book": "BetRivers",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-11-23T09:42:03Z",
     "strategy": "shop",
     "p": 0.5255,
@@ -54,7 +84,10 @@
     "tier": "lean",
     "close_fair": 0.3956,
     "clv": -0.2326,
-    "close_checked": "2026-11-24T17:29:32Z"
+    "close_checked": "2026-11-24T17:29:32Z",
+    "locked": "2026-11-25T01:33:30Z",
+    "units": -1.0,
+    "final": "1-0"
   },
   {
     "id": "aa77e2a08a1a003b0bbb62a5f8e8ae42:h2h:Away:",
