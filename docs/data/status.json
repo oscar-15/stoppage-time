@@ -1,15 +1,15 @@
 {
-  "updated": "2026-11-25T10:24:21Z",
+  "updated": "2026-11-25T20:07:54Z",
   "record": {
     "wins": 1,
-    "losses": 14,
+    "losses": 15,
     "voids": 0,
-    "units": -11.4,
-    "roi": -0.76,
-    "graded": 15,
-    "avg_clv": 0.0256,
-    "beat_close": 0.727,
-    "clv_n": 11
+    "units": -12.4,
+    "roi": -0.775,
+    "graded": 16,
+    "avg_clv": 0.0239,
+    "beat_close": 0.75,
+    "clv_n": 12
   },
   "lean_record": {
     "wins": 20,
@@ -18,13 +18,12 @@
     "units": -6.14,
     "roi": -0.1158,
     "graded": 53,
-    "avg_clv": -0.0057,
-    "beat_close": 0.625,
-    "clv_n": 40
+    "avg_clv": -0.0061,
+    "beat_close": 0.61,
+    "clv_n": 41
   },
-  "credits_remaining": 194,
+  "credits_remaining": 190,
   "refreshed": [
-    "UCL",
     "UEL"
   ],
   "unmatched_teams": [
@@ -33,7 +32,9 @@
     "CUP: Viking FK"
   ],
   "log": [
-    "odds: UCL 9 games, 1 bets clear the bar (h2h 27/27 priced (0 derived), totals 20/20 priced (16 derived))",
-    "odds: UEL 18 games, 2 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (24 derived))"
+    "lock: Over 3.5 goals (Sporting Lisbon v Manchester United) @ +143",
+    "lock: Slavia Praha to win (Slavia Praha v Villarreal) @ +220",
+    "grade: Slavia Praha to win (Slavia Praha v Villarreal 0-1) -> lost",
+    "odds: UEL 18 games, 3 bets clear the bar (h2h 54/54 priced (0 derived), totals 42/42 priced (30 derived))"
   ]
 }
