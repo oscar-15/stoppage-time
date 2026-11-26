@@ -129,7 +129,7 @@
     "price": 2.43,
     "american": "+143",
     "book": "BetRivers",
-    "status": "locked",
+    "status": "won",
     "created": "2026-11-25T01:33:30Z",
     "strategy": "shop",
     "p": 0.4184,
@@ -142,7 +142,9 @@
     "close_fair": 0.4028,
     "clv": -0.0211,
     "close_checked": "2026-11-25T10:24:21Z",
-    "locked": "2026-11-25T20:07:54Z"
+    "locked": "2026-11-25T20:07:54Z",
+    "units": 1.43,
+    "final": "2-2"
   },
   {
     "id": "a7c87fac9e9cbcfc02ad0e0b29ca89e2:h2h:Home:",

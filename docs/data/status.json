@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T20:07:54Z",
+  "updated": "2026-11-26T03:01:29Z",
   "record": {
     "wins": 1,
     "losses": 15,
@@ -12,29 +12,24 @@
     "clv_n": 12
   },
   "lean_record": {
-    "wins": 20,
+    "wins": 21,
     "losses": 33,
     "voids": 0,
-    "units": -6.14,
-    "roi": -0.1158,
-    "graded": 53,
+    "units": -4.71,
+    "roi": -0.0872,
+    "graded": 54,
     "avg_clv": -0.0061,
     "beat_close": 0.61,
     "clv_n": 41
   },
-  "credits_remaining": 190,
-  "refreshed": [
-    "UEL"
-  ],
+  "credits_remaining": 188,
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
   "log": [
-    "lock: Over 3.5 goals (Sporting Lisbon v Manchester United) @ +143",
-    "lock: Slavia Praha to win (Slavia Praha v Villarreal) @ +220",
-    "grade: Slavia Praha to win (Slavia Praha v Villarreal 0-1) -> lost",
-    "odds: UEL 18 games, 3 bets clear the bar (h2h 54/54 priced (0 derived), totals 42/42 priced (30 derived))"
+    "grade: Over 3.5 goals (Sporting Lisbon v Manchester United 2-2) -> won"
   ]
 }
