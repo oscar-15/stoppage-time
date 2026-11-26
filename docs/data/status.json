@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T12:14:42Z",
+  "updated": "2026-11-26T21:52:25Z",
   "record": {
     "wins": 1,
     "losses": 15,
@@ -12,24 +12,23 @@
     "clv_n": 12
   },
   "lean_record": {
-    "wins": 21,
-    "losses": 33,
+    "wins": 22,
+    "losses": 35,
     "voids": 0,
-    "units": -4.71,
-    "roi": -0.0872,
-    "graded": 54,
-    "avg_clv": -0.0061,
-    "beat_close": 0.61,
-    "clv_n": 41
+    "units": -5.99,
+    "roi": -0.1051,
+    "graded": 57,
+    "avg_clv": -0.0047,
+    "beat_close": 0.622,
+    "clv_n": 45
   },
-  "credits_remaining": 176,
+  "credits_remaining": 164,
   "refreshed": [
     "BUNDESLIGA",
     "EPL",
     "LALIGA",
     "LIGUE1",
-    "SERIEA",
-    "UEL"
+    "SERIEA"
   ],
   "unmatched_teams": [
     "CUP: LASK",
@@ -37,11 +36,19 @@
     "CUP: Viking FK"
   ],
   "log": [
+    "lock: Celtic to win (Torreense v Celtic) @ -141",
+    "lock: Rennes to win (NEC Nijmegen v Rennes) @ +118",
+    "lock: Under 3.5 goals (Lyon v Lillestrom) @ -120",
+    "lock: Bayer Leverkusen to win (Dinamo Zagreb v Bayer Leverkusen) @ -139",
+    "lock: Benfica to win (Viktoria Plzeň v Benfica) @ -200",
+    "lock: Under 3.5 goals (Union Saint-Gilloise v Lech Poznań) @ -130",
+    "grade: Bayer Leverkusen to win (Dinamo Zagreb v Bayer Leverkusen 0-2) -> won",
+    "grade: Benfica to win (Viktoria Plzeň v Benfica 4-0) -> lost",
+    "grade: Under 3.5 goals (Union Saint-Gilloise v Lech Poznań 2-2) -> lost",
     "odds: EPL 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 42/42 priced (38 derived))",
-    "odds: LALIGA 22 games, 0 bets clear the bar (h2h 66/66 priced (0 derived), totals 48/48 priced (36 derived))",
-    "odds: BUNDESLIGA 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (32 derived))",
-    "odds: SERIEA 20 games, 1 bets clear the bar (h2h 60/60 priced (0 derived), totals 48/48 priced (40 derived))",
-    "odds: LIGUE1 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (30 derived))",
-    "odds: UEL 18 games, 2 bets clear the bar (h2h 54/54 priced (0 derived), totals 40/40 priced (30 derived))"
+    "odds: LALIGA 22 games, 1 bets clear the bar (h2h 66/66 priced (0 derived), totals 48/48 priced (36 derived))",
+    "odds: BUNDESLIGA 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (34 derived))",
+    "odds: SERIEA 20 games, 0 bets clear the bar (h2h 60/60 priced (0 derived), totals 48/48 priced (40 derived))",
+    "odds: LIGUE1 18 games, 0 bets clear the bar (h2h 54/54 priced (0 derived), totals 38/38 priced (30 derived))"
   ]
 }

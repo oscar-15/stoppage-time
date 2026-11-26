@@ -1,5 +1,32 @@
 [
   {
+    "id": "80c92a163a81b69fef76530221e2edd0:totals:Over:3.5",
+    "event_id": "80c92a163a81b69fef76530221e2edd0",
+    "sport_key": "soccer_spain_la_liga",
+    "comp": "LALIGA",
+    "comp_name": "La Liga",
+    "home": "Levante",
+    "away": "Real Racing Club de Santander",
+    "kickoff": "2026-11-27T20:00:00Z",
+    "market": "totals",
+    "selection": "Over",
+    "point": 3.5,
+    "label": "Over 3.5 goals",
+    "price": 2.14,
+    "american": "+114",
+    "book": "BetRivers",
+    "status": "pending",
+    "created": "2026-11-26T21:52:25Z",
+    "strategy": "shop",
+    "p": 0.4763,
+    "model_p": 0.4763,
+    "market_p": 0.4673,
+    "ev": 0.0193,
+    "fair_src": "Pinnacle (derived)",
+    "open_fair": 0.4763,
+    "tier": "lean"
+  },
+  {
     "id": "e9a663f13e7503c0ac20a54804338b60:h2h:Draw:",
     "event_id": "e9a663f13e7503c0ac20a54804338b60",
     "sport_key": "soccer_italy_serie_a",
@@ -24,7 +51,10 @@
     "ev": 0.0061,
     "fair_src": "Pinnacle",
     "open_fair": 0.2959,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.2948,
+    "clv": 0.0025,
+    "close_checked": "2026-11-26T21:52:25Z"
   },
   {
     "id": "e2036567ee9394a55f022358781dce15:h2h:Away:",
@@ -42,7 +72,7 @@
     "price": 1.71,
     "american": "-141",
     "book": "MGM",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-11-25T10:24:21Z",
     "strategy": "shop",
     "p": 0.5901,
@@ -54,7 +84,8 @@
     "tier": "lean",
     "close_fair": 0.585,
     "clv": 0.0004,
-    "close_checked": "2026-11-26T12:14:42Z"
+    "close_checked": "2026-11-26T12:14:42Z",
+    "locked": "2026-11-26T21:52:25Z"
   },
   {
     "id": "e836bc70afa19b0db28fb320a97662e4:h2h:Away:",
@@ -72,7 +103,7 @@
     "price": 2.18,
     "american": "+118",
     "book": "Bally Bet",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-11-25T20:07:54Z",
     "strategy": "shop",
     "p": 0.462,
@@ -84,7 +115,8 @@
     "tier": "lean",
     "close_fair": 0.4657,
     "clv": 0.0152,
-    "close_checked": "2026-11-26T12:14:42Z"
+    "close_checked": "2026-11-26T12:14:42Z",
+    "locked": "2026-11-26T21:52:25Z"
   },
   {
     "id": "a24c89b65c5a30fb9473735049589e64:totals:Under:3.5",
@@ -102,7 +134,7 @@
     "price": 1.83,
     "american": "-120",
     "book": "Bally Bet",
-    "status": "pending",
+    "status": "locked",
     "created": "2026-11-26T12:14:42Z",
     "strategy": "shop",
     "p": 0.5569,
@@ -111,7 +143,8 @@
     "ev": 0.0192,
     "fair_src": "Pinnacle (derived)",
     "open_fair": 0.5569,
-    "tier": "lean"
+    "tier": "lean",
+    "locked": "2026-11-26T21:52:25Z"
   },
   {
     "id": "cdf4b848361b0374c2027326bd54d8eb:h2h:Away:",
@@ -129,7 +162,7 @@
     "price": 1.72,
     "american": "-139",
     "book": "Bally Bet",
-    "status": "pending",
+    "status": "won",
     "created": "2026-11-25T10:24:21Z",
     "strategy": "shop",
     "p": 0.5889,
@@ -141,7 +174,10 @@
     "tier": "lean",
     "close_fair": 0.5992,
     "clv": 0.0306,
-    "close_checked": "2026-11-26T12:14:42Z"
+    "close_checked": "2026-11-26T12:14:42Z",
+    "locked": "2026-11-26T21:52:25Z",
+    "units": 0.72,
+    "final": "0-2"
   },
   {
     "id": "38332e4cbb2b3991904b00a75dc3769d:h2h:Away:",
@@ -159,7 +195,7 @@
     "price": 1.5,
     "american": "-200",
     "book": "MGM",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-11-25T20:07:54Z",
     "strategy": "shop",
     "p": 0.6767,
@@ -171,7 +207,10 @@
     "tier": "lean",
     "close_fair": 0.6607,
     "clv": -0.0089,
-    "close_checked": "2026-11-26T12:14:42Z"
+    "close_checked": "2026-11-26T12:14:42Z",
+    "locked": "2026-11-26T21:52:25Z",
+    "units": -1.0,
+    "final": "4-0"
   },
   {
     "id": "3ee2bf8a6fa6add543f64ac3e9813976:totals:Under:3.5",
@@ -189,7 +228,7 @@
     "price": 1.77,
     "american": "-130",
     "book": "Bally Bet",
-    "status": "pending",
+    "status": "lost",
     "created": "2026-11-26T12:14:42Z",
     "strategy": "shop",
     "p": 0.5745,
@@ -198,7 +237,10 @@
     "ev": 0.0169,
     "fair_src": "Pinnacle (derived)",
     "open_fair": 0.5745,
-    "tier": "lean"
+    "tier": "lean",
+    "locked": "2026-11-26T21:52:25Z",
+    "units": -1.0,
+    "final": "2-2"
   },
   {
     "id": "01a61442fe04f8751b62eb251f234079:totals:Over:3.5",
