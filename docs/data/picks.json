@@ -72,7 +72,7 @@
     "price": 1.71,
     "american": "-141",
     "book": "MGM",
-    "status": "locked",
+    "status": "won",
     "created": "2026-11-25T10:24:21Z",
     "strategy": "shop",
     "p": 0.5901,
@@ -85,7 +85,9 @@
     "close_fair": 0.585,
     "clv": 0.0004,
     "close_checked": "2026-11-26T12:14:42Z",
-    "locked": "2026-11-26T21:52:25Z"
+    "locked": "2026-11-26T21:52:25Z",
+    "units": 0.71,
+    "final": "1-2"
   },
   {
     "id": "e836bc70afa19b0db28fb320a97662e4:h2h:Away:",
@@ -103,7 +105,7 @@
     "price": 2.18,
     "american": "+118",
     "book": "Bally Bet",
-    "status": "locked",
+    "status": "lost",
     "created": "2026-11-25T20:07:54Z",
     "strategy": "shop",
     "p": 0.462,
@@ -116,7 +118,9 @@
     "close_fair": 0.4657,
     "clv": 0.0152,
     "close_checked": "2026-11-26T12:14:42Z",
-    "locked": "2026-11-26T21:52:25Z"
+    "locked": "2026-11-26T21:52:25Z",
+    "units": -1.0,
+    "final": "3-1"
   },
   {
     "id": "a24c89b65c5a30fb9473735049589e64:totals:Under:3.5",
@@ -134,7 +138,7 @@
     "price": 1.83,
     "american": "-120",
     "book": "Bally Bet",
-    "status": "locked",
+    "status": "won",
     "created": "2026-11-26T12:14:42Z",
     "strategy": "shop",
     "p": 0.5569,
@@ -144,7 +148,9 @@
     "fair_src": "Pinnacle (derived)",
     "open_fair": 0.5569,
     "tier": "lean",
-    "locked": "2026-11-26T21:52:25Z"
+    "locked": "2026-11-26T21:52:25Z",
+    "units": 0.83,
+    "final": "0-0"
   },
   {
     "id": "cdf4b848361b0374c2027326bd54d8eb:h2h:Away:",
