@@ -24,7 +24,10 @@
     "ev": 0.0193,
     "fair_src": "Pinnacle (derived)",
     "open_fair": 0.4763,
-    "tier": "lean"
+    "tier": "lean",
+    "close_fair": 0.4655,
+    "clv": -0.0038,
+    "close_checked": "2026-11-27T13:45:56Z"
   },
   {
     "id": "e9a663f13e7503c0ac20a54804338b60:h2h:Draw:",
@@ -52,9 +55,36 @@
     "fair_src": "Pinnacle",
     "open_fair": 0.2959,
     "tier": "lean",
-    "close_fair": 0.2948,
-    "clv": 0.0025,
-    "close_checked": "2026-11-26T21:52:25Z"
+    "close_fair": 0.3029,
+    "clv": 0.0299,
+    "close_checked": "2026-11-27T13:45:56Z"
+  },
+  {
+    "id": "02ff879cf54f6d1fec2664efee0431db:totals:Under:2.5",
+    "event_id": "02ff879cf54f6d1fec2664efee0431db",
+    "sport_key": "soccer_france_ligue_one",
+    "comp": "LIGUE1",
+    "comp_name": "Ligue 1",
+    "home": "Brest",
+    "away": "Paris FC",
+    "kickoff": "2026-11-27T19:45:00Z",
+    "market": "totals",
+    "selection": "Under",
+    "point": 2.5,
+    "label": "Under 2.5 goals",
+    "price": 2.02,
+    "american": "+102",
+    "book": "betPARX",
+    "status": "pending",
+    "created": "2026-11-27T13:45:56Z",
+    "strategy": "shop",
+    "p": 0.5027,
+    "model_p": 0.5027,
+    "market_p": 0.495,
+    "ev": 0.0154,
+    "fair_src": "Pinnacle",
+    "open_fair": 0.5027,
+    "tier": "lean"
   },
   {
     "id": "e2036567ee9394a55f022358781dce15:h2h:Away:",
