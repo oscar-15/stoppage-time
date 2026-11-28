@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T22:38:24Z",
+  "updated": "2026-11-28T04:41:10Z",
   "record": {
     "wins": 1,
     "losses": 15,
@@ -23,29 +23,11 @@
     "clv_n": 47
   },
   "credits_remaining": 136,
-  "refreshed": [
-    "BUNDESLIGA",
-    "EPL",
-    "LALIGA",
-    "LIGUE1",
-    "SERIEA"
-  ],
+  "refreshed": [],
   "unmatched_teams": [
     "CUP: LASK",
     "CUP: Shakhtar Donetsk",
     "CUP: Viking FK"
   ],
-  "log": [
-    "lock: Over 3.5 goals (Levante v Real Racing Club de Santander) @ +114",
-    "lock: Draw (Venezia v Bologna) @ +240",
-    "lock: Under 2.5 goals (Brest v Paris FC) @ +102",
-    "grade: Under 2.5 goals (Brest v Paris FC 1-0) -> won",
-    "grade: Draw (Venezia v Bologna 0-0) -> won",
-    "grade: Over 3.5 goals (Levante v Real Racing Club de Santander 1-3) -> won",
-    "odds: EPL 19 games, 0 bets clear the bar (h2h 57/57 priced (0 derived), totals 40/40 priced (36 derived))",
-    "odds: LALIGA 21 games, 0 bets clear the bar (h2h 63/63 priced (0 derived), totals 48/48 priced (36 derived))",
-    "odds: BUNDESLIGA 17 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 36/36 priced (30 derived))",
-    "odds: SERIEA 19 games, 0 bets clear the bar (h2h 57/57 priced (0 derived), totals 42/42 priced (32 derived))",
-    "odds: LIGUE1 17 games, 0 bets clear the bar (h2h 51/51 priced (0 derived), totals 36/36 priced (32 derived))"
-  ]
+  "log": []
 }
